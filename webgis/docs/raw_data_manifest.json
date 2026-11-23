@@ -1,0 +1,72 @@
+[
+  {
+    "path": "data/raw/dem/license.txt",
+    "bytes": 21286,
+    "sha256": "047d2259741a3ebb30d8c8a43d4ba79b5b229a069acd1d2bea49f22b297d8e98"
+  },
+  {
+    "path": "data/raw/dem/N22E108_FABDEM_V1-2.tif",
+    "bytes": 28214328,
+    "sha256": "34ae17824aa3a71d11d5de440eedc0e3e6b051a00aa99a74f3879378c8aedc09"
+  },
+  {
+    "path": "data/raw/dem/readme.txt",
+    "bytes": 18866,
+    "sha256": "5035c8bc614af0de7ae78f7ef16d19191039e55ff1129a778582c4395c68454e"
+  },
+  {
+    "path": "data/raw/rainfall/chm_pre_v2_2024_byte_ranges/0000000000-0000065535.bin",
+    "bytes": 65536,
+    "sha256": "4c764713b18f97d7559e53294cfb8f66f421689046e5ebd87e22f4bfd7467d58"
+  },
+  {
+    "path": "data/raw/rainfall/chm_pre_v2_2024_byte_ranges/0459210752-0459276287.bin",
+    "bytes": 65536,
+    "sha256": "b33ff335340c30bae962d4f77dab011c344b6146d8d768e5cac0eb9f107052b4"
+  },
+  {
+    "path": "data/raw/rainfall/chm_pre_v2_2024_byte_ranges/0461045760-0461111295.bin",
+    "bytes": 65536,
+    "sha256": "008ef4d0acccacd07a4b10b742cea6a0945cc3534c1c4cf94065b15c382d4710"
+  },
+  {
+    "path": "data/raw/rainfall/chm_pre_v2_2024_byte_ranges/0462880768-0462946303.bin",
+    "bytes": 65536,
+    "sha256": "db689e1700e969279f3bb78fed8820b43a55c191a24ee3af7f760306993690e6"
+  },
+  {
+    "path": "data/raw/rainfall/chm_pre_v2_2024_byte_ranges/0464715776-0464781311.bin",
+    "bytes": 65536,
+    "sha256": "27ac9e7a02f1b084f437f98b6654903b3c3b0714d973a426fbe4519c1ad11241"
+  },
+  {
+    "path": "data/raw/rainfall/chm_pre_v2_2024_byte_ranges/0466550784-0466616319.bin",
+    "bytes": 65536,
+    "sha256": "2919de485c18ee8dc1c073b20d3b70173ae8afcde3eb2bb59d59d166d7f30eda"
+  },
+  {
+    "path": "data/raw/rainfall/chm_pre_v2_2024_byte_ranges/0468385792-0468451327.bin",
+    "bytes": 65536,
+    "sha256": "3bf0f489ee15144f31c2747bc798aee97689c6ccc7a0b0629bee80023356735c"
+  },
+  {
+    "path": "data/raw/rainfall/chm_pre_v2_2024_byte_ranges/0470286336-0470351871.bin",
+    "bytes": 65536,
+    "sha256": "5d90562b2319bde904e37b81722b6c293aef2a88cb90b231dcc4199020f58e22"
+  },
+  {
+    "path": "data/raw/rainfall/chm_pre_v2_2024_byte_ranges/0472121344-0472186879.bin",
+    "bytes": 65536,
+    "sha256": "4a9c763dd70bbc9069c93de0fa38bfe39ac1ac38d70175b6fe1ea417a30f9032"
+  },
+  {
+    "path": "data/raw/rainfall/chm_pre_v2_2024_byte_ranges/manifest.json",
+    "bytes": 4330,
+    "sha256": "5380c6c9228fd916b5c436a40d6f05246468f16158e1f8404a21cd9610562236"
+  },
+  {
+    "path": "data/raw/rivers/osm_map_context_current.osm",
+    "bytes": 3399855,
+    "sha256": "e729ace30658fa3327cc0f97cf8070910825cde289e65f9e967c0e7b490c19c3"
+  }
+]

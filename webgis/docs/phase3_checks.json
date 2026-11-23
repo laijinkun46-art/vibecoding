@@ -1,0 +1,227 @@
+{
+  "passed": true,
+  "synthetic_tests": 12,
+  "real_data_checks": 55,
+  "checks": [
+    {
+      "name": "所有分析输入哈希未改变",
+      "passed": true
+    },
+    {
+      "name": "所有成果哈希一致",
+      "passed": true
+    },
+    {
+      "name": "S01 分类及水深与DEM同网格",
+      "passed": true
+    },
+    {
+      "name": "S01 无效区分类255且水深-9999",
+      "passed": true
+    },
+    {
+      "name": "S01 所有湿像元严格低于假设水面",
+      "passed": true
+    },
+    {
+      "name": "S01 干地水深0、湿区水深=水位减DEM",
+      "passed": true
+    },
+    {
+      "name": "S01 所有合格主河道种子都被纳入",
+      "passed": true
+    },
+    {
+      "name": "S01 连通搜索已闭合",
+      "passed": true
+    },
+    {
+      "name": "S01 面积水深及体积统计独立核对",
+      "passed": true
+    },
+    {
+      "name": "S01 矢量几何有效且栅格回写完全一致",
+      "passed": true
+    },
+    {
+      "name": "S01 矢量面积与像元面积一致",
+      "passed": true
+    },
+    {
+      "name": "S01 每个湿区组件均与主河道种子相交",
+      "passed": true
+    },
+    {
+      "name": "S02 分类及水深与DEM同网格",
+      "passed": true
+    },
+    {
+      "name": "S02 无效区分类255且水深-9999",
+      "passed": true
+    },
+    {
+      "name": "S02 所有湿像元严格低于假设水面",
+      "passed": true
+    },
+    {
+      "name": "S02 干地水深0、湿区水深=水位减DEM",
+      "passed": true
+    },
+    {
+      "name": "S02 所有合格主河道种子都被纳入",
+      "passed": true
+    },
+    {
+      "name": "S02 连通搜索已闭合",
+      "passed": true
+    },
+    {
+      "name": "S02 面积水深及体积统计独立核对",
+      "passed": true
+    },
+    {
+      "name": "S02 矢量几何有效且栅格回写完全一致",
+      "passed": true
+    },
+    {
+      "name": "S02 矢量面积与像元面积一致",
+      "passed": true
+    },
+    {
+      "name": "S02 每个湿区组件均与主河道种子相交",
+      "passed": true
+    },
+    {
+      "name": "S03 分类及水深与DEM同网格",
+      "passed": true
+    },
+    {
+      "name": "S03 无效区分类255且水深-9999",
+      "passed": true
+    },
+    {
+      "name": "S03 所有湿像元严格低于假设水面",
+      "passed": true
+    },
+    {
+      "name": "S03 干地水深0、湿区水深=水位减DEM",
+      "passed": true
+    },
+    {
+      "name": "S03 所有合格主河道种子都被纳入",
+      "passed": true
+    },
+    {
+      "name": "S03 连通搜索已闭合",
+      "passed": true
+    },
+    {
+      "name": "S03 面积水深及体积统计独立核对",
+      "passed": true
+    },
+    {
+      "name": "S03 矢量几何有效且栅格回写完全一致",
+      "passed": true
+    },
+    {
+      "name": "S03 矢量面积与像元面积一致",
+      "passed": true
+    },
+    {
+      "name": "S03 每个湿区组件均与主河道种子相交",
+      "passed": true
+    },
+    {
+      "name": "S04 分类及水深与DEM同网格",
+      "passed": true
+    },
+    {
+      "name": "S04 无效区分类255且水深-9999",
+      "passed": true
+    },
+    {
+      "name": "S04 所有湿像元严格低于假设水面",
+      "passed": true
+    },
+    {
+      "name": "S04 干地水深0、湿区水深=水位减DEM",
+      "passed": true
+    },
+    {
+      "name": "S04 所有合格主河道种子都被纳入",
+      "passed": true
+    },
+    {
+      "name": "S04 连通搜索已闭合",
+      "passed": true
+    },
+    {
+      "name": "S04 面积水深及体积统计独立核对",
+      "passed": true
+    },
+    {
+      "name": "S04 矢量几何有效且栅格回写完全一致",
+      "passed": true
+    },
+    {
+      "name": "S04 矢量面积与像元面积一致",
+      "passed": true
+    },
+    {
+      "name": "S04 每个湿区组件均与主河道种子相交",
+      "passed": true
+    },
+    {
+      "name": "提高水位时湿区单调包含",
+      "passed": true
+    },
+    {
+      "name": "S01_to_S02 变化分类与布尔集合运算一致",
+      "passed": true
+    },
+    {
+      "name": "S01_to_S02 前后面积守恒",
+      "passed": true
+    },
+    {
+      "name": "S01_to_S02 净面积变化与两期面积差一致",
+      "passed": true
+    },
+    {
+      "name": "S01_to_S02 变化几何有效且各类面积一致",
+      "passed": true
+    },
+    {
+      "name": "S02_to_S03 变化分类与布尔集合运算一致",
+      "passed": true
+    },
+    {
+      "name": "S02_to_S03 前后面积守恒",
+      "passed": true
+    },
+    {
+      "name": "S02_to_S03 净面积变化与两期面积差一致",
+      "passed": true
+    },
+    {
+      "name": "S02_to_S03 变化几何有效且各类面积一致",
+      "passed": true
+    },
+    {
+      "name": "S03_to_S04 变化分类与布尔集合运算一致",
+      "passed": true
+    },
+    {
+      "name": "S03_to_S04 前后面积守恒",
+      "passed": true
+    },
+    {
+      "name": "S03_to_S04 净面积变化与两期面积差一致",
+      "passed": true
+    },
+    {
+      "name": "S03_to_S04 变化几何有效且各类面积一致",
+      "passed": true
+    }
+  ]
+}

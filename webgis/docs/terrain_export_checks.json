@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "native_values_exact": true,
+  "raw_unchanged": true,
+  "metadata": {
+    "source": "FABDEM v1.2",
+    "horizontal_epsg": 4326,
+    "vertical_datum": "EGM2008 / EPSG:3855，未转换为椭球高，仅作地形形态展示",
+    "width": 1189,
+    "height": 793,
+    "geotransform": [
+      108.16986111111112,
+      0.0002777777777777778,
+      0.0,
+      22.900138888888886,
+      0.0,
+      -0.0002777777777777778
+    ],
+    "encoding": "little-endian Float32, north to south row-major",
+    "url": "/terrain/fabdem.f32",
+    "bytes": 3771508,
+    "sha256": "b10b25e8666dae47f5699d6ed75a38e8b15a9f65273e89acb61e4a3b9eed6967",
+    "source_sha256": "34ae17824aa3a71d11d5de440eedc0e3e6b051a00aa99a74f3879378c8aedc09",
+    "elevation_m": {
+      "min": 58.790000915527344,
+      "max": 354.0
+    },
+    "credit": "<a href=\"/terrain/NOTICE.txt\" target=\"_blank\">FABDEM v1.2 · Hawker et al. · CC BY-NC-SA 4.0 · Copernicus</a>",
+    "resampling": "none on export; bilinear for Cesium display tiles",
+    "outside_coverage": "no DEM; globe height is zero outside the exported grid",
+    "bounds_wsen": [
+      108.16986111111112,
+      22.67986111111111,
+      108.5001388888889,
+      22.900138888888886
+    ]
+  }
+}

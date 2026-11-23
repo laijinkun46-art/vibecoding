@@ -1,0 +1,13 @@
+{
+  "description": "课程敏感性试验的假设水面高程，不是2024年实测水位或预报",
+  "vertical_datum": "EGM2008",
+  "connectivity": 4,
+  "rainfall_to_stage_model": null,
+  "scenarios": [
+    {"id": "S01", "label": "情景一：75 m", "water_level_m": 75.0},
+    {"id": "S02", "label": "情景二：80 m", "water_level_m": 80.0},
+    {"id": "S03", "label": "情景三：85 m", "water_level_m": 85.0},
+    {"id": "S04", "label": "情景四：回落至78 m", "water_level_m": 78.0}
+  ],
+  "comparisons": [["S01", "S02"], ["S02", "S03"], ["S03", "S04"]]
+}

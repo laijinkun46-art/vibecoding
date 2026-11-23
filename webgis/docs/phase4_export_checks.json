@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "asset_count": 10,
+  "catalog": {
+    "kind": "hypothetical_scenario_not_observation",
+    "assets": {
+      "summary": {
+        "url": "/analysis/summary.json",
+        "sha256": "19909f062a26289f28c9089d3c16a9460af4a8d503e3893f25ecb0ec3500b54d",
+        "bytes": 2829,
+        "source": "data\\processed\\phase3\\summary.json",
+        "source_sha256": "b92c183bad9e50bbb070f080f89dcafc85df76f36fa6b324645bb3777675f114"
+      },
+      "rainfall_timeseries": {
+        "url": "/analysis/rainfall_timeseries.json",
+        "sha256": "13cbd1b49906e1cada485747e3d5007600c9693d404d4a249b7a3cde8a059155",
+        "bytes": 2515,
+        "source": "data\\processed\\phase2\\rainfall_timeseries.json",
+        "source_sha256": "fd55feac428ca985c8450a74862fd3a13c99d75dd53625a8cfe335dec3e8f070"
+      },
+      "rivers_wgs84": {
+        "url": "/analysis/rivers_wgs84.geojson",
+        "sha256": "e4b54d7aa541ff77c8743a4a489caa27b8ed04934b6164c99ab99eb4e57add07",
+        "bytes": 4455,
+        "source": "data\\processed\\phase2\\rivers_wgs84.geojson",
+        "source_sha256": "8a5cdffdc4107e6b2618922dfc85020775c57db08ae45b4052f382a11da6198f"
+      },
+      "S01_to_S02_change": {
+        "url": "/analysis/S01_to_S02_change.geojson",
+        "sha256": "61d0d68e4ffa2fe68e4e96b490fbe9212361c7c9c380a676795b3d208463a65a",
+        "bytes": 609049,
+        "source": "data\\processed\\phase3\\S01_to_S02_change.geojson",
+        "source_sha256": "0e7c56bbb5524eed0481eef1d6625548bf5c41ce90a5bfe3d4e31491a1703c32"
+      },
+      "S01_wet": {
+        "url": "/analysis/S01_wet.geojson",
+        "sha256": "aa52a14060b6e768b4c727fc0edd698e01c56d958d0514281d16d82f7327bd53",
+        "bytes": 155720,
+        "source": "data\\processed\\phase3\\S01_wet.geojson",
+        "source_sha256": "5d32403cbb1dd53afcb3c8c3b9cd6355d542bde12d580ee9d0e548a146ee02e5"
+      },
+      "S02_to_S03_change": {
+        "url": "/analysis/S02_to_S03_change.geojson",
+        "sha256": "e803e35963fcef20726501325cc65b43f38f437a80282c5f0fe295020af9c8a1",
+        "bytes": 885236,
+        "source": "data\\processed\\phase3\\S02_to_S03_change.geojson",
+        "source_sha256": "010cc78069c3aabd92890cf8c411f0fc3c83302d8ff38c6a05762a2cc39b373d"
+      },
+      "S02_wet": {
+        "url": "/analysis/S02_wet.geojson",
+        "sha256": "d5e12fdcdd70f073fcc2f4cfdbd58bcd87457c0f1975094b559a08d5e1c5e5e9",
+        "bytes": 251599,
+        "source": "data\\processed\\phase3\\S02_wet.geojson",
+        "source_sha256": "c1c2530566981281056e44870fdd537df280c5b5e1ce85f058bd557d3c71264e"
+      },
+      "S03_to_S04_change": {
+        "url": "/analysis/S03_to_S04_change.geojson",
+        "sha256": "433b9a1ddce485717a9647596e5297814eb4f87dd0d8eef81280900e9762d2e8",
+        "bytes": 1029177,
+        "source": "data\\processed\\phase3\\S03_to_S04_change.geojson",
+        "source_sha256": "f3da6c258f4c5d9f6dcf68f9bbc5574530cf0242d5a4d2c0a974663a05628899"
+      },
+      "S03_wet": {
+        "url": "/analysis/S03_wet.geojson",
+        "sha256": "53630c65f99a40c5b712648d791e706354a080f07caaa9ea355d8547c64ca93a",
+        "bytes": 264413,
+        "source": "data\\processed\\phase3\\S03_wet.geojson",
+        "source_sha256": "6ecb1dde575ae693b2fd8a83ca8dd2b8210afe991978e58fe2f99803a10a84e9"
+      },
+      "S04_wet": {
+        "url": "/analysis/S04_wet.geojson",
+        "sha256": "226d2193a9dd92f26e362bf55d12d4498d6aa94f1dd5ad5473e673c654b835e8",
+        "bytes": 347170,
+        "source": "data\\processed\\phase3\\S04_wet.geojson",
+        "source_sha256": "8bd7556ded878341c2bf33528e8c093c13d99e9591d95ad37fd6834ca9cd19d0"
+      }
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "passed": true,
+  "check_count": 11,
+  "checks": [
+    {
+      "name": "波纹与箭头实际连续刷新",
+      "passed": true,
+      "observed": {
+        "before": "24.7835",
+        "after": "36.1026",
+        "pixels_changed": true
+      }
+    },
+    {
+      "name": "暂停时动画时间和帧计数不变",
+      "passed": true,
+      "observed": {
+        "before": "46.4630",
+        "after": "46.4630",
+        "frames": "1010"
+      }
+    },
+    {
+      "name": "暂停后恢复并切换2倍视觉速度",
+      "passed": true,
+      "observed": {
+        "area": "23.7168 km²",
+        "map": {
+          "analysisEntities": "1",
+          "analysisLayer": "S01",
+          "basemap": "satellite",
+          "cameraPitch": "-0.789885008636217",
+          "pendingTiles": "0",
+          "riverVisible": "true",
+          "sceneMode": "3",
+          "terrain": "fabdem",
+          "terrainProbeHeight": "283.087213789801",
+          "waterAtlasFrames": "16",
+          "waterAtlasSize": "512x512",
+          "waterFrames": "1871",
+          "waterState": "running",
+          "waterTime": "124.7748"
+        },
+        "speed": "2"
+      }
+    },
+    {
+      "name": "关闭特效停止帧更新且分析面保留",
+      "passed": true,
+      "observed": {
+        "before": "1874",
+        "after": "1874"
+      }
+    },
+    {
+      "name": "隐藏淹没水面自动挂起",
+      "passed": true,
+      "observed": "analysisLayer=hidden,waterState=suspended"
+    },
+    {
+      "name": "变化分类不播放波纹且停止刷新",
+      "passed": true,
+      "observed": {
+        "analysisEntities": "212",
+        "analysisLayer": "S01_to_S02",
+        "basemap": "satellite",
+        "cameraPitch": "-0.789885008636217",
+        "pendingTiles": "0",
+        "riverVisible": "true",
+        "sceneMode": "3",
+        "terrain": "fabdem",
+        "terrainProbeHeight": "283.087213789801",
+        "waterAtlasFrames": "16",
+        "waterAtlasSize": "512x512",
+        "waterFrames": "1882",
+        "waterState": "suspended",
+        "waterTime": "125.9600"
+      }
+    },
+    {
+      "name": "半速及S03情景动画不改变统计",
+      "passed": true,
+      "observed": {
+        "area": "132.8472 km²",
+        "map": {
+          "analysisEntities": "1",
+          "analysisLayer": "S03",
+          "basemap": "satellite",
+          "cameraPitch": "-0.789885008636217",
+          "pendingTiles": "0",
+          "riverVisible": "true",
+          "sceneMode": "3",
+          "terrain": "fabdem",
+          "terrainProbeHeight": "276.0526802799813",
+          "waterAtlasFrames": "16",
+          "waterAtlasSize": "512x512",
+          "waterFrames": "868",
+          "waterState": "running",
+          "waterTime": "33.6002"
+        },
+        "speed": "0.5"
+      }
+    },
+    {
+      "name": "二维挂起并在三维恢复",
+      "passed": true,
+      "observed": {
+        "mode2": "suspended",
+        "mode3": "running"
+      }
+    },
+    {
+      "name": "水流近景及动画请求频率限制",
+      "passed": true,
+      "observed": {
+        "requests_per_second": 21.907009170375932,
+        "atlas": "512x512",
+        "frames": "16"
+      }
+    },
+    {
+      "name": "超窄窗口布局",
+      "passed": true,
+      "observed": {
+        "alerts": [],
+        "area": "23.7168 km²",
+        "layer": "S01",
+        "scrollWidth": 304,
+        "state": "running",
+        "width": 304
+      }
+    },
+    {
+      "name": "最终三维动画无新增渲染错误且统计正确",
+      "passed": true,
+      "observed": {
+        "reload_utc": "2026-11-23T09:20:11.316Z",
+        "error_count": 0
+      }
+    }
+  ]
+}

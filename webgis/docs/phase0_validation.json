@@ -1,0 +1,220 @@
+{
+  "checked_utc": "2026-11-23T07:57:52.394769+00:00",
+  "runtime": {
+    "gdal": "3120400",
+    "numpy": "2.4.4"
+  },
+  "aoi": {
+    "bbox_wsen": [
+      108.23,
+      22.73,
+      108.44,
+      22.85
+    ],
+    "geometry_valid": true,
+    "area_km2": 286.5479129573669,
+    "finalized": true
+  },
+  "dem": {
+    "status": "downloaded_checked",
+    "file": "data\\raw\\dem\\N22E108_FABDEM_V1-2.tif",
+    "bytes": 28214328,
+    "sha256": "34ae17824aa3a71d11d5de440eedc0e3e6b051a00aa99a74f3879378c8aedc09",
+    "download_hash_matches": true,
+    "archive_crc32_verified": true,
+    "horizontal_epsg": "4326",
+    "vertical_datum_documented": "EGM2008 EPSG:3855, official FABDEM readme",
+    "bounds_wsen": [
+      107.99986111111112,
+      22.000138888888888,
+      108.99986111111112,
+      23.000138888888888
+    ],
+    "pixel_size_degree": [
+      0.0002777777777777778,
+      -0.0002777777777777778
+    ],
+    "raster_size": [
+      3600,
+      3600
+    ],
+    "data_type": "Float32",
+    "nodata": -9999.0,
+    "aoi_fully_covered": true,
+    "aoi_window_size": [
+      757,
+      433
+    ],
+    "aoi_pixels": 327781,
+    "valid_pixels": 327781,
+    "invalid_pixels": 0,
+    "valid_fraction": 1.0,
+    "elevation_m": {
+      "min": 63.0,
+      "max": 289.2799987792969,
+      "median": 86.37000274658203
+    },
+    "limits": "像元完整性通过不等于高程精度经过实测检验；DEM 不是 2024 年实测河床。"
+  },
+  "rainfall": {
+    "status": "subset_acquired_checked",
+    "dataset": "CHM_PRE V2",
+    "repository_version": "V2.1.1",
+    "doi": "10.5281/zenodo.20378336",
+    "source_url": "https://zenodo.org/records/20378336/files/CHM_PRE_V2_daily_2024.nc?download=1",
+    "source_file_bytes": 674638949,
+    "full_file_downloaded": false,
+    "full_file_md5_verified": false,
+    "reference_full_file_md5": "3360750e943c9372761b8cf0bc6f2fa2",
+    "date_labels": [
+      "2024-09-06",
+      "2024-09-07",
+      "2024-09-08",
+      "2024-09-09",
+      "2024-09-10",
+      "2024-09-11",
+      "2024-09-12",
+      "2024-09-13"
+    ],
+    "time_units": "days since 1960-01-01",
+    "units": "mm/day",
+    "shape": [
+      8,
+      2,
+      3
+    ],
+    "lat_centers": [
+      22.75,
+      22.85
+    ],
+    "lon_centers": [
+      108.25,
+      108.35,
+      108.45
+    ],
+    "missing_count": 0,
+    "negative_count": 0,
+    "min": 0.0,
+    "max": 66.30371535764719,
+    "source_prec_attributes": {
+      "_Netcdf4Coordinates": [
+        0,
+        1,
+        2
+      ],
+      "_FillValue": [
+        null
+      ],
+      "long_name": "Daily precipitation",
+      "units": "mm/day",
+      "_Netcdf4Dimid": 0
+    },
+    "subset_file": "data/processed/chm_pre_v2_nanning_20240906_13.h5",
+    "subset_sha256": "57fda5b49877058471a8626f0bbf942821e46f8a54bcb5898b974b764ff95690",
+    "cells_csv": "data/processed/chm_pre_v2_nanning_daily_cells.csv",
+    "interval_start_bjt": "2024-09-05T20:00:00+08:00",
+    "interval_end_bjt": "2024-09-13T20:00:00+08:00",
+    "no_resampling": true,
+    "raw_byte_blocks": 9,
+    "raw_byte_count": 589824,
+    "new_network_bytes": 589824,
+    "checked_utc": "2026-11-23T07:57:53.578662+00:00",
+    "raw_byte_hashes_verified": 9,
+    "source_values_replayed_exactly": true,
+    "csv_values_roundtrip_equal": true,
+    "time_sequence_passed": true,
+    "aoi_cell_coverage_passed": true,
+    "source_coordinate_metadata": "经纬度，单位 degrees_north/degrees_east；源 NetCDF 无独立 EPSG/椭球定义。按官方 GeoTIFF WGS84 说明作本项目 WGS84 匹配假设，未做坐标变换。",
+    "daily_statistics": [
+      {
+        "date_label": "2024-09-06",
+        "min_mm_per_day": 0.0,
+        "max_mm_per_day": 0.0
+      },
+      {
+        "date_label": "2024-09-07",
+        "min_mm_per_day": 24.69700419990076,
+        "max_mm_per_day": 34.69646935280571
+      },
+      {
+        "date_label": "2024-09-08",
+        "min_mm_per_day": 16.55472550615339,
+        "max_mm_per_day": 45.60857680160119
+      },
+      {
+        "date_label": "2024-09-09",
+        "min_mm_per_day": 40.92824490734557,
+        "max_mm_per_day": 66.30371535764719
+      },
+      {
+        "date_label": "2024-09-10",
+        "min_mm_per_day": 4.005325815719998,
+        "max_mm_per_day": 15.001576336756939
+      },
+      {
+        "date_label": "2024-09-11",
+        "min_mm_per_day": 3.4857381816949036,
+        "max_mm_per_day": 7.517495395216784
+      },
+      {
+        "date_label": "2024-09-12",
+        "min_mm_per_day": 2.484488468861257,
+        "max_mm_per_day": 6.391186483138896
+      },
+      {
+        "date_label": "2024-09-13",
+        "min_mm_per_day": 2.968844338792095,
+        "max_mm_per_day": 9.598869345279706
+      }
+    ],
+    "validation_network_bytes": 0
+  },
+  "rivers": {
+    "status": "current_reference_checked",
+    "historical_2024": false,
+    "way_count": 2,
+    "valid_way_count": 2,
+    "intersecting_way_count": 2,
+    "components_by_original_osm_node_ids": 2,
+    "ways": [
+      {
+        "id": "42366144",
+        "name": "邕江",
+        "valid": true,
+        "intersects_aoi": true,
+        "node_count": 195,
+        "bounds": [
+          108.1059146,
+          108.4884871,
+          22.7593442,
+          22.8303415
+        ],
+        "timestamp": "2026-07-28T02:43:29Z"
+      },
+      {
+        "id": "136060113",
+        "name": "朝阳溪",
+        "valid": true,
+        "intersects_aoi": true,
+        "node_count": 46,
+        "bounds": [
+          108.3035501,
+          108.3201157,
+          22.8155243,
+          22.8293173
+        ],
+        "timestamp": "2026-03-07T09:21:12Z"
+      }
+    ],
+    "full_aoi_river_coverage_verified": false,
+    "limits": "小范围主站地图响应只能确认所返回河段；连通分量不是完整邕江水系的连通性验收。",
+    "main_channel_check": {
+      "crosses_west_boundary": true,
+      "crosses_east_boundary": true,
+      "clipped_geometry_type": "LINESTRING",
+      "geometry_valid": true,
+      "osm_way_id": "42366144",
+      "main_channel_coverage_passed": true
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "checks": [
+    {
+      "name": "四情景选择与面积显示",
+      "passed": true,
+      "observed": [
+        "S01 23.7168",
+        "S02 101.2095",
+        "S03 132.8472",
+        "S04 80.4600"
+      ]
+    },
+    {
+      "name": "三组变化分类及退水面积",
+      "passed": true,
+      "observed": "S03_to_S04 退水52.3872km²"
+    },
+    {
+      "name": "图层关闭时隐藏分析面与河流",
+      "passed": true,
+      "observed": "analysisLayer=hidden,riverVisible=false"
+    },
+    {
+      "name": "从S01自动前进并在S04结束",
+      "passed": true,
+      "observed": "S04,selected=3,重新播放"
+    },
+    {
+      "name": "ECharts双图及八日降雨表",
+      "passed": true,
+      "observed": "2 canvas，09-13累计137.43mm"
+    },
+    {
+      "name": "重新播放、暂停与快速切换",
+      "passed": true,
+      "observed": "S04重播至S01，暂停后S01/23.7168一致"
+    },
+    {
+      "name": "二维三维切换",
+      "passed": true,
+      "observed": "sceneMode 2→3，S01保留"
+    },
+    {
+      "name": "宽屏与窄屏布局",
+      "passed": true,
+      "observed": "桌面1440预览和窄屏预览完成，窄屏scrollWidth=clientWidth"
+    },
+    {
+      "name": "最终超窄窗口状态与图表",
+      "passed": true,
+      "observed": {
+        "alerts": [],
+        "charts": 2,
+        "map": {
+          "analysisEntities": "1",
+          "analysisLayer": "S01",
+          "basemap": "satellite",
+          "cameraPitch": "-0.789885008636217",
+          "pendingTiles": "0",
+          "riverVisible": "true",
+          "sceneMode": "3",
+          "terrain": "fabdem",
+          "terrainProbeHeight": "283.087213789801"
+        },
+        "scrollWidth": 304,
+        "width": 304
+      }
+    }
+  ],
+  "check_count": 9,
+  "passed": true
+}

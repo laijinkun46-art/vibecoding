@@ -1,0 +1,244 @@
+{
+  "phase": 2,
+  "processed_utc": "2026-11-23T08:35:48.962779+00:00",
+  "runtime": {
+    "gdal": "3120400",
+    "numpy": "2.4.4"
+  },
+  "source_sha256": {
+    "data\\raw\\dem\\N22E108_FABDEM_V1-2.tif": "34ae17824aa3a71d11d5de440eedc0e3e6b051a00aa99a74f3879378c8aedc09",
+    "data\\study_area\\nanning_yongjiang_aoi.geojson": "7824e7b0f8fe734bb6257ff78f84c444cd1304cbd2d05df7b3e650d01079240d",
+    "data\\processed\\chm_pre_v2_nanning_daily_cells.csv": "c9d0273aa6e30a775343409eeec959b08a1468b58650325651ea924c3b7fe2c9",
+    "data\\processed\\rivers_osm_current.geojson": "4a5a2775f6ce7424bb77da9c8323f43749f475de51c118d24ddc6a3098780606"
+  },
+  "inputs_unchanged": true,
+  "outputs": {
+    "data\\processed\\phase2\\aoi_mask.tif": {
+      "bytes": 2183,
+      "sha256": "2722897a2e9ec8beb505e1a07a366d412999e1a628ee394161aeab9edd23feb3"
+    },
+    "data\\processed\\phase2\\dem_native_clip.tif": {
+      "bytes": 677398,
+      "sha256": "a1e58503fa45a8604f8e8bf1085f7cf789753fd55a05c6f96cd3a02b1fb20c1f"
+    },
+    "data\\processed\\phase2\\dem_utm49n_30m.tif": {
+      "bytes": 1069376,
+      "sha256": "9cc3cd1faa10f6b1403cecdebbfeb6e7c65f1207689ceed0bad826466098f30e"
+    },
+    "data\\processed\\phase2\\hillshade.tif": {
+      "bytes": 180762,
+      "sha256": "6fa563557a8215c5a720b21df330e1e22cbfac30a31c9e761a18a0565b1a0e2a"
+    },
+    "data\\processed\\phase2\\main_river_mask.tif": {
+      "bytes": 2666,
+      "sha256": "e54760f58d3596d0c60b054abe8c4578b789fa98c8de3bd5b48cdead902114a1"
+    },
+    "data\\processed\\phase2\\rainfall_2024-09-06.tif": {
+      "bytes": 1151,
+      "sha256": "beee9b87aba43a61d6c64fa0803a4630b1ad5b47a8a0a45228dc444f0e3c46a3"
+    },
+    "data\\processed\\phase2\\rainfall_2024-09-07.tif": {
+      "bytes": 1230,
+      "sha256": "70645f10b2e53beba8114404c67ecf4fe602a6a6751009884efad5333602c13d"
+    },
+    "data\\processed\\phase2\\rainfall_2024-09-08.tif": {
+      "bytes": 1228,
+      "sha256": "487cd68c5407115f7d8e8eaa11979600415249f6d8f03577a45badd7a9fee710"
+    },
+    "data\\processed\\phase2\\rainfall_2024-09-09.tif": {
+      "bytes": 1231,
+      "sha256": "81f1023c4b86d8e099ddc9ff6c4e1a1bc820a82e8a780e72a8c504297eb5d26d"
+    },
+    "data\\processed\\phase2\\rainfall_2024-09-10.tif": {
+      "bytes": 1228,
+      "sha256": "5e5a6e303cea48c207e162986bd0c63d534744006bd815104bdaac39b7ce3b1b"
+    },
+    "data\\processed\\phase2\\rainfall_2024-09-11.tif": {
+      "bytes": 1227,
+      "sha256": "4a5105626f7d54751912cd647f6518b561fb1cbe03701162f30fbef30c187e3a"
+    },
+    "data\\processed\\phase2\\rainfall_2024-09-12.tif": {
+      "bytes": 1228,
+      "sha256": "82938b008346f9f39173dccd1caaa8763c435686fde4323d4600d0ab72ccb967"
+    },
+    "data\\processed\\phase2\\rainfall_2024-09-13.tif": {
+      "bytes": 1229,
+      "sha256": "e9e2a2d13c1a026b9e4bd7ff246d843d3a5a46e90c739a571e98af2333c4ac58"
+    },
+    "data\\processed\\phase2\\rainfall_accumulated.tif": {
+      "bytes": 1214,
+      "sha256": "235b2f26b7cdcb887a7be5cbf6f6162311a6b27f590f820c27ded5e447e8464b"
+    },
+    "data\\processed\\phase2\\rainfall_cells_wgs84.geojson": {
+      "bytes": 4234,
+      "sha256": "c437cb55f8f6d3d56edc13e0a35af2792ff57e74ea1cbad41fe37fee47377073"
+    },
+    "data\\processed\\phase2\\rainfall_daily_aoi.csv": {
+      "bytes": 1152,
+      "sha256": "b13f115d4bcb49f571b4b3c524a6f5121cb59faa4587e0f533f7bc402f8e1bf0"
+    },
+    "data\\processed\\phase2\\rainfall_timeseries.json": {
+      "bytes": 3176,
+      "sha256": "fd55feac428ca985c8450a74862fd3a13c99d75dd53625a8cfe335dec3e8f070"
+    },
+    "data\\processed\\phase2\\river_mask.tif": {
+      "bytes": 2799,
+      "sha256": "bee8431c5a0bb4c4d85017943a2428b6ecee6b3f7270d0794c63d4096e62ce8d"
+    },
+    "data\\processed\\phase2\\rivers_utm49n.gpkg": {
+      "bytes": 98304,
+      "sha256": "754845f4c0e7adc6b4bb85208f86555daf1113294b044b8cc0c0fb79a1a0b149"
+    },
+    "data\\processed\\phase2\\rivers_wgs84.geojson": {
+      "bytes": 12881,
+      "sha256": "8a5cdffdc4107e6b2618922dfc85020775c57db08ae45b4052f382a11da6198f"
+    },
+    "data\\processed\\phase2\\slope.tif": {
+      "bytes": 1119645,
+      "sha256": "37eb3ba1ccce2e280053dce2c482195bdf2d623af1de4d35522010efb7790ba6"
+    }
+  },
+  "dem": {
+    "horizontal_epsg": 32649,
+    "vertical_datum": "EGM2008 / EPSG:3855（未转换）",
+    "grid_size_m": 30,
+    "shape_rows_cols": [
+      457,
+      728
+    ],
+    "geotransform": [
+      215460.0,
+      30.0,
+      0.0,
+      2529600.0,
+      0.0,
+      -30.0
+    ],
+    "nodata": -9999.0,
+    "valid_pixels": 318721,
+    "area_by_grid_km2": 286.8489,
+    "elevation_m": {
+      "min": 63.0,
+      "max": 288.069091796875
+    },
+    "native_clip": "dem_native_clip.tif",
+    "metric_dem": "dem_utm49n_30m.tif",
+    "slope": "slope.tif",
+    "hillshade": "hillshade.tif",
+    "resampling": "原生裁剪不重采样；UTM 网格双线性，30 m 不代表精度提高",
+    "edge_policy": "坡度/阴影不外推边缘；3×3 邻域含 NoData 时保持 NoData"
+  },
+  "rivers": {
+    "features": [
+      {
+        "name": "邕江",
+        "osm_way_id": "42366144",
+        "length_m": 33682.29228300667
+      },
+      {
+        "name": "朝阳溪",
+        "osm_way_id": "136060113",
+        "length_m": 2953.196853795776
+      }
+    ],
+    "components_by_geometric_intersection": [
+      [
+        "136060113"
+      ],
+      [
+        "42366144"
+      ]
+    ],
+    "mask_policy": "ALL_TOUCHED 栅格化，再限制在有效 DEM 内；仅作后续连通分析候选种子",
+    "historical_2024": false,
+    "source": "© OpenStreetMap contributors / ODbL；Phase 0 当前中心线"
+  },
+  "rainfall": {
+    "source": "CHM_PRE V2 / V2.1.1",
+    "horizontal_epsg_assumption": 4326,
+    "grid_degree": 0.1,
+    "resampling": "none",
+    "weight_area_epsg": 6933,
+    "aoi_area_m2_equal_area": 286547735.0079346,
+    "weight_sum": 0.9999999999999467,
+    "daily": [
+      {
+        "date_label": "2024-09-06",
+        "interval_start_bjt": "2024-09-05T20:00:00+08:00",
+        "interval_end_bjt": "2024-09-06T20:00:00+08:00",
+        "mean_precip_mm": 0.0,
+        "cumulative_precip_mm": 0.0,
+        "min_cell_mm": 0.0,
+        "max_cell_mm": 0.0
+      },
+      {
+        "date_label": "2024-09-07",
+        "interval_start_bjt": "2024-09-06T20:00:00+08:00",
+        "interval_end_bjt": "2024-09-07T20:00:00+08:00",
+        "mean_precip_mm": 29.259701331117363,
+        "cumulative_precip_mm": 29.259701331117363,
+        "min_cell_mm": 24.69700419990076,
+        "max_cell_mm": 34.69646935280571
+      },
+      {
+        "date_label": "2024-09-08",
+        "interval_start_bjt": "2024-09-07T20:00:00+08:00",
+        "interval_end_bjt": "2024-09-08T20:00:00+08:00",
+        "mean_precip_mm": 31.126003696975342,
+        "cumulative_precip_mm": 60.3857050280927,
+        "min_cell_mm": 16.55472550615339,
+        "max_cell_mm": 45.60857680160119
+      },
+      {
+        "date_label": "2024-09-09",
+        "interval_start_bjt": "2024-09-08T20:00:00+08:00",
+        "interval_end_bjt": "2024-09-09T20:00:00+08:00",
+        "mean_precip_mm": 53.30281109709673,
+        "cumulative_precip_mm": 113.68851612518944,
+        "min_cell_mm": 40.92824490734557,
+        "max_cell_mm": 66.30371535764719
+      },
+      {
+        "date_label": "2024-09-10",
+        "interval_start_bjt": "2024-09-09T20:00:00+08:00",
+        "interval_end_bjt": "2024-09-10T20:00:00+08:00",
+        "mean_precip_mm": 10.09675503954671,
+        "cumulative_precip_mm": 123.78527116473614,
+        "min_cell_mm": 4.005325815719998,
+        "max_cell_mm": 15.001576336756939
+      },
+      {
+        "date_label": "2024-09-11",
+        "interval_start_bjt": "2024-09-10T20:00:00+08:00",
+        "interval_end_bjt": "2024-09-11T20:00:00+08:00",
+        "mean_precip_mm": 5.148945255370096,
+        "cumulative_precip_mm": 128.93421642010625,
+        "min_cell_mm": 3.4857381816949036,
+        "max_cell_mm": 7.517495395216784
+      },
+      {
+        "date_label": "2024-09-12",
+        "interval_start_bjt": "2024-09-11T20:00:00+08:00",
+        "interval_end_bjt": "2024-09-12T20:00:00+08:00",
+        "mean_precip_mm": 4.159822137716156,
+        "cumulative_precip_mm": 133.09403855782242,
+        "min_cell_mm": 2.484488468861257,
+        "max_cell_mm": 6.391186483138896
+      },
+      {
+        "date_label": "2024-09-13",
+        "interval_start_bjt": "2024-09-12T20:00:00+08:00",
+        "interval_end_bjt": "2024-09-13T20:00:00+08:00",
+        "mean_precip_mm": 4.331805257982336,
+        "cumulative_precip_mm": 137.42584381580474,
+        "min_cell_mm": 2.968844338792095,
+        "max_cell_mm": 9.598869345279706
+      }
+    ],
+    "total_precip_mm": 137.42584381580474,
+    "units": "原始 mm/day；每条记录覆盖完整24小时，累计量按 mm 解释",
+    "limitations": "格点估计的研究区面平均；不是站点实测或上游流域降雨，不推导洪水水位"
+  },
+  "vertical_datum_limit": "没有可信水位基准换算；后续情景水位必须明确为与 DEM 一致的 EGM2008 高程，不将报道水位直接代入",
+  "phase_boundary": "本阶段仅处理数据；未计算淹没、未接入 Cesium 地形或降雨图层"
+}

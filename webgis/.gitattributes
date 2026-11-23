@@ -1,0 +1,4 @@
+# 地图与验收脚本逐字节校验资源，检出时保留文件原始换行。
+frontend/public/analysis/** -text
+frontend/public/terrain/** -text
+data/processed/** -text

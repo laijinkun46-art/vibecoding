@@ -1,0 +1,178 @@
+{
+  "passed": true,
+  "check_count": 43,
+  "checks": [
+    {
+      "name": "四个输入文件 SHA256 未改变",
+      "passed": true
+    },
+    {
+      "name": "全部派生文件 SHA256 一致",
+      "passed": true
+    },
+    {
+      "name": "原生 DEM 裁剪与源像元逐值一致",
+      "passed": true
+    },
+    {
+      "name": "分析网格 EPSG:32649、30 m 且为米制",
+      "passed": true
+    },
+    {
+      "name": "DEM 有效范围等于研究区栅格掩膜",
+      "passed": true
+    },
+    {
+      "name": "栅格面积与 Phase 0 边界面积差小于 0.2%",
+      "passed": true
+    },
+    {
+      "name": "slope.tif 与 DEM 网格完全对齐",
+      "passed": true
+    },
+    {
+      "name": "坡度范围为 0—90° 且不向 NoData 区域外推",
+      "passed": true
+    },
+    {
+      "name": "hillshade.tif 与 DEM 网格完全对齐",
+      "passed": true
+    },
+    {
+      "name": "aoi_mask.tif 与 DEM 网格完全对齐",
+      "passed": true
+    },
+    {
+      "name": "river_mask.tif 与 DEM 网格完全对齐",
+      "passed": true
+    },
+    {
+      "name": "river_mask.tif 非空且严格位于有效地形内",
+      "passed": true
+    },
+    {
+      "name": "main_river_mask.tif 与 DEM 网格完全对齐",
+      "passed": true
+    },
+    {
+      "name": "main_river_mask.tif 非空且严格位于有效地形内",
+      "passed": true
+    },
+    {
+      "name": "邕江种子像元为单个八邻域连通分量",
+      "passed": true
+    },
+    {
+      "name": "已知解析坡面验证 Horn 坡度与米制单位",
+      "passed": true
+    },
+    {
+      "name": "平坦地形坡度为零",
+      "passed": true
+    },
+    {
+      "name": "降雨单元 108.25,22.75 面积权重独立复核",
+      "passed": true
+    },
+    {
+      "name": "降雨单元 108.25,22.85 面积权重独立复核",
+      "passed": true
+    },
+    {
+      "name": "降雨单元 108.35,22.75 面积权重独立复核",
+      "passed": true
+    },
+    {
+      "name": "降雨单元 108.35,22.85 面积权重独立复核",
+      "passed": true
+    },
+    {
+      "name": "降雨单元 108.45,22.75 面积权重独立复核",
+      "passed": true
+    },
+    {
+      "name": "降雨单元 108.45,22.85 面积权重独立复核",
+      "passed": true
+    },
+    {
+      "name": "六个降雨单元权重和为一",
+      "passed": true
+    },
+    {
+      "name": "2024-09-06 保留六个源格点原值与地理位置",
+      "passed": true
+    },
+    {
+      "name": "2024-09-06 日均量和累计量一致",
+      "passed": true
+    },
+    {
+      "name": "2024-09-07 保留六个源格点原值与地理位置",
+      "passed": true
+    },
+    {
+      "name": "2024-09-07 日均量和累计量一致",
+      "passed": true
+    },
+    {
+      "name": "2024-09-08 保留六个源格点原值与地理位置",
+      "passed": true
+    },
+    {
+      "name": "2024-09-08 日均量和累计量一致",
+      "passed": true
+    },
+    {
+      "name": "2024-09-09 保留六个源格点原值与地理位置",
+      "passed": true
+    },
+    {
+      "name": "2024-09-09 日均量和累计量一致",
+      "passed": true
+    },
+    {
+      "name": "2024-09-10 保留六个源格点原值与地理位置",
+      "passed": true
+    },
+    {
+      "name": "2024-09-10 日均量和累计量一致",
+      "passed": true
+    },
+    {
+      "name": "2024-09-11 保留六个源格点原值与地理位置",
+      "passed": true
+    },
+    {
+      "name": "2024-09-11 日均量和累计量一致",
+      "passed": true
+    },
+    {
+      "name": "2024-09-12 保留六个源格点原值与地理位置",
+      "passed": true
+    },
+    {
+      "name": "2024-09-12 日均量和累计量一致",
+      "passed": true
+    },
+    {
+      "name": "2024-09-13 保留六个源格点原值与地理位置",
+      "passed": true
+    },
+    {
+      "name": "2024-09-13 日均量和累计量一致",
+      "passed": true
+    },
+    {
+      "name": "八日累计栅格逐像元等于逐日之和",
+      "passed": true
+    },
+    {
+      "name": "累计面平均量等于逐日面平均之和",
+      "passed": true
+    },
+    {
+      "name": "投影河流文件可回读且为有效线几何",
+      "passed": true
+    }
+  ]
+}
