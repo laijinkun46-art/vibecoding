@@ -1,0 +1,19 @@
+# 本地工具与可恢复的传输缓存
+.tools/
+data/.download_cache/
+__pycache__/
+*.pyc
+# 原始数据通过获取脚本和来源清单复现，避免误提交大型二进制文件
+data/raw/
+*.backup-*
+# Phase 1 本地运行环境与构建产物
+.venv/
+frontend/node_modules/
+frontend/dist/
+frontend/public/cesium/
+*.log
+# 下载服务响应头可能含临时会话信息
+*.headers.txt
+.env
+.env.*
+!.env.example
