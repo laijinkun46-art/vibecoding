@@ -1,0 +1,970 @@
+{
+  "phase": "4.1.1",
+  "status": "candidate_pending_user_confirmation",
+  "generated_bjt": "2026-11-23T23:56:59.759764+08:00",
+  "recommended_candidate": "C03",
+  "selected_candidate": null,
+  "horizontal_crs": "EPSG:32649",
+  "vertical_datum": "EGM2008",
+  "flow_direction_confirmed": false,
+  "source_sha256": {
+    "data\\processed\\phase2\\dem_utm49n_30m.tif": "9cc3cd1faa10f6b1403cecdebbfeb6e7c65f1207689ceed0bad826466098f30e",
+    "data\\study_area\\nanning_yongjiang_aoi.geojson": "7824e7b0f8fe734bb6257ff78f84c444cd1304cbd2d05df7b3e650d01079240d",
+    "data\\processed\\phase2\\aoi_mask.tif": "2722897a2e9ec8beb505e1a07a366d412999e1a628ee394161aeab9edd23feb3",
+    "data\\processed\\phase2\\rivers_utm49n.gpkg": "754845f4c0e7adc6b4bb85208f86555daf1113294b044b8cc0c0fb79a1a0b149"
+  },
+  "method": {
+    "domain": "substring along west-end chainage, constant-width flat-capped buffer",
+    "end_cap": "actual polygon edge along the endpoint normal, may be asymmetric after buffer overlap",
+    "chainage": "west endpoint zero, purely geometric, not upstream direction",
+    "halfwidths_m": [
+      1200,
+      1800,
+      1500
+    ],
+    "sample_spacing_m": 30,
+    "sampling": "containing valid Phase2 pixel, no interpolation, missing stays null",
+    "side_reference": "L=positive geometric normal; not hydrologic left bank",
+    "diagnostic_elevations_m": [
+      75,
+      80,
+      85
+    ],
+    "diagnostic_warning": "仅地形截断筛查；不是设定水位、洪水范围或边界条件"
+  },
+  "aoi": {
+    "bounds_wgs84_wsen": [
+      108.23,
+      22.73,
+      108.44,
+      22.85
+    ],
+    "bounds_utm_wsen": [
+      215486.43519678776,
+      2515902.027336994,
+      237296.8296047962,
+      2529584.7133418475
+    ],
+    "area_projected_km2": 286.84892649664147,
+    "dem_valid_pixels": 318721,
+    "dem_pixel_area_km2": 286.8489,
+    "dem_grid_shape": [
+      457,
+      728
+    ],
+    "dem_geotransform": [
+      215460.0,
+      30.0,
+      0.0,
+      2529600.0,
+      0.0,
+      -30.0
+    ],
+    "dem_elevation": {
+      "count": 318721,
+      "min_m": 63.0,
+      "p10_m": 74.44386291503906,
+      "median_m": 86.37043762207031,
+      "p90_m": 122.18561553955078,
+      "max_m": 288.069091796875,
+      "mean_m": 93.16155104710589,
+      "std_m": 23.029661122717904
+    },
+    "main_river_length_m": 33682.29228300667,
+    "main_river_points": 109,
+    "main_river_simple": true,
+    "main_end_distance_to_aoi_boundary_m": [
+      5.129041579516033e-06,
+      8.385211455156006e-07
+    ],
+    "main_end_wgs84": [
+      [
+        108.23,
+        22.82886195710342
+      ],
+      [
+        108.44,
+        22.787021508618352
+      ]
+    ],
+    "main_intersection_with_exact_projected_aoi_boundary": "POINT (215691.61762885755 2527242.860794499)",
+    "river_components_by_intersection": 2,
+    "tributary_gap_to_main_m": [
+      {
+        "name": "朝阳溪",
+        "distance_m": 347.2931541119406
+      }
+    ],
+    "mesh_triangles_at_30m_equilateral": 736055
+  },
+  "longitudinal_profile": {
+    "sample_count": 1124,
+    "valid_count": 1123,
+    "invalid_count": 1,
+    "valid_elevation": {
+      "count": 1123,
+      "min_m": 63.0,
+      "p10_m": 63.0,
+      "median_m": 63.0,
+      "p90_m": 63.0,
+      "max_m": 63.0,
+      "mean_m": 63.0,
+      "std_m": 0.0
+    },
+    "count_equal_63m": 1123,
+    "fraction_equal_63m": 1.0,
+    "bed_slope_inferred": false
+  },
+  "profiles": {
+    "csv_rows": 3979,
+    "cross_sections": 9,
+    "boundary_sections": 6,
+    "lateral_edges": 6
+  },
+  "candidates": [
+    {
+      "id": "C01",
+      "name": "西段紧凑方案",
+      "recommended": false,
+      "status": "candidate_pending_user_confirmation",
+      "area_km2": 11.98367821207607,
+      "aoi_area_fraction": 0.041776967264391625,
+      "main_river_length_m": 4999.999999999971,
+      "chainage_interval_m": [
+        4000.0,
+        9000.0
+      ],
+      "half_corridor_width_m": 1200.0,
+      "bounds_utm_wsen": [
+        218567.278922276,
+        2523115.2705094703,
+        224085.35401752032,
+        2527294.9753703154
+      ],
+      "bounds_wgs84_wsen": [
+        108.25828237831472,
+        22.792679378725055,
+        108.31224639872246,
+        22.830107374324243
+      ],
+      "distance_to_aoi_boundary_m": 2204.192620672321,
+      "dem_coverage": {
+        "touched_pixels": 13662,
+        "valid_pixels": 13662,
+        "invalid_pixels": 0,
+        "valid_fraction": 1.0,
+        "elevation": {
+          "count": 13662,
+          "min_m": 63.0,
+          "p10_m": 63.0,
+          "median_m": 76.68854522705078,
+          "p90_m": 79.58546600341796,
+          "max_m": 110.78942108154297,
+          "mean_m": 75.17521873349031,
+          "std_m": 5.874753993844199
+        }
+      },
+      "near_centerline_300m": {
+        "touched_pixels": 3598,
+        "valid_pixels": 3598,
+        "invalid_pixels": 0,
+        "valid_fraction": 1.0,
+        "elevation": {
+          "count": 3598,
+          "min_m": 63.0,
+          "p10_m": 63.0,
+          "median_m": 63.505258560180664,
+          "p90_m": 77.52407608032227,
+          "max_m": 81.27574157714844,
+          "mean_m": 68.28328580045249,
+          "std_m": 6.178910110604784
+        }
+      },
+      "near_centerline_100m": {
+        "touched_pixels": 1351,
+        "valid_pixels": 1351,
+        "invalid_pixels": 0,
+        "valid_fraction": 1.0,
+        "elevation": {
+          "count": 1351,
+          "min_m": 63.0,
+          "p10_m": 63.0,
+          "median_m": 63.0,
+          "p90_m": 63.0,
+          "max_m": 67.37248992919922,
+          "mean_m": 63.01123289987831,
+          "std_m": 0.1659478776513477
+        }
+      },
+      "tributary_intersections": [
+        {
+          "name": "朝阳溪",
+          "length_inside_domain_m": 0.0,
+          "distance_to_domain_m": 317.4788213913286
+        }
+      ],
+      "boundaries": [
+        {
+          "boundary_id": "C01_A",
+          "end_label": "A",
+          "chainage_m": 4000.0,
+          "center_utm": [
+            219436.34789926323,
+            2526467.4978097505
+          ],
+          "center_wgs84": [
+            108.26659228627776,
+            22.822495732528516
+          ],
+          "endpoints_utm": [
+            [
+              218567.278922276,
+              2525640.0202491856
+            ],
+            [
+              220305.41687625047,
+              2527294.9753703154
+            ]
+          ],
+          "endpoints_wgs84": [
+            [
+              108.25828237831472,
+              22.81488374008928
+            ],
+            [
+              108.2749031211493,
+              22.830107374324243
+            ]
+          ],
+          "length_m": 2400.0000000000387,
+          "elevation": {
+            "count": 82,
+            "min_m": 63.0,
+            "p10_m": 63.0,
+            "median_m": 75.48804473876953,
+            "p90_m": 80.20751953125,
+            "max_m": 80.88179016113281,
+            "mean_m": 74.35579267362269,
+            "std_m": 5.8985918508534985
+          },
+          "endpoint_offsets_m": [
+            -1200.000000000019,
+            1200.000000000019
+          ],
+          "endpoint_elevations_m": [
+            73.69005584716797,
+            79.30562591552734
+          ],
+          "valid_fraction": 1.0,
+          "hydraulic_role": "unconfirmed_either_upstream_or_downstream",
+          "flow_direction_confirmed": false,
+          "review": "覆盖中心线两侧候选洪泛走廊；尚非最终水力边界，无流量/水位赋值"
+        },
+        {
+          "boundary_id": "C01_B",
+          "end_label": "B",
+          "chainage_m": 9000.0,
+          "center_utm": [
+            223313.9546165458,
+            2525121.7852275562
+          ],
+          "center_wgs84": [
+            108.30457682433385,
+            22.810996033014252
+          ],
+          "endpoints_utm": [
+            [
+              223990.6718188028,
+              2524154.214070003
+            ],
+            [
+              222626.19725072055,
+              2526105.141625691
+            ]
+          ],
+          "endpoints_wgs84": [
+            [
+              108.31133511443048,
+              22.80237630756241
+            ],
+            [
+              108.29770737517087,
+              22.819755996754992
+            ]
+          ],
+          "length_m": 2380.737107386439,
+          "elevation": {
+            "count": 82,
+            "min_m": 63.0,
+            "p10_m": 63.0,
+            "median_m": 74.28507614135742,
+            "p90_m": 78.44818878173828,
+            "max_m": 82.65971374511719,
+            "mean_m": 74.06243282411157,
+            "std_m": 5.048509183706558
+          },
+          "endpoint_offsets_m": [
+            -1180.7371073865115,
+            1199.9999999999277
+          ],
+          "endpoint_elevations_m": [
+            82.65971374511719,
+            76.41413879394531
+          ],
+          "valid_fraction": 1.0,
+          "hydraulic_role": "unconfirmed_either_upstream_or_downstream",
+          "flow_direction_confirmed": false,
+          "review": "覆盖中心线两侧候选洪泛走廊；尚非最终水力边界，无流量/水位赋值"
+        }
+      ],
+      "lateral_edges": [
+        {
+          "side": "R",
+          "reference": "L/R仅相对于西端起算里程增加方向，非水文左右岸",
+          "length_m": 6741.133230521737,
+          "elevation": {
+            "count": 226,
+            "min_m": 73.0,
+            "p10_m": 75.00129318237305,
+            "median_m": 84.11071014404297,
+            "p90_m": 95.33944702148438,
+            "max_m": 107.03968811035156,
+            "mean_m": 84.39237013960306,
+            "std_m": 7.827347824638557
+          },
+          "fraction_le_diagnostic_elevation": {
+            "75": 0.10176991150442478,
+            "80": 0.336283185840708,
+            "85": 0.5442477876106194
+          },
+          "lowest_sample_wgs84": [
+            108.25951405622482,
+            22.81372825530006
+          ]
+        },
+        {
+          "side": "L",
+          "reference": "L/R仅相对于西端起算里程增加方向，非水文左右岸",
+          "length_m": 3221.1025987648873,
+          "elevation": {
+            "count": 109,
+            "min_m": 73.57828521728516,
+            "p10_m": 73.77251434326172,
+            "median_m": 75.90530395507812,
+            "p90_m": 79.48443756103515,
+            "max_m": 83.44670867919922,
+            "mean_m": 76.34196318180189,
+            "std_m": 2.3908470493688343
+          },
+          "fraction_le_diagnostic_elevation": {
+            "75": 0.3761467889908257,
+            "80": 0.9541284403669725,
+            "85": 1.0
+          },
+          "lowest_sample_wgs84": [
+            108.28987903053792,
+            22.816442858534487
+          ]
+        }
+      ],
+      "mesh_triangle_estimates_uniform_equilateral": {
+        "30": 30751,
+        "60": 7688,
+        "90": 3417,
+        "120": 1922
+      },
+      "risks": [
+        "走廊窄且L侧低平，潜在侧向截流",
+        "朝阳溪在域外附近，未排除未绘连接"
+      ]
+    },
+    {
+      "id": "C02",
+      "name": "西中段扩展方案",
+      "recommended": false,
+      "status": "candidate_pending_user_confirmation",
+      "area_km2": 31.74937057558517,
+      "aoi_area_fraction": 0.11068324697375817,
+      "main_river_length_m": 9000.0000000002,
+      "chainage_interval_m": [
+        3000.0,
+        12000.0
+      ],
+      "half_corridor_width_m": 1800.0,
+      "bounds_utm_wsen": [
+        217739.985593638,
+        2522515.273521003,
+        226607.5613130926,
+        2528713.331420441
+      ],
+      "bounds_wgs84_wsen": [
+        108.25025302525373,
+        22.787264962109017,
+        108.33683516200988,
+        22.842748267556708
+      ],
+      "distance_to_aoi_boundary_m": 803.530678699807,
+      "dem_coverage": {
+        "touched_pixels": 35817,
+        "valid_pixels": 35817,
+        "invalid_pixels": 0,
+        "valid_fraction": 1.0,
+        "elevation": {
+          "count": 35817,
+          "min_m": 63.0,
+          "p10_m": 66.5,
+          "median_m": 77.09058380126953,
+          "p90_m": 84.49635772705078,
+          "max_m": 114.9817123413086,
+          "mean_m": 77.6400835909669,
+          "std_m": 8.285427292605146
+        }
+      },
+      "near_centerline_300m": {
+        "touched_pixels": 6434,
+        "valid_pixels": 6434,
+        "invalid_pixels": 0,
+        "valid_fraction": 1.0,
+        "elevation": {
+          "count": 6434,
+          "min_m": 63.0,
+          "p10_m": 63.0,
+          "median_m": 64.96737289428711,
+          "p90_m": 77.62445907592773,
+          "max_m": 82.83989715576172,
+          "mean_m": 68.58902776645213,
+          "std_m": 6.195561892336197
+        }
+      },
+      "near_centerline_100m": {
+        "touched_pixels": 2406,
+        "valid_pixels": 2406,
+        "invalid_pixels": 0,
+        "valid_fraction": 1.0,
+        "elevation": {
+          "count": 2406,
+          "min_m": 63.0,
+          "p10_m": 63.0,
+          "median_m": 63.0,
+          "p90_m": 63.0,
+          "max_m": 73.44175720214844,
+          "mean_m": 63.0887921524365,
+          "std_m": 0.7128725363366356
+        }
+      },
+      "tributary_intersections": [
+        {
+          "name": "朝阳溪",
+          "length_inside_domain_m": 2902.006014889193,
+          "distance_to_domain_m": 0.0
+        }
+      ],
+      "boundaries": [
+        {
+          "boundary_id": "C02_A",
+          "end_label": "A",
+          "chainage_m": 3000.0,
+          "center_utm": [
+            218640.29497693604,
+            2527064.6751284576
+          ],
+          "center_wgs84": [
+            108.25873555249626,
+            22.827751009349214
+          ],
+          "endpoints_utm": [
+            [
+              217928.14027986926,
+              2525439.5106328465
+            ],
+            [
+              219362.74388924963,
+              2528713.331420441
+            ]
+          ],
+          "endpoints_wgs84": [
+            [
+              108.25209771926154,
+              22.812967285426666
+            ],
+            [
+              108.26547065038139,
+              22.842748267556708
+            ]
+          ],
+          "length_m": 3574.351698606905,
+          "elevation": {
+            "count": 122,
+            "min_m": 63.0,
+            "p10_m": 73.56657562255859,
+            "median_m": 75.05761337280273,
+            "p90_m": 78.99528274536132,
+            "max_m": 82.01490020751953,
+            "mean_m": 74.77367754451564,
+            "std_m": 4.179380452184175
+          },
+          "endpoint_offsets_m": [
+            -1774.3516986068903,
+            1800.0000000000146
+          ],
+          "endpoint_elevations_m": [
+            75.08200073242188,
+            80.60233306884766
+          ],
+          "valid_fraction": 1.0,
+          "hydraulic_role": "unconfirmed_either_upstream_or_downstream",
+          "flow_direction_confirmed": false,
+          "review": "覆盖中心线两侧候选洪泛走廊；尚非最终水力边界，无流量/水位赋值"
+        },
+        {
+          "boundary_id": "C02_B",
+          "end_label": "B",
+          "chainage_m": 12000.0,
+          "center_utm": [
+            224845.75031539108,
+            2523616.2204219876
+          ],
+          "center_wgs84": [
+            108.31975257684338,
+            22.797661803883358
+          ],
+          "endpoints_utm": [
+            [
+              224178.94922269907,
+              2523476.6345134415
+            ],
+            [
+              226607.5613130926,
+              2523985.032038369
+            ]
+          ],
+          "endpoints_wgs84": [
+            [
+              108.31328753439269,
+              22.796292945751272
+            ],
+            [
+              108.33683516200988,
+              22.801277373445878
+            ]
+          ],
+          "length_m": 2481.254668299538,
+          "elevation": {
+            "count": 85,
+            "min_m": 63.0,
+            "p10_m": 63.0,
+            "median_m": 75.51615142822266,
+            "p90_m": 77.7515365600586,
+            "max_m": 78.06686401367188,
+            "mean_m": 73.88629168342142,
+            "std_m": 4.567655162169779
+          },
+          "endpoint_offsets_m": [
+            -681.2546682995302,
+            1800.0000000000077
+          ],
+          "endpoint_elevations_m": [
+            74.63816833496094,
+            75.21339416503906
+          ],
+          "valid_fraction": 1.0,
+          "hydraulic_role": "unconfirmed_either_upstream_or_downstream",
+          "flow_direction_confirmed": false,
+          "review": "覆盖中心线两侧候选洪泛走廊；尚非最终水力边界，无流量/水位赋值"
+        }
+      ],
+      "lateral_edges": [
+        {
+          "side": "R",
+          "reference": "L/R仅相对于西端起算里程增加方向，非水文左右岸",
+          "length_m": 6553.221692505655,
+          "elevation": {
+            "count": 220,
+            "min_m": 68.34783935546875,
+            "p10_m": 75.25236587524414,
+            "median_m": 98.25247573852539,
+            "p90_m": 108.39630126953125,
+            "max_m": 110.63740539550781,
+            "mean_m": 93.50803614529697,
+            "std_m": 11.700765903164053
+          },
+          "fraction_le_diagnostic_elevation": {
+            "75": 0.07272727272727272,
+            "80": 0.20909090909090908,
+            "85": 0.3090909090909091
+          },
+          "lowest_sample_wgs84": [
+            108.25485761399577,
+            22.81039293826298
+          ]
+        },
+        {
+          "side": "L",
+          "reference": "L/R仅相对于西端起算里程增加方向，非水文左右岸",
+          "length_m": 10457.30281827733,
+          "elevation": {
+            "count": 350,
+            "min_m": 70.22965240478516,
+            "p10_m": 76.07810897827149,
+            "median_m": 77.26739501953125,
+            "p90_m": 79.71343307495117,
+            "max_m": 90.97062683105469,
+            "mean_m": 77.63787063598633,
+            "std_m": 2.9540307308916827
+          },
+          "fraction_le_diagnostic_elevation": {
+            "75": 0.07428571428571429,
+            "80": 0.9114285714285715,
+            "85": 0.96
+          },
+          "lowest_sample_wgs84": [
+            108.2725366559225,
+            22.838959627619978
+          ]
+        }
+      ],
+      "mesh_triangle_estimates_uniform_equilateral": {
+        "30": 81469,
+        "60": 20368,
+        "90": 9053,
+        "120": 5092
+      },
+      "risks": [
+        "包含现有朝阳溪线的一部分但未连主线，侧向来流未知",
+        "L侧低平且范围较大",
+        "B端负偏移一侧受相邻河弯走廊挤压，需核对洪泛出口"
+      ]
+    },
+    {
+      "id": "C03",
+      "name": "东段独立河段方案（推荐候选）",
+      "recommended": true,
+      "status": "candidate_pending_user_confirmation",
+      "area_km2": 20.957939144676185,
+      "aoi_area_fraction": 0.07306263753760839,
+      "main_river_length_m": 6999.9999999998145,
+      "chainage_interval_m": [
+        20000.0,
+        27000.0
+      ],
+      "half_corridor_width_m": 1500.0,
+      "bounds_utm_wsen": [
+        226544.31635273353,
+        2519372.0360246627,
+        234420.87961123226,
+        2523749.6372828544
+      ],
+      "bounds_wgs84_wsen": [
+        108.33658885629168,
+        22.760312096816843,
+        108.41339910210031,
+        22.79974402625663
+      ],
+      "distance_to_aoi_boundary_m": 2732.947885804177,
+      "dem_coverage": {
+        "touched_pixels": 23723,
+        "valid_pixels": 23723,
+        "invalid_pixels": 0,
+        "valid_fraction": 1.0,
+        "elevation": {
+          "count": 23723,
+          "min_m": 63.0,
+          "p10_m": 63.0,
+          "median_m": 85.40796661376953,
+          "p90_m": 136.5830841064453,
+          "max_m": 266.9247131347656,
+          "mean_m": 96.32181683614996,
+          "std_m": 34.233799810798125
+        }
+      },
+      "near_centerline_300m": {
+        "touched_pixels": 5004,
+        "valid_pixels": 5004,
+        "invalid_pixels": 0,
+        "valid_fraction": 1.0,
+        "elevation": {
+          "count": 5004,
+          "min_m": 63.0,
+          "p10_m": 63.0,
+          "median_m": 63.0,
+          "p90_m": 78.57623672485352,
+          "max_m": 135.37191772460938,
+          "mean_m": 69.29362450896217,
+          "std_m": 9.274115061322151
+        }
+      },
+      "near_centerline_100m": {
+        "touched_pixels": 1888,
+        "valid_pixels": 1888,
+        "invalid_pixels": 0,
+        "valid_fraction": 1.0,
+        "elevation": {
+          "count": 1888,
+          "min_m": 63.0,
+          "p10_m": 63.0,
+          "median_m": 63.0,
+          "p90_m": 63.0,
+          "max_m": 75.50208282470703,
+          "mean_m": 63.06546349848731,
+          "std_m": 0.739821152165852
+        }
+      },
+      "tributary_intersections": [
+        {
+          "name": "朝阳溪",
+          "length_inside_domain_m": 0.0,
+          "distance_to_domain_m": 4860.123781723998
+        }
+      ],
+      "boundaries": [
+        {
+          "boundary_id": "C03_A",
+          "end_label": "A",
+          "chainage_m": 20000.0,
+          "center_utm": [
+            227400.04538991555,
+            2520647.7860332206
+          ],
+          "center_wgs84": [
+            108.34513183619775,
+            22.771290975340598
+          ],
+          "endpoints_utm": [
+            [
+              228255.77442709758,
+              2519415.82506999
+            ],
+            [
+              226544.31635273353,
+              2521879.746996451
+            ]
+          ],
+          "endpoints_wgs84": [
+            [
+              108.35367340074573,
+              22.760312096816843
+            ],
+            [
+              108.33658885629168,
+              22.78226925267681
+            ]
+          ],
+          "length_m": 3000.000000000332,
+          "elevation": {
+            "count": 102,
+            "min_m": 63.0,
+            "p10_m": 63.0,
+            "median_m": 93.84673309326172,
+            "p90_m": 117.7672332763672,
+            "max_m": 164.67608642578125,
+            "mean_m": 93.9291186613195,
+            "std_m": 20.1329341409578
+          },
+          "endpoint_offsets_m": [
+            -1500.000000000166,
+            1500.000000000166
+          ],
+          "endpoint_elevations_m": [
+            164.67608642578125,
+            106.11865997314453
+          ],
+          "valid_fraction": 1.0,
+          "hydraulic_role": "unconfirmed_either_upstream_or_downstream",
+          "flow_direction_confirmed": false,
+          "review": "覆盖中心线两侧候选洪泛走廊；尚非最终水力边界，无流量/水位赋值"
+        },
+        {
+          "boundary_id": "C03_B",
+          "end_label": "B",
+          "chainage_m": 27000.0,
+          "center_utm": [
+            233151.2003131858,
+            2520170.7315111356
+          ],
+          "center_wgs84": [
+            108.40117941769587,
+            22.767907514473663
+          ],
+          "endpoints_utm": [
+            [
+              231881.52101513935,
+              2519372.0360246627
+            ],
+            [
+              234420.87961123226,
+              2520969.4269976085
+            ]
+          ],
+          "endpoints_wgs84": [
+            [
+              108.38896111227284,
+              22.760498108233115
+            ],
+            [
+              108.41339910210031,
+              22.77531610029296
+            ]
+          ],
+          "length_m": 2999.999999999964,
+          "elevation": {
+            "count": 102,
+            "min_m": 63.0,
+            "p10_m": 65.1093879699707,
+            "median_m": 77.68042755126953,
+            "p90_m": 88.1100082397461,
+            "max_m": 89.35092163085938,
+            "mean_m": 77.63506859424068,
+            "std_m": 7.239396988049604
+          },
+          "endpoint_offsets_m": [
+            -1499.9999999999818,
+            1499.9999999999818
+          ],
+          "endpoint_elevations_m": [
+            89.35092163085938,
+            71.92594146728516
+          ],
+          "valid_fraction": 1.0,
+          "hydraulic_role": "unconfirmed_either_upstream_or_downstream",
+          "flow_direction_confirmed": false,
+          "review": "覆盖中心线两侧候选洪泛走廊；尚非最终水力边界，无流量/水位赋值"
+        }
+      ],
+      "lateral_edges": [
+        {
+          "side": "R",
+          "reference": "L/R仅相对于西端起算里程增加方向，非水文左右岸",
+          "length_m": 4442.144150660897,
+          "elevation": {
+            "count": 150,
+            "min_m": 85.67047119140625,
+            "p10_m": 86.52009582519531,
+            "median_m": 96.31342315673828,
+            "p90_m": 183.16268310546872,
+            "max_m": 215.30801391601562,
+            "mean_m": 112.64493469238282,
+            "std_m": 35.709184211404384
+          },
+          "fraction_le_diagnostic_elevation": {
+            "75": 0.0,
+            "80": 0.0,
+            "85": 0.0
+          },
+          "lowest_sample_wgs84": [
+            108.36882779252623,
+            22.770450262440818
+          ]
+        },
+        {
+          "side": "L",
+          "reference": "L/R仅相对于西端起算里程增加方向，非水文左右岸",
+          "length_m": 9421.728740379705,
+          "elevation": {
+            "count": 316,
+            "min_m": 63.174503326416016,
+            "p10_m": 77.3144416809082,
+            "median_m": 88.77103424072266,
+            "p90_m": 204.81277465820312,
+            "max_m": 266.1994323730469,
+            "mean_m": 112.31907768490949,
+            "std_m": 52.70200683752971
+          },
+          "fraction_le_diagnostic_elevation": {
+            "75": 0.05063291139240506,
+            "80": 0.2310126582278481,
+            "85": 0.379746835443038
+          },
+          "lowest_sample_wgs84": [
+            108.34132460676615,
+            22.785438097237407
+          ]
+        }
+      ],
+      "mesh_triangle_estimates_uniform_equilateral": {
+        "30": 53779,
+        "60": 13445,
+        "90": 5976,
+        "120": 3362
+      },
+      "risks": [
+        "L侧存在低口，不能默认封闭",
+        "B端正偏移末端地形偏低，需核对洪泛通道",
+        "河床、水位、来流资料缺失；上下游角色未确认"
+      ]
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "check_count": 57,
+    "checks": [
+      "DEM为EPSG:32649、30m北向上网格",
+      "AOI掩膜与DEM网格、CRS完全一致",
+      "AOI掩膜内DEM全部有效，掩膜外DEM无有效值",
+      "河流GeoPackage为EPSG:32649",
+      "唯一邕江主线存在",
+      "邕江主线单段连续且有效、无自交",
+      "邕江主线无相邻重复节点",
+      "C01候选域为单一有效多边形",
+      "C01候选域完全位于AOI内",
+      "C01只包含一个连续主河段，长度与选段一致",
+      "C01候选域所有触及像元均有有效DEM",
+      "C01_A整条端盖匹配计算域边界",
+      "C01_A只横切主河道一次且交点位于目标里程",
+      "C01_A端界剖面有效覆盖",
+      "C01_B整条端盖匹配计算域边界",
+      "C01_B只横切主河道一次且交点位于目标里程",
+      "C01_B端界剖面有效覆盖",
+      "C01R侧边界单线且匹配域边界",
+      "C01L侧边界单线且匹配域边界",
+      "C02候选域为单一有效多边形",
+      "C02候选域完全位于AOI内",
+      "C02只包含一个连续主河段，长度与选段一致",
+      "C02候选域所有触及像元均有有效DEM",
+      "C02_A整条端盖匹配计算域边界",
+      "C02_A只横切主河道一次且交点位于目标里程",
+      "C02_A端界剖面有效覆盖",
+      "C02_B整条端盖匹配计算域边界",
+      "C02_B只横切主河道一次且交点位于目标里程",
+      "C02_B端界剖面有效覆盖",
+      "C02R侧边界单线且匹配域边界",
+      "C02L侧边界单线且匹配域边界",
+      "C03候选域为单一有效多边形",
+      "C03候选域完全位于AOI内",
+      "C03只包含一个连续主河段，长度与选段一致",
+      "C03候选域所有触及像元均有有效DEM",
+      "C03_A整条端盖匹配计算域边界",
+      "C03_A只横切主河道一次且交点位于目标里程",
+      "C03_A端界剖面有效覆盖",
+      "C03_B整条端盖匹配计算域边界",
+      "C03_B只横切主河道一次且交点位于目标里程",
+      "C03_B端界剖面有效覆盖",
+      "C03R侧边界单线且匹配域边界",
+      "C03L侧边界单线且匹配域边界",
+      "纵剖面里程严格增加且终点准确",
+      "9条横剖面均包含中心点且有效覆盖",
+      "全体剖面值与原DEM像元一致",
+      "YONGJIANG无效点保持空值",
+      "candidate_model_domains.gpkg图层数量回读",
+      "candidate_domains要素数/坐标系/有效性回读",
+      "candidate_river_segments要素数/坐标系/有效性回读",
+      "boundary_candidates.gpkg图层数量回读",
+      "end_boundary_candidates要素数/坐标系/有效性回读",
+      "terrain_cross_sections要素数/坐标系/有效性回读",
+      "lateral_boundary_review要素数/坐标系/有效性回读",
+      "CSV回读记录数及高程、空值一致",
+      "预览PNG可解码",
+      "四项输入SHA256未改变"
+    ]
+  },
+  "outputs_sha256": {
+    "candidate_model_domains.gpkg": "a326d0029b41e95972359def9d7dd274e0cb9bc12397e8d4ad98c11d7e8d8512",
+    "boundary_candidates.gpkg": "469815a39de362c4eabbf83ee1c05b9adcf6edadfac4f31491a1e6f73152c621",
+    "river_profile.csv": "b0f093c78a12533d83846cd1bb49d22251d3a01b6846daa7e7de3f30f8db5d13",
+    "domain_preview.png": "2428946ca6affeafac69f9bae59f5999734c481c25f9b79303c7d864ea7dfa68"
+  },
+  "script_sha256": "b8d350ee477c53095681a1576edb195d0b3ba5028a2aa6fb97067ae95f8fad27",
+  "no_data_downloaded": true,
+  "no_anuga_installed_or_run": true,
+  "bed_modified": false,
+  "discharge_or_stage_boundary_assigned": false
+}

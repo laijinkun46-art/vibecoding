@@ -1,0 +1,206 @@
+{
+  "stage": "extension_4.1.2_full_reach",
+  "status": "terrain_inputs_prepared",
+  "horizontal_crs": "EPSG:32649",
+  "vertical_datum": "EGM2008 / EPSG:3855; heights not converted",
+  "resolution_m": 30,
+  "elevation_unit": "m",
+  "base_dem": {
+    "path": "data/processed/phase2/dem_utm49n_30m.tif",
+    "mode": "direct_reference",
+    "nodata": -9999.0,
+    "shape": [
+      457,
+      728
+    ],
+    "geotransform": [
+      215460.0,
+      30.0,
+      0.0,
+      2529600.0,
+      0.0,
+      -30.0
+    ],
+    "valid_pixels": 318721,
+    "inside_nodata": 0,
+    "all_touched_pixels": 319904,
+    "all_touched_nodata": 1183,
+    "z_min_m": 63.0,
+    "z_max_m": 288.069091796875
+  },
+  "domain": {
+    "area_km2": 286.84892649664147,
+    "perimeter_m": 69740.27267789374,
+    "main_length_m": 33682.29228300667,
+    "outside_main_length_m": 5.243429141147964e-06
+  },
+  "profile": {
+    "path": "data/processed/hydrodynamics/preparation/domain/river_profile.csv",
+    "filter": {
+      "profile_kind": "longitudinal"
+    },
+    "samples": 1124,
+    "valid": 1123,
+    "missing_chainages_m": [
+      0.0
+    ],
+    "min_z_m": 63.0,
+    "max_z_m": 63.0,
+    "terminal_support_layer": "river_terminals",
+    "values": "surface elevation, not surveyed bathymetry"
+  },
+  "terminals": [
+    {
+      "terminal_id": "YONGJIANG_W",
+      "side": "W",
+      "scenario_role": "assumed_inlet_option",
+      "flow_confirmed": 0,
+      "boundary_type": "unassigned",
+      "line_chainage_m": 0.0,
+      "side_chainage_m": 10954.628828071907,
+      "lon": 108.23000000004994,
+      "lat": 22.828861957103424,
+      "source_gap_m": 5.129029875716188e-06,
+      "exact_z_m": null,
+      "support_z_m": 63.0,
+      "support_x": 215701.4367098677,
+      "support_y": 2527244.754347574,
+      "pixel_row": 78,
+      "pixel_col": 8,
+      "line_inset_m": 10,
+      "support_method": "line_inward_valid_pixel"
+    },
+    {
+      "terminal_id": "YONGJIANG_E",
+      "side": "E",
+      "scenario_role": "assumed_outlet_option",
+      "flow_confirmed": 0,
+      "boundary_type": "unassigned",
+      "line_chainage_m": 33682.29228300667,
+      "side_chainage_m": 6317.464616450319,
+      "lon": 108.44000000000817,
+      "lat": 22.787021508618352,
+      "source_gap_m": 8.385183102455819e-07,
+      "exact_z_m": 63.0,
+      "support_z_m": 63.0,
+      "support_x": 237175.8624351889,
+      "support_y": 2522218.547201989,
+      "pixel_row": 246,
+      "pixel_col": 723,
+      "line_inset_m": 0,
+      "support_method": "phase2_containing_pixel"
+    }
+  ],
+  "side_checks": {
+    "S": {
+      "length_m": 21583.667191598357,
+      "samples": 720,
+      "exact_nodata": 364,
+      "max_support_inset_m": 20,
+      "min_inner_z_m": 78.36639404296875,
+      "linked_samples": {
+        "75": 0,
+        "80": 9,
+        "85": 57
+      }
+    },
+    "E": {
+      "length_m": 13294.95593261085,
+      "samples": 444,
+      "exact_nodata": 218,
+      "max_support_inset_m": 20,
+      "min_inner_z_m": 63.0,
+      "linked_samples": {
+        "75": 15,
+        "80": 35,
+        "85": 123
+      }
+    },
+    "N": {
+      "length_m": 21564.755232881682,
+      "samples": 719,
+      "exact_nodata": 359,
+      "max_support_inset_m": 20,
+      "min_inner_z_m": 69.0,
+      "linked_samples": {
+        "75": 0,
+        "80": 226,
+        "85": 347
+      }
+    },
+    "W": {
+      "length_m": 13296.894320802854,
+      "samples": 444,
+      "exact_nodata": 220,
+      "max_support_inset_m": 20,
+      "min_inner_z_m": 63.0,
+      "linked_samples": {
+        "75": 14,
+        "80": 196,
+        "85": 290
+      }
+    }
+  },
+  "perimeter_layer_classes": {
+    "unclassified_review": 29,
+    "lateral_connected_low85": 28,
+    "lateral_connected_low80": 14,
+    "low_ground_connection_unconfirmed": 11,
+    "river_end_candidate": 2
+  },
+  "tributaries": [
+    {
+      "name": "朝阳溪",
+      "geometry_gap_m": 347.2931541119406,
+      "role": "unassigned"
+    }
+  ],
+  "screening": {
+    "thresholds_m": [
+      75,
+      80,
+      85
+    ],
+    "step_max_m": 30,
+    "inner_offset_m": 45,
+    "connectivity": 4,
+    "seed_raster": "data/processed/phase2/main_river_mask.tif",
+    "terminal_segment_rule": "contiguous <=75 m connected inner samples around mainline endpoint",
+    "interpretation": "terrain screening only; thresholds are not scenario water levels"
+  },
+  "sampling": {
+    "exact": "Phase 2 containing pixel, null when masked",
+    "inset_step_m": 5,
+    "max_inset_m": 45,
+    "perimeter_support": "first valid in-domain pixel on inward normal",
+    "terminal_support": "first valid pixel on the centerline toward the study area interior",
+    "raw_dem_needed": false
+  },
+  "scenario_assumptions": {
+    "flow_option": "west inlet and east outlet may be adopted as a teaching scenario",
+    "observed_flow_confirmed": false,
+    "boundary_conditions": "unassigned",
+    "numeric_parameters": "deferred",
+    "bathymetry_modified": false
+  },
+  "sources_sha256": {
+    "data/study_area/nanning_yongjiang_aoi.geojson": "7824e7b0f8fe734bb6257ff78f84c444cd1304cbd2d05df7b3e650d01079240d",
+    "data/processed/phase2/dem_utm49n_30m.tif": "9cc3cd1faa10f6b1403cecdebbfeb6e7c65f1207689ceed0bad826466098f30e",
+    "data/processed/phase2/aoi_mask.tif": "2722897a2e9ec8beb505e1a07a366d412999e1a628ee394161aeab9edd23feb3",
+    "data/processed/phase2/main_river_mask.tif": "e54760f58d3596d0c60b054abe8c4578b789fa98c8de3bd5b48cdead902114a1",
+    "data/processed/phase2/rivers_utm49n.gpkg": "754845f4c0e7adc6b4bb85208f86555daf1113294b044b8cc0c0fb79a1a0b149",
+    "data/processed/hydrodynamics/preparation/domain/river_profile.csv": "b0f093c78a12533d83846cd1bb49d22251d3a01b6846daa7e7de3f30f8db5d13"
+  },
+  "legacy_verified_counts": {
+    "phase2": 21,
+    "phase3": 21,
+    "candidate_domain": 4,
+    "c03": 6
+  },
+  "script_sha256": "030acfb99fe4995a5253e2197d13a2adb1d8e177c06468fcf8716b1a33144a7c",
+  "outputs_sha256": {
+    "domain.gpkg": "9c391a6ca37bb05b19636505045d365e377a3ee001feafb22b99fd4c99df3063",
+    "perimeter_samples.csv": "06017cc30dd960e7f123a72356bc951e48208a3e6622e4a740f991ea6a9ee0db"
+  },
+  "readback_verified": true
+}

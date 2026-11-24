@@ -6,6 +6,7 @@ import {
   BoundingSphere, Cartesian3, Cartographic, HeadingPitchRange, Matrix4, SceneMode,
   ArcGisMapServerImageryProvider,
   GeoJsonDataSource, ClassificationType, SingleTileImageryProvider,
+  Math as CesiumMath, ScreenSpaceEventHandler, ScreenSpaceEventType,
 } from 'cesium'
 import { loadDemTerrain } from '../demTerrain'
 import { fetchCheckedJson } from '../analysisData'
@@ -13,9 +14,11 @@ import { fetchCheckedJson } from '../analysisData'
 const props = defineProps({ bbox: Array, basemap: { type: String, default: 'satellite' }, layer: Object,
   riverAsset: Object, showRivers: { type: Boolean, default: true }, effects: Object,
   reliefScale: { type: Number, required: true } })
-const emit = defineEmits(['status', 'terrain-status', 'layer-status', 'river-status', 'effects-status'])
+const emit = defineEmits(['status', 'terrain-status', 'layer-status', 'river-status', 'effects-status', 'hydro-location'])
 const container = ref(null)
 let viewer
+let terrainFactory, baseTerrain, hydro, hydroPicker, hydroBounds
+const measureHydro = new URLSearchParams(window.location.search).has('measureHydro')
 let basemapRevision = 0
 let destroyed = false
 let layerRevision = 0
@@ -38,7 +41,7 @@ function syncRelief() {
   if (!viewer || viewer.isDestroyed()) return
   const scale = viewer.scene.mode === SceneMode.SCENE3D ? props.reliefScale : 1
   viewer.scene.verticalExaggeration = scale
-  if (reliefLayer) reliefLayer.show = props.basemap === 'satellite' && viewer.scene.mode === SceneMode.SCENE3D
+  if (reliefLayer) reliefLayer.show = (props.basemap === 'satellite' || !!hydro) && viewer.scene.mode === SceneMode.SCENE3D
   for (const [source, stage] of scenarioSources) {
     for (const entity of source.entities.values) {
       if (entity.polygon && entity.polygon.height?.getValue() !== stage * scale) {
@@ -103,10 +106,14 @@ function viewWater() {
   const river = riverSource?.entities.values.find(entity => entity.polyline && entity.properties?.name?.getValue() === '邕江')
   const positions = river?.polyline.positions.getValue(viewer.clock.currentTime)
   if (!positions?.length) { viewFlood(); return }
-  const point = Cartographic.fromCartesian(positions[Math.floor(positions.length / 2)])
+  // 选择青秀山西侧入弯前的实际河道节点，沿东北向河段看向远岸。
+  const bend = Cartesian3.fromDegrees(108.366, 22.785)
+  const target = positions.reduce((nearest, position) =>
+    Cartesian3.distanceSquared(position, bend) < Cartesian3.distanceSquared(nearest, bend) ? position : nearest)
+  const point = Cartographic.fromCartesian(target)
   viewer.scene.morphTo3D(0)
   const center = Cartesian3.fromRadians(point.longitude, point.latitude, (props.layer?.waterLevel ?? 80) * props.reliefScale)
-  viewer.camera.viewBoundingSphere(new BoundingSphere(center, 1500), new HeadingPitchRange(-.3, -.6, 4800))
+  viewer.camera.viewBoundingSphere(new BoundingSphere(center, 500), new HeadingPitchRange(.98, -.20, 1850))
   viewer.camera.lookAtTransform(Matrix4.IDENTITY)
   container.value.dataset.sceneMode = String(viewer.scene.mode)
   syncEffects()
@@ -224,9 +231,11 @@ function viewTerrain() {
 async function updateTerrain() {
   emit('terrain-status', { state: 'loading' })
   try {
-    const { provider, metadata } = await loadDemTerrain()
+    const { provider, metadata, makeProvider } = await loadDemTerrain()
     if (destroyed) return
     viewer.terrainProvider = provider
+    baseTerrain = provider
+    terrainFactory = makeProvider
     container.value.dataset.terrain = 'fabdem'
     syncRelief()
     viewer.scene.requestRender()
@@ -292,11 +301,12 @@ async function updateBasemap() {
     container.value.dataset.pendingTiles = 'loading'
     const imagery = viewer.imageryLayers.addImageryProvider(provider, 0)
     basemapLayer = imagery
-    if (reliefLayer) reliefLayer.show = props.basemap === 'satellite' && viewer.scene.mode === SceneMode.SCENE3D
+    syncRelief()
     if (props.basemap === 'satellite') {
-      imagery.brightness = .97
+      imagery.brightness = 1.16
+      imagery.gamma = 1.12
       imagery.saturation = .91
-      imagery.contrast = 1.05
+      imagery.contrast = 1.02
     }
     container.value.dataset.basemap = props.basemap
     viewer.scene.requestRender()
@@ -320,6 +330,68 @@ function setMode(mode) {
   syncEffects()
 }
 
+async function enableHydro(data, signal) {
+  const { createHydroRender } = await import('../hydroRender')
+  if (signal.aborted || destroyed) throw new DOMException('Aborted','AbortError')
+  if (!terrainFactory) throw new Error('地形尚未就绪')
+  hydro = createHydroRender(viewer, data)
+  viewer.terrainProvider = terrainFactory(hydro.height)
+  viewer.scene.morphTo3D(0)
+  hydroBounds = data.manifest.bounds
+  viewHydro('full')
+  hydroPicker = new ScreenSpaceEventHandler(viewer.scene.canvas)
+  hydroPicker.setInputAction(({ position }) => {
+    const ray = viewer.camera.getPickRay(position)
+    const point = ray && viewer.scene.globe.pick(ray,viewer.scene)
+    if (!point) return
+    const c = Cartographic.fromCartesian(point)
+    emit('hydro-location', { lon: CesiumMath.toDegrees(c.longitude), lat: CesiumMath.toDegrees(c.latitude) })
+  },ScreenSpaceEventType.LEFT_CLICK)
+  container.value.dataset.hydro = 'ready'
+  syncRelief()
+}
+
+function viewHydro(name) {
+  if (!hydroBounds) return
+  if (name==='full') {
+    const [w,s,e,n] = hydroBounds
+    const domain = BoundingSphere.fromPoints([
+      Cartesian3.fromDegrees(w,s), Cartesian3.fromDegrees(e,n),
+      Cartesian3.fromDegrees(w,n), Cartesian3.fromDegrees(e,s),
+    ])
+    viewer.camera.viewBoundingSphere(domain,new HeadingPitchRange(0,-Math.PI*.34,domain.radius*2.10))
+  } else {
+    const next = hydroViews[name]
+    if (!next) return
+    const [lon,lat,height,heading,pitch,range] = next
+    const target = Cartesian3.fromDegrees(lon,lat,height*viewer.scene.verticalExaggeration)
+    viewer.camera.viewBoundingSphere(new BoundingSphere(target,50),new HeadingPitchRange(heading,pitch,range))
+  }
+  viewer.camera.lookAtTransform(Matrix4.IDENTITY)
+  viewer.scene.requestRender()
+}
+
+const hydroViews = {
+  bend: [108.32830,22.77750,68,0.42,-0.49,2630],
+  bank: [108.35987,22.78376,67,0.28,-0.37,1110],
+}
+
+function updateHydro(pair,time,settings) {
+  hydro?.update(pair,time,settings)
+}
+
+function disableHydro() {
+  hydroPicker?.destroy()
+  hydroPicker = undefined
+  if (!hydro) return
+  hydro.dispose()
+  hydro = undefined
+  hydroBounds = undefined
+  viewer.terrainProvider = baseTerrain
+  delete container.value.dataset.hydro
+  syncRelief()
+}
+
 onMounted(async () => {
   try {
     viewer = new Viewer(container.value, {
@@ -331,6 +403,19 @@ onMounted(async () => {
     })
     viewer.scene.globe.baseColor = Color.fromCssColorString('#49665e')
     viewer.scene.globe.depthTestAgainstTerrain = true
+    if (measureHydro) {
+      viewer.scene.postRender.addEventListener(() => {
+        if (hydro) container.value?.dispatchEvent(new Event('hydro-render'))
+      })
+      container.value.addEventListener('hydro-inspect', () => {
+        const diagnostic = hydro?.diagnostics()
+        container.value.dataset.hydroStats = JSON.stringify({ ...diagnostic,
+          primitives: viewer.scene.primitives.length,
+          camera: { position: Cartesian3.pack(viewer.camera.positionWC, []), direction: Cartesian3.pack(viewer.camera.directionWC, []),
+            up: Cartesian3.pack(viewer.camera.upWC, []) },
+          context_lost: viewer.scene.canvas.getContext('webgl2')?.isContextLost() ?? true })
+      })
+    }
     viewer.scene.morphComplete.addEventListener(() => { syncRelief(); syncEffects() })
     syncRelief()
     viewer.scene.globe.tileLoadProgressEvent.addEventListener((pending) => {
@@ -367,9 +452,11 @@ onBeforeUnmount(() => {
   basemapRevision++
   layerRevision++
   effectController?.dispose()
+  disableHydro()
   if (viewer && !viewer.isDestroyed()) viewer.destroy()
 })
-defineExpose({ resetView, setMode, viewTerrain, viewFlood, viewWater, retryLayer: updateLayer })
+defineExpose({ resetView, setMode, viewTerrain, viewFlood, viewWater, retryLayer: updateLayer,
+  enableHydro, updateHydro, disableHydro, viewHydro, resetHydroParticles: () => hydro?.reset() })
 </script>
 
 <template><div ref="container" class="cesium-map" aria-label="Cesium 地图画布"></div></template>

@@ -32,6 +32,11 @@ export async function loadDemTerrain() {
   if (!grid.every(Number.isFinite)) throw new Error('DEM 高程包含无效值')
   const hash = [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))].map(value => value.toString(16).padStart(2, '0')).join('')
   if (hash !== metadata.sha256) throw new Error('DEM 文件完整性校验失败')
+  const makeProvider = override => makeTerrainProvider(metadata, grid, override)
+  return { provider: makeProvider(), metadata, makeProvider }
+}
+
+function makeTerrainProvider(metadata, grid, override) {
   const tilingScheme = new GeographicTilingScheme()
   const sampleTile = (x, y, level) => {
     const rectangle = tilingScheme.tileXYToRectangle(x, y, level)
@@ -41,7 +46,7 @@ export async function loadDemTerrain() {
       const latitude = (rectangle.north - (rectangle.north - rectangle.south) * row / (TILE_SIZE - 1)) * degrees
       for (let col = 0; col < TILE_SIZE; col++) {
         const longitude = (rectangle.west + (rectangle.east - rectangle.west) * col / (TILE_SIZE - 1)) * degrees
-        result[row * TILE_SIZE + col] = sampleHeight(metadata, grid, longitude, latitude)
+        result[row * TILE_SIZE + col] = override?.(longitude, latitude) ?? sampleHeight(metadata, grid, longitude, latitude)
       }
     }
     return result
@@ -53,5 +58,5 @@ export async function loadDemTerrain() {
     buffer: sampleTile(x, y, level), width: TILE_SIZE, height: TILE_SIZE, childTileMask: level < MAX_LEVEL ? 15 : 0,
   }))
   provider.getTileDataAvailable = (x, y, level) => level <= MAX_LEVEL
-  return { provider, metadata }
+  return provider
 }

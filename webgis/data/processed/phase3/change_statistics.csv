@@ -1,0 +1,4 @@
+﻿id,before,after,added_pixels,added_area_km2,persistent_pixels,persistent_area_km2,receded_pixels,receded_area_km2,net_area_change_km2,polygon_count
+S01_to_S02,S01,S02,86103,77.4927,26352,23.7168,0,0.0,77.4927,212
+S02_to_S03,S02,S03,35153,31.6377,112455,101.2095,0,0.0,31.6377,528
+S03_to_S04,S03,S04,0,0.0,89400,80.46,58208,52.3872,-52.3872,336

@@ -1,0 +1,412 @@
+{
+  "schema_version": 1,
+  "stage": "extension_4.1.4",
+  "scenario_id": "full_reach_inflow_only_v1",
+  "status": "parameter_prepared_solver_unverified",
+  "observed": false,
+  "label_zh": "基于真实地形和假设参数的洪水动态情景模拟",
+  "horizontal_crs": "EPSG:32649",
+  "vertical_datum": "EGM2008 (EPSG:3855)",
+  "sources_sha256": {
+    "data/processed/hydrodynamics/preparation/full_reach_v1/terrain_manifest.json": "4159cf21e1f15300f2e5ca55c20867d92ec518d2466f9f4effa49af99679c338",
+    "data/processed/hydrodynamics/preparation/full_reach_v1/domain.gpkg": "9c391a6ca37bb05b19636505045d365e377a3ee001feafb22b99fd4c99df3063",
+    "data/processed/hydrodynamics/preparation/full_reach_v1/perimeter_samples.csv": "06017cc30dd960e7f123a72356bc951e48208a3e6622e4a740f991ea6a9ee0db",
+    "data/processed/phase2/rainfall_timeseries.json": "fd55feac428ca985c8450a74862fd3a13c99d75dd53625a8cfe335dec3e8f070",
+    "data/processed/phase2/dem_utm49n_30m.tif": "9cc3cd1faa10f6b1403cecdebbfeb6e7c65f1207689ceed0bad826466098f30e"
+  },
+  "rainfall": {
+    "value": 0.0,
+    "unit": "m/s",
+    "location": "whole AOI, all times",
+    "basis": "首轮独立来水，无叠加雨量。",
+    "source_type": "synthetic_teaching_assumption",
+    "sensitivity": "另建有雨情景时使用已验收的降雨强迫，核对累计雨量。"
+  },
+  "rainfall_background": {
+    "source": "CHM_PRE V2 / V2.1.1",
+    "source_file": "data/processed/phase2/rainfall_timeseries.json",
+    "days": 8,
+    "start_bjt": "2024-09-05T20:00:00+08:00",
+    "end_bjt": "2024-09-13T20:00:00+08:00",
+    "aoi_total_mm": 137.42584381580474,
+    "phase_4_1_3_accepted_forcing": "not_found_in_project",
+    "active_forcing": "none"
+  },
+  "direction": {
+    "value": "W_to_E",
+    "unit": "categorical",
+    "location": "increasing chainage throughout main channel",
+    "basis": "教学情景约定，与实测流向无关。",
+    "source_type": "synthetic_teaching_assumption",
+    "sensitivity": "若反向，另建情景并一起调整床坡、端界和初始动量。"
+  },
+  "clock": {
+    "origin": "start of artificial warmup, no event date",
+    "time_unit": "s",
+    "warmup": {
+      "value": 129600,
+      "unit": "s",
+      "location": "whole domain",
+      "basis": "4 m 理想水深对应的平流通过时间约 17.6 h，先预热 24 h。",
+      "source_type": "synthetic_teaching_assumption",
+      "sensitivity": [
+        64800,
+        129600
+      ]
+    },
+    "end": {
+      "value": 345600,
+      "unit": "s",
+      "location": "whole domain",
+      "basis": "为合成涨水、洪峰、退水及基流回落留出时间。",
+      "source_type": "synthetic_teaching_assumption",
+      "sensitivity": [
+        302400,
+        345600
+      ]
+    },
+    "interpolation": "For each interval use y=y0+(y1-y0)*(3*u*u-2*u*u*u), u=(t-t0)/(t1-t0).",
+    "schedule_policy": "If extending warmup, shift all subsequent flood knots and end consistently. If extending final hold, keep final values."
+  },
+  "bathymetry": {
+    "source_dem": "data/processed/phase2/dem_utm49n_30m.tif",
+    "model_raster_created": false,
+    "centerline_layer": "main_centerline",
+    "length_m": 33682.29228300667,
+    "bottom_width": {
+      "value": 180.0,
+      "unit": "m",
+      "location": "normal to mainline at every chainage",
+      "basis": "30 m 地形上采用可辨认的理想梯形，在端界内留有余量。",
+      "source_type": "synthetic_teaching_assumption",
+      "sensitivity": [
+        160,
+        200
+      ]
+    },
+    "design_bank_depth": {
+      "value": 7.0,
+      "unit": "m",
+      "location": "vertical distance from ideal bed to ideal bank",
+      "basis": "初始水深 4 m，留 3 m 理想岸高差供涨水。",
+      "source_type": "synthetic_teaching_assumption",
+      "sensitivity": [
+        6,
+        8
+      ]
+    },
+    "bank_side_slope": {
+      "value": 3.0,
+      "unit": "m horizontal/m vertical",
+      "location": "both ideal banks",
+      "basis": "用缓坡过渡，后续按网格及实际地形复查。",
+      "source_type": "synthetic_teaching_assumption",
+      "sensitivity": [
+        2.5,
+        3.5
+      ]
+    },
+    "west_bed_elevation": {
+      "value": 56.5,
+      "unit": "m above EGM2008",
+      "location": "s=0, W terminal",
+      "basis": "独立的合成床底锚点。",
+      "source_type": "synthetic_teaching_assumption",
+      "sensitivity": [
+        55.5,
+        57.5
+      ]
+    },
+    "bed_slope": {
+      "value": 5e-05,
+      "unit": "m/m",
+      "location": "positive drop along W to E",
+      "basis": "设温和合成床坡，整段降落约 1.68 m。",
+      "source_type": "synthetic_teaching_assumption",
+      "sensitivity": [
+        3e-05,
+        7e-05
+      ]
+    },
+    "blend_width": {
+      "value": 60.0,
+      "unit": "m",
+      "location": "outside each ideal bank",
+      "basis": "以约两个地形像元间距平滑过渡。",
+      "source_type": "synthetic_teaching_assumption",
+      "sensitivity": [
+        30,
+        90
+      ]
+    },
+    "derived": {
+      "east_bed_m": 54.81588538584967,
+      "bank_width_m": 222.0,
+      "west_ideal_bank_z_m": 63.5,
+      "east_ideal_bank_z_m": 61.81588538584967
+    },
+    "formula": "bed=west_bed-S*s; target=bed+min(D,max(0,(abs(offset)-B/2)/M)); model_z=DEM+w*(min(DEM,target)-DEM); w=1 inside ideal bank, then smoothstep to 0 over blend",
+    "constraints": "Only modify a future independent model terrain within AOI and valid DEM. Never raise banks; resolve station ambiguity at bends and inspect cross sections and edge gaps."
+  },
+  "friction": {
+    "channel": {
+      "value": 0.032,
+      "unit": "s/m^(1/3)",
+      "location": "within ideal bank lines",
+      "basis": "简化的教学主槽阻力。",
+      "source_type": "synthetic_teaching_assumption",
+      "sensitivity": [
+        0.028,
+        0.038
+      ]
+    },
+    "floodplain": {
+      "value": 0.065,
+      "unit": "s/m^(1/3)",
+      "location": "outside bank transition",
+      "basis": "统一的教学洪泛区阻力。",
+      "source_type": "synthetic_teaching_assumption",
+      "sensitivity": [
+        0.05,
+        0.08
+      ]
+    },
+    "transition": "linear interpolation across bathymetry blend width"
+  },
+  "initial": {
+    "channel_depth": {
+      "value": 4.0,
+      "unit": "m",
+      "location": "above ideal channel bed over full mainline",
+      "basis": "4 m 理想正常水深与 409 m3/s 基流配套。",
+      "source_type": "synthetic_teaching_assumption",
+      "sensitivity": [
+        3.5,
+        4.5
+      ]
+    },
+    "channel_speed": {
+      "value": 0.5325520833333334,
+      "unit": "m/s",
+      "location": "wet channel, along increasing chainage",
+      "basis": "理想梯形以 Q/A 给初始断面平均速度，离散后检查积分流量。",
+      "source_type": "synthetic_teaching_assumption",
+      "sensitivity": "随基流或几何重算。"
+    },
+    "floodplain_depth": {
+      "value": 0.0,
+      "unit": "m",
+      "location": "outside ideal channel",
+      "basis": "首轮从两岸干地开始。",
+      "source_type": "synthetic_teaching_assumption",
+      "sensitivity": "另建存在积水的敏感性情景。"
+    },
+    "stage_formula": "inside ideal channel: max(model_z,bed(s)+H0); elsewhere: model_z",
+    "momentum_formula": "wet cells hu,hv=h*speed*tangent_xy; dry cells zero. Reconcile actual wet section conveyance after terrain generation.",
+    "warmup_acceptance": {
+      "last_window_s": 7200,
+      "storage_change_max_fraction": 0.02,
+      "flux_imbalance_max_fraction": 0.05,
+      "storage_reference_m3": 25868000.47334912,
+      "flux_reference": "integrated input over the last window",
+      "includes": "main and lateral fluxes",
+      "status": "unverified_until_solver_run"
+    }
+  },
+  "boundary": {
+    "W": {
+      "terminal_id": "YONGJIANG_W",
+      "segment_id": "W006",
+      "intent": "prescribed_total_discharge",
+      "series": {
+        "value": [
+          [
+            0,
+            409.0
+          ],
+          [
+            129600,
+            409.0
+          ],
+          [
+            151200,
+            409.0
+          ],
+          [
+            172800,
+            1600.0
+          ],
+          [
+            194400,
+            4000.0
+          ],
+          [
+            216000,
+            2400.0
+          ],
+          [
+            259200,
+            950.0
+          ],
+          [
+            324000,
+            409.0
+          ],
+          [
+            345600,
+            409.0
+          ]
+        ],
+        "unit": "[s,m^3/s]",
+        "location": "active wet main channel within W006",
+        "basis": "409 m3/s 基流取自曼宁估算，合成洪峰 42 h 到 4000 m3/s。",
+        "source_type": "synthetic_teaching_assumption",
+        "sensitivity": "超基流部分乘 0.8 或 1.2。"
+      },
+      "distribution": "inward unit discharge q_i=Q*h_i/sum(h_j*edge_length_j) only on wet channel opening; verify intended and realized summed flux",
+      "remainder": "lateral outflow if wet"
+    },
+    "E": {
+      "terminal_id": "YONGJIANG_E",
+      "segment_id": "E012",
+      "intent": "prescribed_stage_open",
+      "series": {
+        "value": [
+          [
+            0,
+            58.81588538584967
+          ],
+          [
+            129600,
+            58.81588538584967
+          ],
+          [
+            162000,
+            58.81588538584967
+          ],
+          [
+            183600,
+            61.81588538584967
+          ],
+          [
+            205200,
+            68.81588538584967
+          ],
+          [
+            226800,
+            64.81588538584967
+          ],
+          [
+            270000,
+            60.81588538584967
+          ],
+          [
+            334800,
+            58.81588538584967
+          ],
+          [
+            345600,
+            58.81588538584967
+          ]
+        ],
+        "unit": "[s,m above EGM2008]",
+        "location": "active main channel within E012",
+        "basis": "初始等于东端床底加 4 m，尾水合成涨幅独立给定，峰值比来流晚 3 h。",
+        "source_type": "synthetic_teaching_assumption",
+        "sensitivity": "独立调整涨幅 ±20% 或相位 ±2 h，保持基准。"
+      },
+      "relative_depth_knots": [
+        [
+          0,
+          4.0
+        ],
+        [
+          129600,
+          4.0
+        ],
+        [
+          162000,
+          4.0
+        ],
+        [
+          183600,
+          7.0
+        ],
+        [
+          205200,
+          14.0
+        ],
+        [
+          226800,
+          10.0
+        ],
+        [
+          270000,
+          6.0
+        ],
+        [
+          334800,
+          4.0
+        ],
+        [
+          345600,
+          4.0
+        ]
+      ],
+      "momentum_intent": "transmit normal momentum, prescribe zero tangential component; allow pressure-driven backflow and count signed flux",
+      "remainder": "lateral outflow if wet"
+    },
+    "lateral": {
+      "wet_threshold": {
+        "value": 0.05,
+        "unit": "m",
+        "location": "lowland candidate segments and overbank remainder of W006/E012",
+        "basis": "达到该湿深才允许外向通量，抑制干边扰动。",
+        "source_type": "synthetic_teaching_assumption",
+        "sensitivity": [
+          0.02,
+          0.1
+        ]
+      },
+      "friction_slope": {
+        "value": 5e-05,
+        "unit": "m/m",
+        "location": "eligible lateral outflow sections",
+        "basis": "区外坡未知，先给温和的摩阻坡数量级。",
+        "source_type": "synthetic_teaching_assumption",
+        "sensitivity": [
+          2e-05,
+          0.0001
+        ]
+      },
+      "manning": {
+        "value": 0.065,
+        "unit": "s/m^(1/3)",
+        "location": "eligible lateral outflow sections",
+        "basis": "与洪泛区教学阻力起始一致。",
+        "source_type": "synthetic_teaching_assumption",
+        "sensitivity": [
+          0.05,
+          0.08
+        ]
+      },
+      "flux_intent": "outward only when wet; candidate unit-discharge relation h^(5/3)*sqrt(S)/n; no prescribed lateral external supply; verify realized sign and volume",
+      "tentative_wall_review": "review and reclassify unclassified segments if wet depth >=0.05 m for 900 s or crossed by a connected wet pathway",
+      "branches": "Chaoyangxi 347 m mapping gap left as-is; no fixed tributary inflow",
+      "sensitivity": "evaluate closing uncertain-connectivity candidates; compare signed volumes and wet extents at observation areas"
+    }
+  },
+  "sensitivity_protocol": "One factor at a time. For geometry, bed slope, initial depth or channel n changes recheck endpoint widths and recompute matching Q/U/base stage. Re-evaluate calculated stage/flow, lateral budget and near-boundary artifacts.",
+  "boundary_assessment": "boundary_assessment.csv",
+  "implementation_checks": [
+    "derive terrain independently and check bed and wet opening sections W/E",
+    "verify selected ANUGA version and small-case boundary flux sign, magnitude and reverse-flow behavior",
+    "verify warmup, wet/dry and mass balance before full reach run",
+    "verify meaningful overbank motion and recession from dynamic output, then compare sensitivities"
+  ],
+  "run_adjustment": {
+    "warmup_hours": 36,
+    "shifted_forcing_seconds": 43200,
+    "reason": "24 h pilot of full input exceeded last-window 5% flux-imbalance threshold"
+  }
+}

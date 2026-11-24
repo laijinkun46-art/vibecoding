@@ -1,0 +1,213 @@
+{
+  "phase": "4.1.2",
+  "domain_selection": {
+    "selected_candidate": "C03",
+    "extent_adjusted": false,
+    "confirmed_by": "user",
+    "confirmation_text": "确认",
+    "date_bjt": "2026-11-24",
+    "candidate_geometry": {
+      "id": "C03",
+      "area_km2": 20.957939144676185,
+      "bounds_utm_wsen": [
+        226544.31635273353,
+        2519372.0360246627,
+        234420.87961123226,
+        2523749.6372828544
+      ],
+      "chainage_interval_m": [
+        20000.0,
+        27000.0
+      ],
+      "main_river_length_m": 6999.9999999998145
+    }
+  },
+  "horizontal_crs": "EPSG:32649",
+  "source_vertical_datum": "EGM2008 / EPSG:3855; heights not converted",
+  "vertical_transform_applied": false,
+  "pixel_selection": "像元中心入域。触及边界但中心在域外的像元只参与源覆盖核查。",
+  "nodata": -9999.0,
+  "grid_shape_rows_cols": [
+    146,
+    262
+  ],
+  "geotransform": [
+    226560.0,
+    30,
+    0,
+    2523750.0,
+    0,
+    -30
+  ],
+  "source_window_col_row_width_height": [
+    370,
+    195,
+    262,
+    146
+  ],
+  "valid_touched_source_pixels": 23723,
+  "inside_missing_pixels": 0,
+  "outside_domain_nodata_pixels_in_window": 14952,
+  "surface_elevation": {
+    "count": 23300,
+    "min_m": 63.0,
+    "p10_m": 63.0,
+    "median_m": 85.29037857055664,
+    "p90_m": 136.25906219482422,
+    "max_m": 265.3873291015625
+  },
+  "adjacent_cell_diagnostics": {
+    "absolute_difference": {
+      "count": 46152,
+      "min_m": 0.0,
+      "p10_m": 0.0,
+      "median_m": 0.8227729797363281,
+      "p90_m": 6.156613922119145,
+      "max_m": 22.579299926757812
+    },
+    "diagnostic_threshold_m": 10,
+    "pairs_at_or_above_threshold": 1385,
+    "maximum_pair": [
+      {
+        "utm": [
+          231675.0,
+          2521665.0
+        ],
+        "lon_lat": [
+          108.3865573623721,
+          22.781157533757376
+        ],
+        "elevation_m": 106.25379180908203
+      },
+      {
+        "utm": [
+          231675.0,
+          2521635.0
+        ],
+        "lon_lat": [
+          108.38656252257974,
+          22.780886806130585
+        ],
+        "elevation_m": 83.67449188232422
+      }
+    ]
+  },
+  "profile_checks": [
+    {
+      "kind": "longitudinal",
+      "profile_id": "YONGJIANG",
+      "source_elevation": {
+        "count": 234,
+        "min_m": 63.0,
+        "p10_m": 63.0,
+        "median_m": 63.0,
+        "p90_m": 63.0,
+        "max_m": 63.0
+      },
+      "samples_in_local_dem": 233
+    },
+    {
+      "kind": "boundary",
+      "profile_id": "C03_A",
+      "source_elevation": {
+        "count": 102,
+        "min_m": 63.0,
+        "p10_m": 63.0,
+        "median_m": 93.84673309326172,
+        "p90_m": 117.7672332763672,
+        "max_m": 164.67608642578125
+      },
+      "samples_in_local_dem": 53
+    },
+    {
+      "kind": "boundary",
+      "profile_id": "C03_B",
+      "source_elevation": {
+        "count": 102,
+        "min_m": 63.0,
+        "p10_m": 65.1093879699707,
+        "median_m": 77.68042755126953,
+        "p90_m": 88.1100082397461,
+        "max_m": 89.35092163085938
+      },
+      "samples_in_local_dem": 50
+    },
+    {
+      "kind": "cross_section",
+      "profile_id": "C03_X1",
+      "source_elevation": {
+        "count": 101,
+        "min_m": 63.0,
+        "p10_m": 63.0,
+        "median_m": 81.00413513183594,
+        "p90_m": 109.79672241210938,
+        "max_m": 131.29226684570312
+      },
+      "samples_in_local_dem": 100
+    },
+    {
+      "kind": "cross_section",
+      "profile_id": "C03_X2",
+      "source_elevation": {
+        "count": 101,
+        "min_m": 63.0,
+        "p10_m": 71.17045593261719,
+        "median_m": 79.52912902832031,
+        "p90_m": 127.3163070678711,
+        "max_m": 136.30776977539062
+      },
+      "samples_in_local_dem": 100
+    },
+    {
+      "kind": "cross_section",
+      "profile_id": "C03_X3",
+      "source_elevation": {
+        "count": 101,
+        "min_m": 63.0,
+        "p10_m": 66.8353042602539,
+        "median_m": 94.41971588134766,
+        "p90_m": 175.0501251220703,
+        "max_m": 253.53131103515625
+      },
+      "samples_in_local_dem": 100
+    },
+    {
+      "kind": "lateral_edge",
+      "profile_id": "C03_R",
+      "source_elevation": {
+        "count": 150,
+        "min_m": 85.67047119140625,
+        "p10_m": 86.52009582519531,
+        "median_m": 96.31342315673828,
+        "p90_m": 183.16268310546872,
+        "max_m": 215.30801391601562
+      },
+      "samples_in_local_dem": 78
+    },
+    {
+      "kind": "lateral_edge",
+      "profile_id": "C03_L",
+      "source_elevation": {
+        "count": 316,
+        "min_m": 63.174503326416016,
+        "p10_m": 77.3144416809082,
+        "median_m": 88.77103424072266,
+        "p90_m": 204.81277465820312,
+        "max_m": 266.1994323730469
+      },
+      "samples_in_local_dem": 172
+    }
+  ],
+  "source_sha256": {
+    "data\\processed\\phase2\\dem_utm49n_30m.tif": "9cc3cd1faa10f6b1403cecdebbfeb6e7c65f1207689ceed0bad826466098f30e",
+    "data\\processed\\phase2\\aoi_mask.tif": "2722897a2e9ec8beb505e1a07a366d412999e1a628ee394161aeab9edd23feb3",
+    "data\\processed\\hydrodynamics\\preparation\\domain\\candidate_model_domains.gpkg": "a326d0029b41e95972359def9d7dd274e0cb9bc12397e8d4ad98c11d7e8d8512",
+    "data\\processed\\hydrodynamics\\preparation\\domain\\domain_candidates.json": "9ac1ca2d868e8379c9ed205162be13d3c16992f1088634a5b258e0a9a5541393",
+    "data\\processed\\hydrodynamics\\preparation\\domain\\river_profile.csv": "b0f093c78a12533d83846cd1bb49d22251d3a01b6846daa7e7de3f30f8db5d13"
+  },
+  "script_sha256": "d1dfc9be56691701cc20a7ffe6aae7eae848df1d4b9b91d2cc63ab202641cdeb",
+  "bathymetry_modified": false,
+  "flow_direction_confirmed": false,
+  "dem_sha256": "75f0744afa606f373b10ae55c17f1ad5b2aed6970904906b2eeee5b1bcf09c0c",
+  "verified_readback": true
+}

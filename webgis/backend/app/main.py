@@ -1,12 +1,14 @@
-"""Phase 1 基础 API；只提供健康检查与已验收项目元数据，不计算洪水。"""
+"""基础 API 和离线水动力结果的只读服务。"""
 
 import json
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
+from .hydrodynamics import router as hydrodynamics_router
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 app = FastAPI(title="南宁洪水 WebGIS API", version="0.1.0")
+app.include_router(hydrodynamics_router)
 
 
 @app.get("/api/health", summary="检查基础服务")

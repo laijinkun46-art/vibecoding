@@ -1,0 +1,135 @@
+{
+  "checks": [
+    "只读 API 与域内外查询",
+    "基流、播放与暂停",
+    "峰值拖动、流速图层和地图点位过程",
+    "重播与后台暂停逻辑",
+    "回到旧静态模式与历史降雨"
+  ],
+  "evidence": {
+    "point": "108.34706° E · 22.79744° N · 0.00 m · 0.00 m/s",
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002860) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "browser": "156.0.4314.58",
+    "visualResourcesBefore": {
+      "vertices": 59434,
+      "triangles": 47780,
+      "geometry_bytes": 4090456,
+      "frame_texture_bytes": 376832,
+      "lookup_texture_bytes": 315392,
+      "uploads": 8,
+      "textures": 4,
+      "normal_ready": true,
+      "normal_unavailable": false,
+      "seconds": 0,
+      "animation_style": 0,
+      "low_quality": false,
+      "cache_count": 4,
+      "pending_count": 0,
+      "primitives": 3,
+      "camera": {
+        "position": [
+          -1858996.0852972462,
+          5609592.032532369,
+          2452506.79730276
+        ],
+        "direction": [
+          0.3128431650788155,
+          -0.944016257020642,
+          0.10470176953713084
+        ],
+        "up": [
+          -0.0329362617033359,
+          0.0993864337282298,
+          0.9945036648780103
+        ]
+      },
+      "context_lost": false
+    },
+    "performance": {
+      "window_s": 119.99330000007153,
+      "rendered_frames": 15611,
+      "average_fps": 130.09059672490628,
+      "p95_gap_ms": 8.399999976158142,
+      "max_gap_ms": 11.799999952316284,
+      "gaps_over_500_ms": 0,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "basemap": "local",
+      "particles": 320,
+      "memoryBefore": {
+        "heap": 23963532,
+        "nodes": 542
+      },
+      "stability_s": 600.0219038999999,
+      "seeks": 24,
+      "seek_max_ms": 58.085300000035204,
+      "seek_median_ms": 48.477599999983795,
+      "memoryAfter": {
+        "heap": 29187980,
+        "nodes": 558
+      }
+    },
+    "visualResourcesAfter": {
+      "vertices": 59434,
+      "triangles": 47780,
+      "geometry_bytes": 4090456,
+      "frame_texture_bytes": 376832,
+      "lookup_texture_bytes": 315392,
+      "uploads": 643,
+      "textures": 4,
+      "normal_ready": true,
+      "normal_unavailable": false,
+      "seconds": 196232.85000000012,
+      "animation_style": 0,
+      "low_quality": false,
+      "cache_count": 6,
+      "pending_count": 0,
+      "primitives": 3,
+      "camera": {
+        "position": [
+          -1858996.0852972462,
+          5609592.032532369,
+          2452506.79730276
+        ],
+        "direction": [
+          0.3128431650788155,
+          -0.944016257020642,
+          0.10470176953713084
+        ],
+        "up": [
+          -0.0329362617033359,
+          0.0993864337282298,
+          0.9945036648780103
+        ]
+      },
+      "context_lost": false
+    },
+    "staticResources": {
+      "primitives": 1,
+      "camera": {
+        "position": [
+          -1858996.0852972462,
+          5609592.032532369,
+          2452506.79730276
+        ],
+        "direction": [
+          0.3128431650788155,
+          -0.944016257020642,
+          0.10470176953713084
+        ],
+        "up": [
+          -0.0329362617033359,
+          0.0993864337282298,
+          0.9945036648780103
+        ]
+      },
+      "context_lost": false
+    }
+  },
+  "observed_console_errors": [
+    "Failed to load resource: net::ERR_FAILED"
+  ],
+  "fullRun": "full_reach_v2"
+}

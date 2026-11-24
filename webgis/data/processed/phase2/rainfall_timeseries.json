@@ -1,0 +1,86 @@
+{
+  "source": "CHM_PRE V2 / V2.1.1",
+  "horizontal_epsg_assumption": 4326,
+  "grid_degree": 0.1,
+  "resampling": "none",
+  "weight_area_epsg": 6933,
+  "aoi_area_m2_equal_area": 286547735.0079346,
+  "weight_sum": 0.9999999999999467,
+  "daily": [
+    {
+      "date_label": "2024-09-06",
+      "interval_start_bjt": "2024-09-05T20:00:00+08:00",
+      "interval_end_bjt": "2024-09-06T20:00:00+08:00",
+      "mean_precip_mm": 0.0,
+      "cumulative_precip_mm": 0.0,
+      "min_cell_mm": 0.0,
+      "max_cell_mm": 0.0
+    },
+    {
+      "date_label": "2024-09-07",
+      "interval_start_bjt": "2024-09-06T20:00:00+08:00",
+      "interval_end_bjt": "2024-09-07T20:00:00+08:00",
+      "mean_precip_mm": 29.259701331117363,
+      "cumulative_precip_mm": 29.259701331117363,
+      "min_cell_mm": 24.69700419990076,
+      "max_cell_mm": 34.69646935280571
+    },
+    {
+      "date_label": "2024-09-08",
+      "interval_start_bjt": "2024-09-07T20:00:00+08:00",
+      "interval_end_bjt": "2024-09-08T20:00:00+08:00",
+      "mean_precip_mm": 31.126003696975342,
+      "cumulative_precip_mm": 60.3857050280927,
+      "min_cell_mm": 16.55472550615339,
+      "max_cell_mm": 45.60857680160119
+    },
+    {
+      "date_label": "2024-09-09",
+      "interval_start_bjt": "2024-09-08T20:00:00+08:00",
+      "interval_end_bjt": "2024-09-09T20:00:00+08:00",
+      "mean_precip_mm": 53.30281109709673,
+      "cumulative_precip_mm": 113.68851612518944,
+      "min_cell_mm": 40.92824490734557,
+      "max_cell_mm": 66.30371535764719
+    },
+    {
+      "date_label": "2024-09-10",
+      "interval_start_bjt": "2024-09-09T20:00:00+08:00",
+      "interval_end_bjt": "2024-09-10T20:00:00+08:00",
+      "mean_precip_mm": 10.09675503954671,
+      "cumulative_precip_mm": 123.78527116473614,
+      "min_cell_mm": 4.005325815719998,
+      "max_cell_mm": 15.001576336756939
+    },
+    {
+      "date_label": "2024-09-11",
+      "interval_start_bjt": "2024-09-10T20:00:00+08:00",
+      "interval_end_bjt": "2024-09-11T20:00:00+08:00",
+      "mean_precip_mm": 5.148945255370096,
+      "cumulative_precip_mm": 128.93421642010625,
+      "min_cell_mm": 3.4857381816949036,
+      "max_cell_mm": 7.517495395216784
+    },
+    {
+      "date_label": "2024-09-12",
+      "interval_start_bjt": "2024-09-11T20:00:00+08:00",
+      "interval_end_bjt": "2024-09-12T20:00:00+08:00",
+      "mean_precip_mm": 4.159822137716156,
+      "cumulative_precip_mm": 133.09403855782242,
+      "min_cell_mm": 2.484488468861257,
+      "max_cell_mm": 6.391186483138896
+    },
+    {
+      "date_label": "2024-09-13",
+      "interval_start_bjt": "2024-09-12T20:00:00+08:00",
+      "interval_end_bjt": "2024-09-13T20:00:00+08:00",
+      "mean_precip_mm": 4.331805257982336,
+      "cumulative_precip_mm": 137.42584381580474,
+      "min_cell_mm": 2.968844338792095,
+      "max_cell_mm": 9.598869345279706
+    }
+  ],
+  "total_precip_mm": 137.42584381580474,
+  "units": "原始 mm/day；每条记录覆盖完整24小时，累计量按 mm 解释",
+  "limitations": "格点估计的研究区面平均；不是站点实测或上游流域降雨，不推导洪水水位"
+}

@@ -112,4 +112,39 @@ node '.\scripts\verify_phase1_browser.mjs'
 - [Phase 4 可视化操作与验收](docs/PHASE4_REPORT.md)
 - [Phase 5 水流效果与验收](docs/PHASE5_REPORT.md)
 
-下一阶段是Phase 6综合测试与课程设计交付，须经用户确认后启动。简化洪水情景不能描述为真实洪水预报。
+## 全河段动态水动力演示
+
+打开 [本机演示](http://127.0.0.1:5173/)，选择左侧「全河段模拟」。用地图底部的时间轴播放、暂停、重播、拖动和切换倍率。左侧可切换水深、流速着色及跟踪点。点击地图查看同一时刻的水深、流速和过程曲线。「静态情景」恢复原 S01–S04、水位比较及 CHM_PRE 历史降雨。
+
+水面默认使用自然样式，也可切换水深、流速。在「水动力视角」中选择全河段、河弯斜视或漫岸近景；勾选「原单元边界」对照模型网格，选择「节能」可减少纹理和跟踪点开销。详见[视觉优化验收](outputs/hydro_water_visuals_v1/REVIEW.md)。
+
+当前成果覆盖现有 AOI 内 33.682 km 邕江及两岸。它采用真实地表 DEM 和教学假设河床、来水、尾水及糙率。基准情景不叠加降雨。动态模式显示与计算一致的粗化模型地形，查询使用原模型数值。首播时间从 36 h 预热后起算，包含 60 h 模拟过程。 [参数与验收](docs/FULL_REACH_HYDRODYNAMIC_DELIVERY.md)
+
+在项目根目录开两个 PowerShell 终端。第一个终端启动后端：
+
+```powershell
+Set-Location 'C:\Users\ly5it\vibecoding\webgis'
+& '.\.venv\Scripts\python.exe' -B -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000
+```
+
+第二个终端构建及预览，前后端均只监听本机。两个终端分别按 Ctrl+C 停止。
+
+```powershell
+Set-Location 'C:\Users\ly5it\vibecoding\webgis\frontend'
+npm.cmd run build
+node .\node_modules\vite\bin\vite.js preview --host 127.0.0.1 --port 5173 --strictPort
+```
+
+已经验收的运行直接由 API 读取。复算在项目根目录使用已有 GIS Python 和 Windows C# 编译器，必须指定新运行 ID：
+
+```powershell
+Set-Location 'C:\Users\ly5it\vibecoding\webgis'
+& 'D:\Arcgis10.8.2\apps\Python312\python.exe' -B '.\scripts\run_full_reach_hydro.py' --run-id full_reach_v3 --warmup-hours 36
+```
+
+浏览器回归复用本机 Edge 和 Playwright。保持两个服务运行，在项目根目录执行以下命令。添加 `--long` 可重复桌面呈现性能及 10 分钟稳定性检查。
+
+```powershell
+$env:PLAYWRIGHT_MODULE_PATH='C:\Users\ly5it\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\node_modules\playwright'
+node '.\scripts\verify_hydrodynamics.mjs'
+```

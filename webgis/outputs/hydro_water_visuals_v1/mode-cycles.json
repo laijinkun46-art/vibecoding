@@ -1,0 +1,34 @@
+{
+  "columns": [
+    "dynamic primitives",
+    "dynamic textures",
+    "static primitives",
+    "static hydro textures"
+  ],
+  "samples": [
+    [
+      3,
+      4,
+      1,
+      0
+    ],
+    [
+      3,
+      4,
+      1,
+      0
+    ],
+    [
+      3,
+      4,
+      1,
+      0
+    ],
+    [
+      3,
+      4,
+      1,
+      0
+    ]
+  ]
+}

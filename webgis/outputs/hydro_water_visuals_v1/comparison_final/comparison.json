@@ -1,0 +1,152 @@
+{
+  "basemap": "local",
+  "viewport": [
+    1920,
+    1080
+  ],
+  "relief": 1.2,
+  "positions": {
+    "full": {
+      "position": [
+        -1858996.0852972462,
+        5609592.032532369,
+        2452506.79730276
+      ],
+      "direction": [
+        0.3128431650788155,
+        -0.944016257020642,
+        0.10470176953713084
+      ],
+      "up": [
+        -0.0329362617033359,
+        0.0993864337282298,
+        0.9945036648780103
+      ]
+    },
+    "bend": {
+      "position": [
+        -1849936.1632065917,
+        5587445.135009529,
+        2452576.4451729185
+      ],
+      "direction": [
+        -0.10699293893001788,
+        -0.8211349886993033,
+        0.5606155914286655
+      ],
+      "up": [
+        -0.38567284088909537,
+        0.5539794590626002,
+        0.7378097442682927
+      ]
+    },
+    "bank": {
+      "position": [
+        -1853176.3168926672,
+        5584816.287003374,
+        2453928.0345060006
+      ],
+      "direction": [
+        -0.03022740050831896,
+        -0.7269097197288311,
+        0.6860674628797535
+      ],
+      "up": [
+        -0.32321025265059794,
+        0.6566147109198993,
+        0.6814633181508112
+      ]
+    }
+  },
+  "bench": {
+    "full-base": {
+      "time": 0,
+      "after": "7.49 km²",
+      "before": "7.49 km²"
+    },
+    "full-peak": {
+      "time": 81000,
+      "after": "13.37 km²",
+      "before": "13.37 km²"
+    },
+    "full-recession": {
+      "time": 216000,
+      "after": "8.35 km²",
+      "before": "8.35 km²"
+    },
+    "bend-base": {
+      "time": 0,
+      "after": "7.49 km²",
+      "before": "7.49 km²"
+    },
+    "bend-peak": {
+      "time": 81000,
+      "after": "13.37 km²",
+      "before": "13.37 km²"
+    },
+    "bend-recession": {
+      "time": 216000,
+      "after": "8.35 km²",
+      "before": "8.35 km²"
+    },
+    "bank-base": {
+      "time": 0,
+      "after": "7.49 km²",
+      "before": "7.49 km²"
+    },
+    "bank-peak": {
+      "time": 81000,
+      "after": "13.37 km²",
+      "before": "13.37 km²"
+    },
+    "bank-recession": {
+      "time": 216000,
+      "after": "8.35 km²",
+      "before": "8.35 km²"
+    }
+  },
+  "checks": [
+    "same ECEF camera",
+    "same model area",
+    "freeze and play",
+    "missing frame retries",
+    "ignore out-of-order response",
+    "fixed analysis legends",
+    "quality switch and original mesh overlay"
+  ],
+  "resources": {
+    "vertices": 59434,
+    "triangles": 47780,
+    "geometry_bytes": 4090456,
+    "frame_texture_bytes": 376832,
+    "lookup_texture_bytes": 315392,
+    "uploads": 24,
+    "textures": 4,
+    "normal_ready": true,
+    "normal_unavailable": false,
+    "seconds": 109800,
+    "animation_style": 0,
+    "low_quality": false,
+    "cache_count": 4,
+    "pending_count": 0,
+    "primitives": 3,
+    "camera": {
+      "position": [
+        -1853176.3168926672,
+        5584816.287003374,
+        2453928.0345060006
+      ],
+      "direction": [
+        -0.03022740050831896,
+        -0.7269097197288311,
+        0.6860674628797535
+      ],
+      "up": [
+        -0.32321025265059794,
+        0.6566147109198993,
+        0.6814633181508112
+      ]
+    },
+    "context_lost": false
+  }
+}
