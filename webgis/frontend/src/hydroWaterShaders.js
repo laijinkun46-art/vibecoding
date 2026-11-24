@@ -1,9 +1,24 @@
+export const waterPalette = Object.freeze({
+  initial: '#355C57',
+  initialDeep: '#1F4540',
+  floodShallow: '#36B6DC',
+  floodDeep: '#165B98',
+  front: '#B0E8F5',
+})
+const rgb = hex => [1, 3, 5].map(start => parseInt(hex.slice(start,start+2),16)/255)
+
 export const waterStyle = Object.freeze({
   surfaceOffset: 0.24, // Existing visual offset, in metres above exaggerated stage.
   shallowFade: 0.15,
   shoreWidth: 28,
-  shallowColor: [0.24, 0.46, 0.44],
-  deepColor: [0.10, 0.28, 0.31],
+  floodShoreWidth: 56,
+  shallowColor: rgb(waterPalette.initial),
+  deepColor: rgb(waterPalette.initialDeep),
+  floodColor: rgb(waterPalette.floodShallow),
+  floodDeepColor: rgb(waterPalette.floodDeep),
+  floodFrontColor: rgb(waterPalette.front),
+  frontWidthM: 8,
+  frontTint: 0.32,
   waveScales: [26, 88],
   visualSecondsPerSecond: 1 / 1500,
   waveTravel: 10,
@@ -16,10 +31,13 @@ uniform sampler2D beforeFrame;
 uniform sampler2D afterFrame;
 uniform float fraction;
 uniform int frameWidth;
+ivec2 frameTexel(float id) {
+  int index = int(id);
+  return ivec2(index % frameWidth,index / frameWidth);
+}
 vec4 sampleFrame(float id) {
   if (id < 0.0) return vec4(0.0);
-  int index = int(id);
-  ivec2 p = ivec2(index % frameWidth, index / frameWidth);
+  ivec2 p = frameTexel(id);
   return mix(texelFetch(beforeFrame,p,0),texelFetch(afterFrame,p,0),fraction);
 }
 `
@@ -31,6 +49,7 @@ in vec3 up;
 in vec2 grid;
 in vec4 neighbors;
 in float owner;
+in float initialWet;
 uniform float relief;
 uniform float surfaceOffset;
 uniform float wetThreshold;
@@ -41,6 +60,8 @@ out vec3 eastEC;
 out vec4 field;
 flat out float ownerId;
 flat out vec2 ownerDepthStage;
+flat out float initiallyWet;
+flat out float ownerRise;
 SAMPLE_FRAME
 
 void main() {
@@ -57,7 +78,10 @@ void main() {
   vec4 connected = wet * vec4(equal(neighbors,vec4(owner)));
   for (int i=0; i<3; i++)
     connected = max(connected,max(connected.yzwx*edges,connected.wxyz*edges.wxyz));
-  vec4 own = sampleFrame(owner);
+  ivec2 ownTexel = frameTexel(owner);
+  vec4 previous = texelFetch(beforeFrame,ownTexel,0), next = texelFetch(afterFrame,ownTexel,0);
+  vec4 own = mix(previous,next,fraction);
+  ownerRise = next.x-previous.x;
   vec4 weights = connected * smoothstep(vec4(wetThreshold),vec4(wetThreshold+0.10),h);
   float total = dot(weights,vec4(1.0));
   vec3 reconstructed = weights.x*a.yzw + weights.y*b.yzw + weights.z*c.yzw + weights.w*d.yzw;
@@ -65,6 +89,7 @@ void main() {
   field = total>0.0 ? vec4(reconstructed,dot(weights,bed))/total : vec4(own.yzw,own.y-own.x);
   ownerId = owner;
   ownerDepthStage = own.xy;
+  initiallyWet = initialWet;
   lattice = grid;
   vec4 relative = czm_translateRelativeToEye(high,low+up*(field.x*relief+surfaceOffset));
   eyePosition = (czm_modelViewRelativeToEye*relative).xyz;
@@ -83,6 +108,8 @@ in vec3 eastEC;
 in vec4 field;
 flat in float ownerId;
 flat in vec2 ownerDepthStage;
+flat in float initiallyWet;
+flat in float ownerRise;
 uniform sampler2D cellLookup;
 uniform sampler2D normalMap;
 uniform vec2 latticeSize;
@@ -91,16 +118,23 @@ uniform vec2 boundsOrigin;
 uniform vec2 latticeDegrees;
 uniform vec3 shallowColor;
 uniform vec3 deepColor;
+uniform vec3 floodColor;
+uniform vec3 floodDeepColor;
+uniform vec3 floodFrontColor;
+uniform float frontWidthM;
+uniform float frontTint;
 uniform vec2 waveScales;
 uniform float wetThreshold;
 uniform float shallowFade;
 uniform float shoreWidth;
+uniform float floodShoreWidth;
 uniform float visualTime;
 uniform float waveTravel;
 uniform int style;
 uniform bool normalReady;
 uniform bool lowQuality;
 uniform bool showMesh;
+uniform bool softenFlood;
 SAMPLE_FRAME
 
 float cellAt(ivec2 p) {
@@ -147,6 +181,12 @@ void main() {
   vec4 distances = vec4(position.x,position.y,1.0-position.x,1.0-position.y)*latticeMetres.xyxy;
   float eyeDistance = length(eyePosition);
   float featherWidth = min(shoreWidth,max(17.0,eyeDistance*.0026));
+  bool naturalFlood = softenFlood && style==0 && !showMesh && initiallyWet<0.5;
+  if (naturalFlood) {
+    // 羽化范围局限在一格以内，紧邻干格才会向湿区内渐隐。
+    float maxWidth = min(floodShoreWidth,0.95*min(latticeMetres.x,latticeMetres.y));
+    featherWidth = max(featherWidth,min(maxWidth,max(30.0,eyeDistance*.005)));
+  }
   vec4 side = vec4(
     shoreSide(p+ivec2(-1,0),distances.x,featherWidth),
     shoreSide(p+ivec2(0,-1),distances.y,featherWidth),
@@ -198,8 +238,22 @@ void main() {
     vec3 light = normalize(czm_sunDirectionEC+viewDir);
     float glint = pow(max(dot(surf,light),0.0),38.0)*0.073;
     float sheen = (normal.x*0.105+normal.y*0.135)*movement;
-    color = mix(shallowColor,deepColor,base)+vec3(0.085,0.105,0.11)*sky+glint+sheen;
-    maxAlpha = mix(0.63,0.89,base);
+    vec3 river = mix(shallowColor,deepColor,base);
+    vec3 flood = mix(floodColor,floodDeepColor,smoothstep(0.25,5.0,waterDepth));
+    float newFlood = 1.0-initiallyWet;
+    color = mix(river,flood,newFlood)+vec3(0.085,0.105,0.11)*sky+glint+sheen;
+    // 只提亮涨水中的新增湿单元，仍受岸内距离及原有透明度约束。
+    float advancing = smoothstep(0.0,0.035,ownerRise);
+    float front = (1.0-smoothstep(0.0,min(frontWidthM,featherWidth),max(0.0,outline)))*newFlood*advancing;
+    color = mix(color,floodFrontColor,front*frontTint);
+    maxAlpha = mix(mix(0.80,0.92,base),mix(0.82,0.94,base),newFlood);
+    if (naturalFlood) {
+      // 低速浅水更透亮。水深门槛、湿区范围和分析色标由原逻辑控制。
+      float stillness = 1.0-smoothstep(0.02,0.12,length(field.yz));
+      float shallowPool = stillness*(1.0-smoothstep(0.30,1.40,waterDepth));
+      color = mix(color,vec3(0.27,0.46,0.51),0.58*shallowPool);
+      maxAlpha *= 1.0-0.42*shallowPool;
+    }
   }
   if (showMesh) {
     float stroke = max(0.8,min(45.0,eyeDistance*0.001));

@@ -1,0 +1,19 @@
+{
+  "fastSeconds": 18.349808,
+  "sameCamera": true,
+  "recessionKm2": 7.66,
+  "peakKm2": 21.7,
+  "strongBluePixelsInSample": {
+    "before": 11040,
+    "after": 3148
+  },
+  "viewport": [
+    1920,
+    1080
+  ],
+  "compactViewportWidth": 390,
+  "peakShortcutPassed": true,
+  "analysisStylesPassed": true,
+  "v2Passed": true,
+  "errors": []
+}

@@ -44,15 +44,17 @@ def polygonize_classes(path, classes, reference, labels, extra):
     return len(features)
 
 
-def main():
-    OUT.mkdir(parents=True, exist_ok=True)
-    source_files = [INPUT / 'dem_utm49n_30m.tif', INPUT / 'main_river_mask.tif', CONFIG]
+def main(config_path=CONFIG, out=OUT, report_path=ROOT / 'docs/phase3_processing.json', legacy_masks=None):
+    out.mkdir(parents=True, exist_ok=legacy_masks is None)
+    legacy_masks = legacy_masks or {}
+    source_files = [INPUT / 'dem_utm49n_30m.tif', INPUT / 'main_river_mask.tif', config_path, *legacy_masks.values()]
     sources = {str(path.relative_to(ROOT)): digest(path) for path in source_files}
     previous = json.loads((ROOT / 'docs/phase2_processing.json').read_text(encoding='utf-8'))
+    checked = {Path(key.replace('\\', '/')).as_posix(): item['sha256'] for key, item in previous['outputs'].items()}
     for path in source_files[:2]:
-        if digest(path) != previous['outputs'][str(path.relative_to(ROOT))]['sha256']:
+        if sources[str(path.relative_to(ROOT))] != checked[path.relative_to(ROOT).as_posix()]:
             raise ValueError('Phase 2 输入与已验收清单不一致')
-    config = json.loads(CONFIG.read_text(encoding='utf-8'))
+    config = json.loads(config_path.read_text(encoding='utf-8'))
     if config['vertical_datum'] != 'EGM2008' or config['rainfall_to_stage_model'] is not None:
         raise ValueError('情景必须使用DEM一致的EGM2008基准，且不得绑定未经验证的降雨水位模型')
     reference = gdal.Open(str(source_files[0]))
@@ -82,14 +84,26 @@ def main():
         padded = np.pad(valid, 1, constant_values=False)
         boundary = ~(padded[:-2, 1:-1] & padded[2:, 1:-1] & padded[1:-1, :-2] & padded[1:-1, 2:])
         stats['touches_analysis_boundary'] = bool((wet & boundary).any())
-        write_grid(OUT / f'{sid}_wet.tif', classes, reference, 255, '1', '0干地、1情景淹没、255无效')
-        write_grid(OUT / f'{sid}_depth.tif', depth, reference, DEPTH_NODATA, 'm', '假设水位减DEM；干地0，无效-9999')
-        stats['polygon_count'] = polygonize_classes(OUT / f'{sid}_wet.geojson', classes, reference, {1: '情景淹没'},
+        write_grid(out / f'{sid}_wet.tif', classes, reference, 255, '1', '0干地、1情景淹没、255无效')
+        write_grid(out / f'{sid}_depth.tif', depth, reference, DEPTH_NODATA, 'm', '假设水位减DEM；干地0，无效-9999')
+        stats['polygon_count'] = polygonize_classes(out / f'{sid}_wet.geojson', classes, reference, {1: '情景淹没'},
                                                     {'scenario_id': sid, 'water_level_m': item['water_level_m'], 'kind': 'hypothetical_scenario'})
         scenarios[sid] = stats
         summaries.append(stats)
     changes = []
-    for before, after in config['comparisons']:
+    for sid, path in legacy_masks.items():
+        if sid in masks:
+            raise ValueError(f'新增情景覆盖既有编号：{sid}')
+        source = gdal.Open(str(path), gdal.GA_ReadOnly)
+        if (source.GetGeoTransform() != gt or source.GetProjection() != reference.GetProjection()
+                or (source.RasterYSize, source.RasterXSize) != valid.shape):
+            raise ValueError(f'既有情景掩膜与当前网格不一致：{sid}')
+        masks[sid] = source.ReadAsArray() == 1
+    order = config.get('playback_order')
+    if order is not None and (len(order) != len(masks) or set(order) != set(masks)):
+        raise ValueError('播放顺序必须包含所有情景，且每个情景只出现一次')
+    comparisons = list(zip(order, order[1:])) if order else config['comparisons']
+    for before, after in comparisons:
         classes = detect_change(masks[before], masks[after], valid)
         name = f'{before}_to_{after}'
         stats = {'id': name, 'before': before, 'after': after}
@@ -97,15 +111,15 @@ def main():
             stats[f'{label}_pixels'] = int((classes == code).sum())
             stats[f'{label}_area_km2'] = float((classes == code).sum()*area/1e6)
         stats['net_area_change_km2'] = stats['added_area_km2']-stats['receded_area_km2']
-        write_grid(OUT / f'{name}_change.tif', classes, reference, 255, '1', '0均干、1新增、2持续、3退水、255无效')
-        stats['polygon_count'] = polygonize_classes(OUT / f'{name}_change.geojson', classes, reference,
+        write_grid(out / f'{name}_change.tif', classes, reference, 255, '1', '0均干、1新增、2持续、3退水、255无效')
+        stats['polygon_count'] = polygonize_classes(out / f'{name}_change.geojson', classes, reference,
                         {1: '新增情景淹没', 2: '持续情景淹没', 3: '情景退水'}, {'comparison_id': name, 'kind': 'hypothetical_scenario'})
         changes.append(stats)
-    with (OUT / 'scenario_statistics.csv').open('w', encoding='utf-8-sig', newline='') as target:
+    with (out / 'scenario_statistics.csv').open('w', encoding='utf-8-sig', newline='') as target:
         writer = csv.DictWriter(target, fieldnames=list(summaries[0]))
         writer.writeheader()
         writer.writerows(summaries)
-    with (OUT / 'change_statistics.csv').open('w', encoding='utf-8-sig', newline='') as target:
+    with (out / 'change_statistics.csv').open('w', encoding='utf-8-sig', newline='') as target:
         writer = csv.DictWriter(target, fieldnames=list(changes[0]))
         writer.writeheader()
         writer.writerows(changes)
@@ -117,12 +131,12 @@ def main():
                'limitations': ['静态等水位，不含流速、沿程水面坡降或洪水到达时间', 'DEM不含可靠水下河床、精细堤防或闸门',
                               '默认四邻域，NoData为不可穿越边界，范围外来水未知', '回落情景从头计算，不模拟滞水或退水历时',
                               '体积为静态水柱几何量，不是流量或来水量', '全部数值仅为课程假设情景，不代表2024实测或预报']}
-    save_json(OUT / 'summary.json', summary)
+    save_json(out / 'summary.json', summary)
     if any(digest(ROOT/path) != checksum for path, checksum in sources.items()):
         raise ValueError('分析输入在处理期间发生变化')
     outputs = {str(path.relative_to(ROOT)): {'bytes': path.stat().st_size, 'sha256': digest(path)}
-               for path in sorted(OUT.iterdir()) if path.is_file()}
-    save_json(ROOT / 'docs/phase3_processing.json', {'phase': 3, 'processed_utc': dt.datetime.now(dt.timezone.utc).isoformat(),
+               for path in sorted(out.iterdir()) if path.is_file()}
+    save_json(report_path, {'phase': 3, 'processed_utc': dt.datetime.now(dt.timezone.utc).isoformat(),
                'inputs_unchanged': True, 'source_sha256': sources, 'outputs': outputs, 'summary': summary})
     print(json.dumps({'scenarios': summaries, 'changes': changes, 'outputs': len(outputs)}, ensure_ascii=False))
 

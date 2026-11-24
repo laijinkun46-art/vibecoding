@@ -1,0 +1,50 @@
+{
+  "jumps": [
+    {
+      "time": 68400,
+      "ms": 51.6
+    },
+    {
+      "time": 216000,
+      "ms": 49.7
+    },
+    {
+      "time": 81000,
+      "ms": 49.6
+    },
+    {
+      "time": 0,
+      "ms": 43.4
+    },
+    {
+      "time": 68400,
+      "ms": 40.3
+    }
+  ],
+  "styles": {
+    "natural": {
+      "kind": "satellite",
+      "brightness": 1,
+      "saturation": 0.6,
+      "gamma": 1.12,
+      "contrast": 1.02
+    },
+    "depth": {
+      "kind": "satellite",
+      "brightness": 1.16,
+      "saturation": 0.91,
+      "gamma": 1.12,
+      "contrast": 1.02
+    },
+    "speed": {
+      "kind": "satellite",
+      "brightness": 1.16,
+      "saturation": 0.91,
+      "gamma": 1.12,
+      "contrast": 1.02
+    }
+  },
+  "localBasemapRestored": true,
+  "canvasCount": 1,
+  "errors": []
+}

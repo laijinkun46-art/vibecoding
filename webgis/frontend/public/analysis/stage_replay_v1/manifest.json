@@ -1,0 +1,124 @@
+{
+  "kind": "static_connected_stage_replay",
+  "crs": "EPSG:32649",
+  "vertical_datum": "EGM2008",
+  "grid_bounds": [
+    215460.0,
+    2515890.0,
+    237300.0,
+    2529600.0
+  ],
+  "cols": 728,
+  "rows": 457,
+  "cell_area_m2": 900,
+  "duration_s": 12,
+  "stages": [
+    [
+      0,
+      75.0
+    ],
+    [
+      0.32,
+      80.0
+    ],
+    [
+      0.6,
+      85.0
+    ],
+    [
+      1,
+      78.0
+    ]
+  ],
+  "encoding": {
+    "origin_m": 32,
+    "ticks_per_m": 262144,
+    "nodata": 16777215
+  },
+  "assets": {
+    "activation.png": {
+      "url": "/analysis/stage_replay_v1/activation.png",
+      "bytes": 303461,
+      "sha256": "c553b353fe78ec4bba8f494f7d08103908c6f97569044c077fcac1e6913d9067"
+    },
+    "areas.bin": {
+      "url": "/analysis/stage_replay_v1/areas.bin",
+      "bytes": 729672,
+      "sha256": "906aa74c4a8dbe0188c2337bb8e61cd593e3e25ba9009bbc4e7245070bbb2c68"
+    }
+  },
+  "sources_sha256": {
+    "data/processed/phase2/dem_utm49n_30m.tif": "9cc3cd1faa10f6b1403cecdebbfeb6e7c65f1207689ceed0bad826466098f30e",
+    "data/processed/phase2/main_river_mask.tif": "e54760f58d3596d0c60b054abe8c4578b789fa98c8de3bd5b48cdead902114a1",
+    "data/processed/phase3/summary.json": "b92c183bad9e50bbb070f080f89dcafc85df76f36fa6b324645bb3777675f114",
+    "data/processed/phase3/S01_wet.tif": "b0fe4a86c7ffcce47518d3aef25a21b5fced5c7fb3e91815c031ab98999fc7ec",
+    "data/processed/phase3/S02_wet.tif": "69c2778fb44869b41623f7ed320293117c71f69361f7b42c2e805974a9b487c4",
+    "data/processed/phase3/S03_wet.tif": "35d4718cec57a403b0f50663293646ae05677b165239ce0df74f3556bfc67bc3",
+    "data/processed/phase3/S04_wet.tif": "8f31a016bcde7bf28733fb5c0ce97e99bdb61ff9d64453715f76cad78cd49aa4",
+    "data/processed/phase3_extension_v1/summary.json": "86d6a8f8bdfcdc077fa24cb087bc60bfddbff45d5341bba437fd3e9289972ee7",
+    "data/processed/phase3_extension_v1/S05_wet.tif": "047e8a33f7822f3037ddb4873590f431616de5ac1259f141ceeb6b35517c2bc1",
+    "data/processed/phase3_extension_v1/S06_wet.tif": "7746970435f2ad9b8321c32250cc7ce15e6115296a7e309a728d85f69c3ec9a9",
+    "data/processed/phase3_extension_v1/S07_wet.tif": "d449758fff6dbc80c871b697b873fe7436504288318add44dfd3250773f2c407",
+    "data/processed/phase3_extension_v1/S08_wet.tif": "616ef38fcc1902baa2883fa3e41a6dfc7c8bd217b8c49a59a31dc722821cf4e1",
+    "data/processed/phase3_extension_v1/S09_wet.tif": "296c310903553b1a3832e82d69e2e4282c979f8dd23b7da47150621f310c1f92",
+    "data/processed/phase3_extension_v1/S10_wet.tif": "6aad1a4abf3b55e13a9ada82062dcece2a3165292fe59928275a640ade66c1cc",
+    "data/processed/phase3_extension_v1/S11_wet.tif": "1305f9fc9f4d539de3311ae74a131536d694a5d57697ad80af767019c07162dc"
+  },
+  "validated_scenarios": {
+    "S01": {
+      "stage_m": 75.0,
+      "wet_pixels": 26352,
+      "wet_km2": 23.7168
+    },
+    "S02": {
+      "stage_m": 80.0,
+      "wet_pixels": 112455,
+      "wet_km2": 101.2095
+    },
+    "S03": {
+      "stage_m": 85.0,
+      "wet_pixels": 147608,
+      "wet_km2": 132.8472
+    },
+    "S04": {
+      "stage_m": 78.0,
+      "wet_pixels": 89400,
+      "wet_km2": 80.46
+    },
+    "S05": {
+      "stage_m": 77,
+      "wet_pixels": 67883,
+      "wet_km2": 61.0947
+    },
+    "S06": {
+      "stage_m": 78.5,
+      "wet_pixels": 96799,
+      "wet_km2": 87.1191
+    },
+    "S07": {
+      "stage_m": 81.5,
+      "wet_pixels": 127281,
+      "wet_km2": 114.5529
+    },
+    "S08": {
+      "stage_m": 83.5,
+      "wet_pixels": 139665,
+      "wet_km2": 125.6985
+    },
+    "S09": {
+      "stage_m": 83,
+      "wet_pixels": 136786,
+      "wet_km2": 123.1074
+    },
+    "S10": {
+      "stage_m": 81,
+      "wet_pixels": 123296,
+      "wet_km2": 110.9664
+    },
+    "S11": {
+      "stage_m": 79,
+      "wet_pixels": 102581,
+      "wet_km2": 92.3229
+    }
+  }
+}

@@ -2,7 +2,7 @@ import {
   BoundingSphere, Buffer, BufferUsage, Cartesian2, Cartesian3, ComponentDatatype, DrawCommand, Ellipsoid,
   EncodedCartesian3, IndexDatatype, NearFarScalar, PixelDatatype, PixelFormat, PointPrimitiveCollection, Color,
   Pass, RenderState, Resource, ShaderProgram, Texture, Sampler, TextureMinificationFilter,
-  TextureMagnificationFilter, TextureWrap, VertexArray, BlendingState, SceneMode, PrimitiveType, buildModuleUrl,
+  TextureMagnificationFilter, TextureWrap, VertexArray, BlendingState, SceneMode, SceneTransforms, PrimitiveType, buildModuleUrl,
 } from 'cesium'
 import { makeSurfaceMesh } from './hydroSurfaceGeometry'
 import { waterStyle, waterVertex, waterFragment } from './hydroWaterShaders'
@@ -36,6 +36,9 @@ class WaterSurface {
     const waveScales = new Cartesian2(...waterStyle.waveScales)
     const shallowColor = new Cartesian3(...waterStyle.shallowColor)
     const deepColor = new Cartesian3(...waterStyle.deepColor)
+    const floodColor = new Cartesian3(...waterStyle.floodColor)
+    const floodDeepColor = new Cartesian3(...waterStyle.floodDeepColor)
+    const floodFrontColor = new Cartesian3(...waterStyle.floodFrontColor)
     this.width = Math.min(256,count)
     this.height = Math.ceil(count/this.width)
     this.scratch = new Float32Array(this.width*this.height*4)
@@ -52,20 +55,23 @@ class WaterSurface {
       Cartesian3.pack(encode.low,low,3*i)
       Cartesian3.pack(normal,up,3*i)
     }
-    const arrays = [high,low,up,mesh.grid,mesh.neighbors,mesh.owners]
-    const sizes = [3,3,3,2,4,1]
+    const initialWet = Uint8Array.from(mesh.owners, id => this.data.initiallyWet[id])
+    const arrays = [high,low,up,mesh.grid,mesh.neighbors,mesh.owners,initialWet]
+    const sizes = [3,3,3,2,4,1,1]
     const attributes = arrays.map((typedArray,index) => ({
       index, vertexBuffer: Buffer.createVertexBuffer({ context, typedArray, usage: BufferUsage.STATIC_DRAW }),
-      componentsPerAttribute: sizes[index], componentDatatype: ComponentDatatype.FLOAT,
+      componentsPerAttribute: sizes[index],
+      componentDatatype: typedArray instanceof Uint8Array ? ComponentDatatype.UNSIGNED_BYTE : ComponentDatatype.FLOAT,
     }))
     const indexBuffer = Buffer.createIndexBuffer({ context, typedArray: mesh.triangles, usage: BufferUsage.STATIC_DRAW,
       indexDatatype: mesh.triangles instanceof Uint32Array ? IndexDatatype.UNSIGNED_INT : IndexDatatype.UNSIGNED_SHORT })
     this.array = new VertexArray({ context, attributes, indexBuffer })
     this.meshStats = { vertices, triangles: mesh.triangles.length/3,
       geometry_bytes: arrays.reduce((bytes, a) => bytes+a.byteLength, mesh.triangles.byteLength),
-      frame_texture_bytes: 2*this.scratch.byteLength, lookup_texture_bytes: lookup.byteLength }
+      frame_texture_bytes: 2*this.scratch.byteLength, lookup_texture_bytes: lookup.byteLength,
+      initial_mask_bytes: this.data.initiallyWet.byteLength, initial_vertex_bytes: initialWet.byteLength }
     this.shader = ShaderProgram.fromCache({ context, vertexShaderSource: waterVertex, fragmentShaderSource: waterFragment,
-      attributeLocations: { high: 0, low: 1, up: 2, grid: 3, neighbors: 4, owner: 5 } })
+      attributeLocations: { high: 0, low: 1, up: 2, grid: 3, neighbors: 4, owner: 5, initialWet: 6 } })
     const corners = [Cartesian3.fromDegrees(west,south),Cartesian3.fromDegrees(east,south),
       Cartesian3.fromDegrees(west,north),Cartesian3.fromDegrees(east,north)]
     const boundingVolume = BoundingSphere.fromPoints(corners)
@@ -87,10 +93,13 @@ class WaterSurface {
         latticeSize: () => dimensions, latticeMetres: () => metres, boundsOrigin: () => origin, latticeDegrees: () => degrees,
         relief: () => this.scene.verticalExaggeration, wetThreshold: () => manifest.wet_threshold_m,
         surfaceOffset: () => waterStyle.surfaceOffset, shallowFade: () => waterStyle.shallowFade, shoreWidth: () => waterStyle.shoreWidth,
+        floodShoreWidth: () => waterStyle.floodShoreWidth, softenFlood: () => Boolean(manifest.overbank),
         style: () => this.settings.style, visualTime: () => this.seconds*waterStyle.visualSecondsPerSecond,
         normalMap: () => this.normalTexture ?? context.defaultTexture, normalReady: () => !!this.normalTexture,
         lowQuality: () => this.settings.lowQuality, showMesh: () => this.settings.showMesh,
         shallowColor: () => shallowColor, deepColor: () => deepColor, waveScales: () => waveScales, waveTravel: () => waterStyle.waveTravel,
+        floodColor: () => floodColor, floodDeepColor: () => floodDeepColor, floodFrontColor: () => floodFrontColor,
+        frontWidthM: () => waterStyle.frontWidthM, frontTint: () => waterStyle.frontTint,
       } })
   }
   update(frameState) {
@@ -168,8 +177,9 @@ export function createHydroRender(viewer, data) {
       for (let i = 0; i < data.manifest.cell_count; i++) if (Math.max(pair.first[4*i],pair.second[4*i]) > .12) seedCells.push(i)
     }
     const delta = previousTime === undefined ? 0 : seconds - previousTime
-    if (delta < 0 || delta > 250) reset()
-    const elapsed = previousTime === undefined ? 0 : delta
+    if (delta < 0) reset()
+    // Fast replay keeps a fixed visual transport budget, still following h/u/v with wet-path checks.
+    const elapsed = previousTime === undefined ? 0 : Math.min(delta,160)
     previousTime = seconds
     scale = scene.verticalExaggeration
     if (showParticles) for (let i = 0; i < particles.length; i++) {
@@ -212,7 +222,16 @@ export function createHydroRender(viewer, data) {
     scene.requestRender()
   }
   const contains = (lon,lat) => lon >= west && lon <= east && lat >= south && lat <= north
-  return { update, reset, diagnostics: () => ({ ...water.meshStats, uploads: water.uploads,
+  function probeCell(id) {
+    if (!Number.isInteger(id) || id < 0 || id >= data.manifest.cell_count || !water.pair) return null
+    const [w,s,e,n] = data.cells.subarray(5*id,5*id+4)
+    const depth = value(water.pair,id,0), stage = value(water.pair,id,1)
+    const position = Cartesian3.fromDegrees((w+e)/2,(s+n)/2,stage*scene.verticalExaggeration+waterStyle.surfaceOffset)
+    const pixel = SceneTransforms.worldToWindowCoordinates(scene,position)
+    return { id, originally_wet: data.initiallyWet[id] === 1, depth, stage, pixel }
+  }
+  return { update, reset, diagnostics: (ids = []) => ({ ...water.meshStats, uploads: water.uploads,
+    cells: ids.map(probeCell),
     textures: water.textures ? 3 + Number(!!water.normalTexture) : 0, normal_ready: !!water.normalTexture,
     normal_unavailable: !!water.normalUnavailable, seconds: water.seconds, animation_style: water.settings.style,
     low_quality: water.settings.lowQuality, ...data.cacheStats() }), height(lon,lat) {

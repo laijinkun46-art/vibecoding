@@ -5,13 +5,15 @@ async function response(url, signal) {
   return r
 }
 
-export async function openHydrodynamics(signal) {
-  const list = await (await response('/api/hydrodynamics/runs', signal)).json()
-  const run = 'full_reach_v2'
-  if (!list.some(item=>item.id===run)) throw new Error('当前演示需要已验收的 full_reach_v2 水动力结果')
+export async function listHydrodynamics(signal) {
+  return (await response('/api/hydrodynamics/runs',signal)).json()
+}
+
+export async function openHydrodynamics(signal,run) {
   const base = '/api/hydrodynamics/runs/' + encodeURIComponent(run)
   const manifest = await (await response(base + '/manifest', signal)).json()
-  if (manifest.schema !== 1 || manifest.status !== 'ready' || manifest.frames.length < 2) throw new Error('水动力结果格式不符')
+  if (manifest.schema !== 1 || manifest.status !== 'ready' || manifest.frames.length < 2
+    || !Number.isFinite(manifest.wet_threshold_m) || manifest.wet_threshold_m <= 0) throw new Error('水动力结果格式不符')
   const hash = bytes => Array.from(new Uint8Array(bytes), v => v.toString(16).padStart(2, '0')).join('')
   const asset = async (name, cancel) => {
     const entry = manifest.assets[name]
@@ -65,6 +67,18 @@ export async function openHydrodynamics(signal) {
   async function series(lon, lat, cancel) {
     return (await response(`${base}/series?lon=${lon}&lat=${lat}`, cancel)).json()
   }
-  const cacheStats = () => ({ cache_count: cache.size, pending_count: pending.size })
-  return { manifest, cells, lookup, cellId, ensure, pair, prune, series, cacheStats }
+  const cacheStats = () => ({ cache_count: cache.size, pending_count: pending.size, initial_frame_cached: cache.has(0) })
+  // 固定以模拟开始时的湿区区分原有水面与后续新增淹没；不改变模型帧。
+  const initialFrame = await ensure(0, signal)
+  const initiallyWet = Uint8Array.from({ length: count }, (_, id) =>
+    Number(initialFrame[4 * id] >= manifest.wet_threshold_m))
+  let overbankWeights
+  if (manifest.overbank) {
+    const bytes=Uint8Array.from(atob(manifest.overbank.weights_base64),c=>c.charCodeAt(0))
+    if (bytes.length!==count*8 || hash(await crypto.subtle.digest('SHA-256',bytes))!==manifest.overbank.weights_sha256)
+      throw new Error('两岸面积权重完整性校验失败')
+    overbankWeights=new Float64Array(bytes.buffer)
+    if (overbankWeights.some(n=>!Number.isFinite(n)||n<0)) throw new Error('两岸面积权重无效')
+  }
+  return { manifest, cells, lookup, initiallyWet, overbankWeights, cellId, ensure, pair, prune, series, cacheStats }
 }

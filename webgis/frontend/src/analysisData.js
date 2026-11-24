@@ -15,6 +15,26 @@ export async function loadAnalysis() {
   const [summary, rainfall] = await Promise.all([
     fetchCheckedJson(catalog.assets.summary), fetchCheckedJson(catalog.assets.rainfall_timeseries),
   ])
-  if (summary.kind !== 'hypothetical_scenario_not_observation' || summary.scenarios.length !== 4 || rainfall.daily.length !== 8) throw new Error('分析成果格式不符合当前项目')
-  return { catalog, summary, rainfall }
+  if (summary.kind !== 'hypothetical_scenario_not_observation' || !summary.scenarios?.length || rainfall.daily.length !== 8) throw new Error('分析成果格式不符合当前项目')
+  try {
+    const response = await fetch('/analysis/expanded_v1/catalog.json', { signal: AbortSignal.timeout(10000) })
+    if (!response.ok) throw new Error('扩展情景清单不可用')
+    const expanded = await response.json()
+    const { summary: expandedSummary, ...assets } = expanded.assets
+    const added = await fetchCheckedJson(expandedSummary)
+    const rows = [...summary.scenarios, ...added.scenarios]
+    const byId = new Map(rows.map(row => [row.id, row]))
+    const order = expanded.playback_order
+    if (added.kind !== summary.kind || added.vertical_datum !== summary.vertical_datum
+      || byId.size !== rows.length || order.length !== rows.length || new Set(order).size !== rows.length
+      || order.some(id => !byId.has(id) || !(assets[id + '_wet'] || catalog.assets[id + '_wet']))
+      || added.comparisons.some(row => !assets[row.id + '_change'] || !byId.has(row.before) || !byId.has(row.after))) {
+      throw new Error('扩展情景与原成果不匹配')
+    }
+    const comparisons = [...summary.comparisons, ...added.comparisons]
+    return { catalog: { ...catalog, assets: { ...catalog.assets, ...assets } },
+      summary: { ...summary, scenarios: order.map(id => byId.get(id)), comparisons }, rainfall }
+  } catch {
+    return { catalog, summary, rainfall, extensionError: '扩展情景暂不可用，当前显示原有四档水位。' }
+  }
 }

@@ -47,7 +47,7 @@ onBeforeUnmount(() => { observer?.disconnect(); areaChart?.dispose(); rainChart?
 <template>
   <section class="chart-section">
     <h3>假设情景面积</h3>
-    <div ref="areaContainer" class="stat-chart" role="img" aria-label="四个假设水位情景的连通湿区面积柱状图"></div>
+    <div ref="areaContainer" class="stat-chart" role="img" :aria-label="summary.scenarios.length + ' 个假设水位情景的连通湿区面积柱状图'"></div>
     <details><summary>查看面积数据</summary><table><thead><tr><th>情景</th><th>面积 km²</th></tr></thead><tbody><tr v-for="row in summary.scenarios" :key="row.id"><td>{{ row.id }} · {{ row.water_level_m }} m</td><td>{{ row.area_km2.toFixed(4) }}</td></tr></tbody></table></details>
     <h3 class="rain-chart-title">真实历史降雨 · CHM_PRE</h3>
     <div ref="rainContainer" class="stat-chart rain-chart" role="img" aria-label="2024年9月6日至13日逐日及累计研究区面平均降雨图"></div>

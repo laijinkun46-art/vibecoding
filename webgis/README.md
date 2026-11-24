@@ -112,11 +112,21 @@ node '.\scripts\verify_phase1_browser.mjs'
 - [Phase 4 可视化操作与验收](docs/PHASE4_REPORT.md)
 - [Phase 5 水流效果与验收](docs/PHASE5_REPORT.md)
 
+## 静态水位样本加密
+
+打开「静态情景」，时间轴按涨水至退水展示 11 档假设水位。原 S01–S04 的编号和数值沿用，S05–S11 插入相应位置。图层就绪后每档停留 1 秒，时间轴和面积图按相同顺序排列。「两期变化」可选相邻情景比较。新增水位与统计分别见[配置](data/scenarios/flood_scenarios_extension_v1.json)和[成果清单](data/processed/phase3_extension_v1/manifest.json)。
+
+## 2024 年洪水情景的陆地淹没演示
+
+[本机打开并播放](http://127.0.0.1:5173/?demo=land-flood)，或点「陆地淹没」。基于现有静态水位的连续演示用约 12 秒展示从基流到漫岸、洪峰和退水，2× 约 6 秒。蓝色表示 75 m 初始湿区之外当前淹没范围。查看[方法、截图和录屏](docs/STAGE_REPLAY_REPORT.md)。
+
 ## 全河段动态水动力演示
 
-打开 [本机演示](http://127.0.0.1:5173/)，选择左侧「全河段模拟」。用地图底部的时间轴播放、暂停、重播、拖动和切换倍率。左侧可切换水深、流速着色及跟踪点。点击地图查看同一时刻的水深、流速和过程曲线。「静态情景」恢复原 S01–S04、水位比较及 CHM_PRE 历史降雨。
+打开[本机演示](http://127.0.0.1:5173/)，选择「全河段模拟」，点「播放」。默认 `full_reach_v3`，快放一轮约 18 秒，可以暂停、拖动时间轴、重播、切换倍率或跳到漫岸洪峰。点「城区低地 A／B」查看越岸及退水近景，也可点击地图查询水深、流速、水面高程及过程曲线。「水动力情景」可切回 v2。「静态情景」继续提供 S01–S11、水位比较和 CHM_PRE 历史降雨。新情景与截图见[全河段漫岸验收](docs/FULL_REACH_OVERBANK_REPORT.md)。
 
 水面默认使用自然样式，也可切换水深、流速。在「水动力视角」中选择全河段、河弯斜视或漫岸近景；勾选「原单元边界」对照模型网格，选择「节能」可减少纹理和跟踪点开销。详见[视觉优化验收](outputs/hydro_water_visuals_v1/REVIEW.md)。
+
+「自然水面」采用方案一。暗绿标记模拟 0 小时的初始湿区，青蓝标记初始湿区以外当前被淹位置。推进前缘在正在涨水的湿区内轻微提亮。切换到水深或流速会恢复定量色标和常规底图。详见[配色方案与验收](docs/CONSTRAINT_HYDRO_FLOOD_PALETTE_20261124.md)。
 
 当前成果覆盖现有 AOI 内 33.682 km 邕江及两岸。它采用真实地表 DEM 和教学假设河床、来水、尾水及糙率。基准情景不叠加降雨。动态模式显示与计算一致的粗化模型地形，查询使用原模型数值。首播时间从 36 h 预热后起算，包含 60 h 模拟过程。 [参数与验收](docs/FULL_REACH_HYDRODYNAMIC_DELIVERY.md)
 
@@ -135,11 +145,11 @@ npm.cmd run build
 node .\node_modules\vite\bin\vite.js preview --host 127.0.0.1 --port 5173 --strictPort
 ```
 
-已经验收的运行直接由 API 读取。复算在项目根目录使用已有 GIS Python 和 Windows C# 编译器，必须指定新运行 ID：
+已经验收的运行直接由 API 读取。以下为历史基准方案的复算示例，在项目根目录使用已有 GIS Python 和 Windows C# 编译器，运行号需为空。v3 漫岸试算入口、参数和发布检查见[验收报告](docs/FULL_REACH_OVERBANK_REPORT.md)。
 
 ```powershell
 Set-Location 'C:\Users\ly5it\vibecoding\webgis'
-& 'D:\Arcgis10.8.2\apps\Python312\python.exe' -B '.\scripts\run_full_reach_hydro.py' --run-id full_reach_v3 --warmup-hours 36
+& 'D:\Arcgis10.8.2\apps\Python312\python.exe' -B '.\scripts\run_full_reach_hydro.py' --run-id full_reach_v4 --warmup-hours 36
 ```
 
 浏览器回归复用本机 Edge 和 Playwright。保持两个服务运行，在项目根目录执行以下命令。添加 `--long` 可重复桌面呈现性能及 10 分钟稳定性检查。

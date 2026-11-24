@@ -1,0 +1,27 @@
+{
+  "protocol": "synthetic_boundary_sensitivity",
+  "baseline": "full_reach_v2",
+  "description": "Keep v2 topography, mesh, dry/wet threshold and baseflow. Factors apply only to the flood excursion above the starting value.",
+  "pilot_display_h": 42,
+  "target_new_km2": 5,
+  "cases": {
+    "w_amplitude": {
+      "west_excursion_factor": 3,
+      "east_excursion_factor": 1,
+      "west_duration_factor": 1,
+      "east_shift_h": 0
+    },
+    "e_amplitude": {
+      "west_excursion_factor": 1,
+      "east_excursion_factor": 1.6,
+      "west_duration_factor": 1,
+      "east_shift_h": 0
+    },
+    "w_duration": {
+      "west_excursion_factor": 1,
+      "east_excursion_factor": 1,
+      "west_duration_factor": 1.3,
+      "east_shift_h": 0
+    }
+  }
+}

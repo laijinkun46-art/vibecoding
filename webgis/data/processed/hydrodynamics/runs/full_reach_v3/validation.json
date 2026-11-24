@@ -1,0 +1,59 @@
+{
+  "small_cases": {
+    "lake": {
+      "max_depth_change_m": 0.0,
+      "absolute_mass_error_m3": 0.0,
+      "max_speed_mps": 1.5443121792069203e-16,
+      "wet_cells_initial": 96,
+      "wet_cells_final": 96
+    },
+    "dam_break": {
+      "max_depth_change_m": 1.3356796261312804,
+      "absolute_mass_error_m3": 0.0,
+      "max_speed_mps": 0.5731010197937599,
+      "wet_cells_initial": 25,
+      "wet_cells_final": 144
+    }
+  },
+  "limits": {
+    "relative_mass_error": 1e-09,
+    "max_speed_mps": 12.0,
+    "min_raw_depth_m": -1e-07,
+    "lake_max_velocity_mps": 1e-09,
+    "lake_max_depth_error_m": 1e-09,
+    "min_overbank_growth_km2": 1.0,
+    "min_recession_km2": 1.0
+  },
+  "max_relative_mass_error": 3.010136392737302e-14,
+  "max_speed_mps": 2.8193617591241376,
+  "min_raw_depth_m": 0.0,
+  "raw_frame_count": 193,
+  "steps": 193028,
+  "elapsed_s": 78.25,
+  "pilot": false,
+  "final_budget_m3": {
+    "index": 192.0,
+    "t_seconds": 345600.0,
+    "volume_m3": 54933482.560697645,
+    "inlet_m3": 732391199.9570459,
+    "east_m3": 545658317.91463,
+    "lateral_m3": 157552849.51679823,
+    "correction_m3": 0.0,
+    "max_speed_mps": 2.8193617591241376,
+    "min_raw_depth_m": 0.0,
+    "steps": 193028.0
+  },
+  "growth_km2": 21.695034152709958,
+  "recession_km2": 14.034181823852538,
+  "peak": {
+    "t_seconds": 210600.0,
+    "raw_index": 117,
+    "wet_km2": 33.12538240270996,
+    "overbank_km2": 21.69867150036621,
+    "max_depth_m": 21.747848127695747,
+    "max_wet_speed_mps": 2.0157370801338472,
+    "relative_mass_error": 1.1029384007931336e-14
+  },
+  "warmup_storage_change_fraction": 0.001749392591371289,
+  "warmup_flux_imbalance": 0.015367185677126548
+}

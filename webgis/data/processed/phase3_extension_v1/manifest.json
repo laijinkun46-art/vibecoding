@@ -1,0 +1,448 @@
+{
+  "phase": 3,
+  "processed_utc": "2026-11-24T07:00:42.340385+00:00",
+  "inputs_unchanged": true,
+  "source_sha256": {
+    "data\\processed\\phase2\\dem_utm49n_30m.tif": "9cc3cd1faa10f6b1403cecdebbfeb6e7c65f1207689ceed0bad826466098f30e",
+    "data\\processed\\phase2\\main_river_mask.tif": "e54760f58d3596d0c60b054abe8c4578b789fa98c8de3bd5b48cdead902114a1",
+    "data\\scenarios\\flood_scenarios_extension_v1.json": "397a77a624497a13c8f312d704a37d7669129412ecad3e290304c7738ca89144",
+    "data\\processed\\phase3\\S01_wet.tif": "b0fe4a86c7ffcce47518d3aef25a21b5fced5c7fb3e91815c031ab98999fc7ec",
+    "data\\processed\\phase3\\S02_wet.tif": "69c2778fb44869b41623f7ed320293117c71f69361f7b42c2e805974a9b487c4",
+    "data\\processed\\phase3\\S03_wet.tif": "35d4718cec57a403b0f50663293646ae05677b165239ce0df74f3556bfc67bc3",
+    "data\\processed\\phase3\\S04_wet.tif": "8f31a016bcde7bf28733fb5c0ce97e99bdb61ff9d64453715f76cad78cd49aa4"
+  },
+  "outputs": {
+    "data\\processed\\phase3_extension_v1\\change_statistics.csv": {
+      "bytes": 827,
+      "sha256": "284d283493fdf9170255684f8b89c36cf23b6c345e92362bb352c5aeaa3d58be"
+    },
+    "data\\processed\\phase3_extension_v1\\S01_to_S05_change.geojson": {
+      "bytes": 1807598,
+      "sha256": "925a53532a0d0ba335cc5af48e3bb232041629f866b72d91bd864c5db9dc904c"
+    },
+    "data\\processed\\phase3_extension_v1\\S01_to_S05_change.tif": {
+      "bytes": 11529,
+      "sha256": "61845a5df39e2093d04528d249f555067ba9754ee00f22e7e1718f35760d518b"
+    },
+    "data\\processed\\phase3_extension_v1\\S02_to_S07_change.geojson": {
+      "bytes": 2375517,
+      "sha256": "913fa654d112ca655de6f559e51f5ab219c513482773609ca280dd6ff0b6e281"
+    },
+    "data\\processed\\phase3_extension_v1\\S02_to_S07_change.tif": {
+      "bytes": 12180,
+      "sha256": "6650f36965bd523888336d64bf74a4b88470cdbefaac8b506199a15d54a80c51"
+    },
+    "data\\processed\\phase3_extension_v1\\S03_to_S09_change.geojson": {
+      "bytes": 2557068,
+      "sha256": "6881dabfa252d29a4cd34de766c6f2f866e2ec218e03fa68cc32f5bb83f813d8"
+    },
+    "data\\processed\\phase3_extension_v1\\S03_to_S09_change.tif": {
+      "bytes": 12245,
+      "sha256": "f3042b676fd47b9c157c966470f6ad4a329482948d056bb1975ed5a4be90faa3"
+    },
+    "data\\processed\\phase3_extension_v1\\S05_depth.tif": {
+      "bytes": 215618,
+      "sha256": "9e128a1fa615ccc5df5df1cb4f4e6da2d6d520b5930469c13a801b4ca358da41"
+    },
+    "data\\processed\\phase3_extension_v1\\S05_to_S06_change.geojson": {
+      "bytes": 2768913,
+      "sha256": "8a1ed1ba9b49e2821599bdf814f7092a1b4e810288bad2d7e9895f6f6d77bbee"
+    },
+    "data\\processed\\phase3_extension_v1\\S05_to_S06_change.tif": {
+      "bytes": 13949,
+      "sha256": "0ecb88fb5741f8a558c868d31b211ba4317b4334f593a3e806ec33d1c2853668"
+    },
+    "data\\processed\\phase3_extension_v1\\S05_wet.geojson": {
+      "bytes": 793054,
+      "sha256": "7f8136629f9b6278639d469fe31d9cc541b3bc12c1dad1ade3c8bd06885dc1ba"
+    },
+    "data\\processed\\phase3_extension_v1\\S05_wet.tif": {
+      "bytes": 9296,
+      "sha256": "047e8a33f7822f3037ddb4873590f431616de5ac1259f141ceeb6b35517c2bc1"
+    },
+    "data\\processed\\phase3_extension_v1\\S06_depth.tif": {
+      "bytes": 314560,
+      "sha256": "6d6f1c8c99245d11ac759cd92c9b3d6d5a84b88fe286e9a918a811524e53ce4c"
+    },
+    "data\\processed\\phase3_extension_v1\\S06_to_S02_change.geojson": {
+      "bytes": 2702187,
+      "sha256": "4e603032321cf3947482ba0db8ba0b12a0b8a664e84c351b43e1e802866c5ac4"
+    },
+    "data\\processed\\phase3_extension_v1\\S06_to_S02_change.tif": {
+      "bytes": 13068,
+      "sha256": "44e6406151973cd77f3999ca46f25c579f2b15061bae7d6d62292f696c70132a"
+    },
+    "data\\processed\\phase3_extension_v1\\S06_wet.geojson": {
+      "bytes": 802473,
+      "sha256": "6bd013bd9bb1e93357e46b87a22de1829b735c027389ab192b3919219acce39e"
+    },
+    "data\\processed\\phase3_extension_v1\\S06_wet.tif": {
+      "bytes": 9402,
+      "sha256": "7746970435f2ad9b8321c32250cc7ce15e6115296a7e309a728d85f69c3ec9a9"
+    },
+    "data\\processed\\phase3_extension_v1\\S07_depth.tif": {
+      "bytes": 419768,
+      "sha256": "861c8641e0e5244b44e9842ce9e4e3dcb311f87e5e8c074a780e85bb35e4ad34"
+    },
+    "data\\processed\\phase3_extension_v1\\S07_to_S08_change.geojson": {
+      "bytes": 2489546,
+      "sha256": "2f4deba03881f1eaa04eb9ed68fa38212023a6bf17417c32126fad9bb2741622"
+    },
+    "data\\processed\\phase3_extension_v1\\S07_to_S08_change.tif": {
+      "bytes": 12348,
+      "sha256": "b1c34879a65b6c5c8586837ee444dce8520743f155dd791176637bc17ce90e01"
+    },
+    "data\\processed\\phase3_extension_v1\\S07_wet.geojson": {
+      "bytes": 638406,
+      "sha256": "910188cf80923b3c060bcb939e87348df4645cb4892ffa198c16cfb0e4051f2c"
+    },
+    "data\\processed\\phase3_extension_v1\\S07_wet.tif": {
+      "bytes": 8507,
+      "sha256": "d449758fff6dbc80c871b697b873fe7436504288318add44dfd3250773f2c407"
+    },
+    "data\\processed\\phase3_extension_v1\\S08_depth.tif": {
+      "bytes": 462843,
+      "sha256": "72aaa15056633eb5fbb719d242801d307b134b0319bbcba7388e062fd18ff812"
+    },
+    "data\\processed\\phase3_extension_v1\\S08_to_S03_change.geojson": {
+      "bytes": 2604288,
+      "sha256": "fd2a3a506714f2dc3141bdefab91321bd917a329a9deaf164d43ff46585e9d77"
+    },
+    "data\\processed\\phase3_extension_v1\\S08_to_S03_change.tif": {
+      "bytes": 11944,
+      "sha256": "a993076ef04389b8b8413e311b7b6e99f377d312ff26d11e99fff6d9f33c66a0"
+    },
+    "data\\processed\\phase3_extension_v1\\S08_wet.geojson": {
+      "bytes": 658599,
+      "sha256": "c67b876a38140d4a8087d5104b88e359533554049cc8f33d2be298d3adebc653"
+    },
+    "data\\processed\\phase3_extension_v1\\S08_wet.tif": {
+      "bytes": 8637,
+      "sha256": "616ef38fcc1902baa2883fa3e41a6dfc7c8bd217b8c49a59a31dc722821cf4e1"
+    },
+    "data\\processed\\phase3_extension_v1\\S09_depth.tif": {
+      "bytes": 452897,
+      "sha256": "35da0134f92359d8adbbc1bd823f067ae7b6e733907ec9f78aaed78618d5d55e"
+    },
+    "data\\processed\\phase3_extension_v1\\S09_to_S10_change.geojson": {
+      "bytes": 2463866,
+      "sha256": "8c9fb150c4765e37096cbe24bfabedaf3fbe6442102f00f3e176ce0bbdef827a"
+    },
+    "data\\processed\\phase3_extension_v1\\S09_to_S10_change.tif": {
+      "bytes": 12375,
+      "sha256": "067395d6b0cee32fc2233ef0774912ec359bf616cd4da2930b57bff3af8a4dec"
+    },
+    "data\\processed\\phase3_extension_v1\\S09_wet.geojson": {
+      "bytes": 638816,
+      "sha256": "75ab76a6732f0b4b33d688e7ac701822ed262c15272d2100bf7e844708709816"
+    },
+    "data\\processed\\phase3_extension_v1\\S09_wet.tif": {
+      "bytes": 8535,
+      "sha256": "296c310903553b1a3832e82d69e2e4282c979f8dd23b7da47150621f310c1f92"
+    },
+    "data\\processed\\phase3_extension_v1\\S10_depth.tif": {
+      "bytes": 405754,
+      "sha256": "0e43add4e51df0cd4d5687b1f7ba15e5b9490c673ed56ca1ec3d7f475add543f"
+    },
+    "data\\processed\\phase3_extension_v1\\S10_to_S11_change.geojson": {
+      "bytes": 2536063,
+      "sha256": "723b696f3b282b84fd5babb9497419983f163670e87f3b5db87503c0c8ae50e8"
+    },
+    "data\\processed\\phase3_extension_v1\\S10_to_S11_change.tif": {
+      "bytes": 13051,
+      "sha256": "95fdc7f536d640ddd9909d8187155a9e88f92509626faf53c9a546c31545436e"
+    },
+    "data\\processed\\phase3_extension_v1\\S10_wet.geojson": {
+      "bytes": 643195,
+      "sha256": "11c61437216b7780f69c8fdd04f356b71af6b989d5a839b577d5328b6b8091d4"
+    },
+    "data\\processed\\phase3_extension_v1\\S10_wet.tif": {
+      "bytes": 8536,
+      "sha256": "6aad1a4abf3b55e13a9ada82062dcece2a3165292fe59928275a640ade66c1cc"
+    },
+    "data\\processed\\phase3_extension_v1\\S11_depth.tif": {
+      "bytes": 334147,
+      "sha256": "7afc01352a946336cdd9422b80a0dcad212b0da7aa401b531a12ab1bbf55c1ef"
+    },
+    "data\\processed\\phase3_extension_v1\\S11_to_S04_change.geojson": {
+      "bytes": 2943857,
+      "sha256": "8adc88d60ad7d140434cb55d010943ee8dd8a5fc527d545aeefb4209d4cdc1a9"
+    },
+    "data\\processed\\phase3_extension_v1\\S11_to_S04_change.tif": {
+      "bytes": 13585,
+      "sha256": "2026e56b4e99e51dfc71c36e5a801e7e86977ac5979168d89165d619c87cd4b2"
+    },
+    "data\\processed\\phase3_extension_v1\\S11_wet.geojson": {
+      "bytes": 725462,
+      "sha256": "de7b82b8e7413e8a56a8ebf3aba4dc313949c5c29983da81c701aa6c4dab814d"
+    },
+    "data\\processed\\phase3_extension_v1\\S11_wet.tif": {
+      "bytes": 8942,
+      "sha256": "1305f9fc9f4d539de3311ae74a131536d694a5d57697ad80af767019c07162dc"
+    },
+    "data\\processed\\phase3_extension_v1\\scenario_statistics.csv": {
+      "bytes": 908,
+      "sha256": "04b827cbceb61265505287a193f013f719921d9e8dfbba46e76fb660571ade43"
+    },
+    "data\\processed\\phase3_extension_v1\\summary.json": {
+      "bytes": 7666,
+      "sha256": "86d6a8f8bdfcdc077fa24cb087bc60bfddbff45d5341bba437fd3e9289972ee7"
+    }
+  },
+  "summary": {
+    "kind": "hypothetical_scenario_not_observation",
+    "vertical_datum": "EGM2008",
+    "connectivity": 4,
+    "cell_area_m2_projected": 900.0,
+    "horizontal_epsg": 32649,
+    "scenarios": [
+      {
+        "wet_pixels": 67883,
+        "area_km2": 61.0947,
+        "mean_depth_m": 4.5850932049332975,
+        "max_depth_m": 14.0,
+        "water_column_volume_m3": 280124893.82743835,
+        "id": "S05",
+        "water_level_m": 77,
+        "label": "涨水 77 m",
+        "phase": "涨水",
+        "eligible_seed_pixels": 1450,
+        "isolated_low_pixels_excluded": 5529,
+        "touches_analysis_boundary": true,
+        "polygon_count": 1
+      },
+      {
+        "wet_pixels": 96799,
+        "area_km2": 87.1191,
+        "mean_depth_m": 4.534922173619794,
+        "max_depth_m": 15.5,
+        "water_column_volume_m3": 395078338.3358002,
+        "id": "S06",
+        "water_level_m": 78.5,
+        "label": "涨水 78.5 m",
+        "phase": "涨水",
+        "eligible_seed_pixels": 1450,
+        "isolated_low_pixels_excluded": 4979,
+        "touches_analysis_boundary": true,
+        "polygon_count": 1
+      },
+      {
+        "wet_pixels": 127281,
+        "area_km2": 114.5529,
+        "mean_depth_m": 6.224635695934599,
+        "max_depth_m": 18.5,
+        "water_column_volume_m3": 713050070.4128265,
+        "id": "S07",
+        "water_level_m": 81.5,
+        "label": "涨水 81.5 m",
+        "phase": "涨水",
+        "eligible_seed_pixels": 1450,
+        "isolated_low_pixels_excluded": 4378,
+        "touches_analysis_boundary": true,
+        "polygon_count": 1
+      },
+      {
+        "wet_pixels": 139665,
+        "area_km2": 125.6985,
+        "mean_depth_m": 7.616376161648722,
+        "max_depth_m": 20.5,
+        "water_column_volume_m3": 957367058.9550018,
+        "id": "S08",
+        "water_level_m": 83.5,
+        "label": "涨水 83.5 m",
+        "phase": "涨水",
+        "eligible_seed_pixels": 1450,
+        "isolated_low_pixels_excluded": 4471,
+        "touches_analysis_boundary": true,
+        "polygon_count": 1
+      },
+      {
+        "wet_pixels": 136786,
+        "area_km2": 123.1074,
+        "mean_depth_m": 7.267085297688152,
+        "max_depth_m": 20.0,
+        "water_column_volume_m3": 894631976.5766144,
+        "id": "S09",
+        "water_level_m": 83,
+        "label": "退水 83 m",
+        "phase": "退水",
+        "eligible_seed_pixels": 1450,
+        "isolated_low_pixels_excluded": 4410,
+        "touches_analysis_boundary": true,
+        "polygon_count": 1
+      },
+      {
+        "wet_pixels": 123296,
+        "area_km2": 110.9664,
+        "mean_depth_m": 5.900812497455796,
+        "max_depth_m": 18.0,
+        "water_column_volume_m3": 654791919.9176788,
+        "id": "S10",
+        "water_level_m": 81,
+        "label": "退水 81 m",
+        "phase": "退水",
+        "eligible_seed_pixels": 1450,
+        "isolated_low_pixels_excluded": 4594,
+        "touches_analysis_boundary": true,
+        "polygon_count": 1
+      },
+      {
+        "wet_pixels": 102581,
+        "area_km2": 92.3229,
+        "mean_depth_m": 4.765892446903965,
+        "max_depth_m": 16.0,
+        "water_column_volume_m3": 440001011.78627014,
+        "id": "S11",
+        "water_level_m": 79,
+        "label": "退水 79 m",
+        "phase": "退水",
+        "eligible_seed_pixels": 1450,
+        "isolated_low_pixels_excluded": 5549,
+        "touches_analysis_boundary": true,
+        "polygon_count": 1
+      }
+    ],
+    "comparisons": [
+      {
+        "id": "S01_to_S05",
+        "before": "S01",
+        "after": "S05",
+        "added_pixels": 41531,
+        "added_area_km2": 37.3779,
+        "persistent_pixels": 26352,
+        "persistent_area_km2": 23.7168,
+        "receded_pixels": 0,
+        "receded_area_km2": 0.0,
+        "net_area_change_km2": 37.3779,
+        "polygon_count": 706
+      },
+      {
+        "id": "S05_to_S06",
+        "before": "S05",
+        "after": "S06",
+        "added_pixels": 28916,
+        "added_area_km2": 26.0244,
+        "persistent_pixels": 67883,
+        "persistent_area_km2": 61.0947,
+        "receded_pixels": 0,
+        "receded_area_km2": 0.0,
+        "net_area_change_km2": 26.0244,
+        "polygon_count": 1170
+      },
+      {
+        "id": "S06_to_S02",
+        "before": "S06",
+        "after": "S02",
+        "added_pixels": 15656,
+        "added_area_km2": 14.0904,
+        "persistent_pixels": 96799,
+        "persistent_area_km2": 87.1191,
+        "receded_pixels": 0,
+        "receded_area_km2": 0.0,
+        "net_area_change_km2": 14.0904,
+        "polygon_count": 1395
+      },
+      {
+        "id": "S02_to_S07",
+        "before": "S02",
+        "after": "S07",
+        "added_pixels": 14826,
+        "added_area_km2": 13.3434,
+        "persistent_pixels": 112455,
+        "persistent_area_km2": 101.2095,
+        "receded_pixels": 0,
+        "receded_area_km2": 0.0,
+        "net_area_change_km2": 13.3434,
+        "polygon_count": 1395
+      },
+      {
+        "id": "S07_to_S08",
+        "before": "S07",
+        "after": "S08",
+        "added_pixels": 12384,
+        "added_area_km2": 11.1456,
+        "persistent_pixels": 127281,
+        "persistent_area_km2": 114.5529,
+        "receded_pixels": 0,
+        "receded_area_km2": 0.0,
+        "net_area_change_km2": 11.1456,
+        "polygon_count": 1528
+      },
+      {
+        "id": "S08_to_S03",
+        "before": "S08",
+        "after": "S03",
+        "added_pixels": 7943,
+        "added_area_km2": 7.1487,
+        "persistent_pixels": 139665,
+        "persistent_area_km2": 125.6985,
+        "receded_pixels": 0,
+        "receded_area_km2": 0.0,
+        "net_area_change_km2": 7.1487,
+        "polygon_count": 1873
+      },
+      {
+        "id": "S03_to_S09",
+        "before": "S03",
+        "after": "S09",
+        "added_pixels": 0,
+        "added_area_km2": 0.0,
+        "persistent_pixels": 136786,
+        "persistent_area_km2": 123.1074,
+        "receded_pixels": 10822,
+        "receded_area_km2": 9.7398,
+        "net_area_change_km2": -9.7398,
+        "polygon_count": 1677
+      },
+      {
+        "id": "S09_to_S10",
+        "before": "S09",
+        "after": "S10",
+        "added_pixels": 0,
+        "added_area_km2": 0.0,
+        "persistent_pixels": 123296,
+        "persistent_area_km2": 110.9664,
+        "receded_pixels": 13490,
+        "receded_area_km2": 12.141,
+        "net_area_change_km2": -12.141,
+        "polygon_count": 1485
+      },
+      {
+        "id": "S10_to_S11",
+        "before": "S10",
+        "after": "S11",
+        "added_pixels": 0,
+        "added_area_km2": 0.0,
+        "persistent_pixels": 102581,
+        "persistent_area_km2": 92.3229,
+        "receded_pixels": 20715,
+        "receded_area_km2": 18.6435,
+        "net_area_change_km2": -18.6435,
+        "polygon_count": 1226
+      },
+      {
+        "id": "S11_to_S04",
+        "before": "S11",
+        "after": "S04",
+        "added_pixels": 0,
+        "added_area_km2": 0.0,
+        "persistent_pixels": 89400,
+        "persistent_area_km2": 80.46,
+        "receded_pixels": 13181,
+        "receded_area_km2": 11.8629,
+        "net_area_change_km2": -11.8629,
+        "polygon_count": 1615
+      }
+    ],
+    "rainfall_relationship": "历史降雨作为事件背景；没有降雨到水位的率定模型，情景水位独立指定且不绑定历史日期",
+    "area_definition": "UTM网格的全部连通湿像元面积，包含现有河道，不等于河道外受灾陆地面积",
+    "limitations": [
+      "静态等水位，不含流速、沿程水面坡降或洪水到达时间",
+      "DEM不含可靠水下河床、精细堤防或闸门",
+      "默认四邻域，NoData为不可穿越边界，范围外来水未知",
+      "回落情景从头计算，不模拟滞水或退水历时",
+      "体积为静态水柱几何量，不是流量或来水量",
+      "全部数值仅为课程假设情景，不代表2024实测或预报"
+    ]
+  }
+}

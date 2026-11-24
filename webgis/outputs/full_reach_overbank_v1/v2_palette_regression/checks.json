@@ -1,0 +1,710 @@
+{
+  "frames": {
+    "base": {
+      "vertices": 59434,
+      "triangles": 47780,
+      "geometry_bytes": 4149890,
+      "frame_texture_bytes": 376832,
+      "lookup_texture_bytes": 315392,
+      "initial_mask_bytes": 11654,
+      "initial_vertex_bytes": 59434,
+      "uploads": 2,
+      "cells": [
+        {
+          "id": 4730,
+          "originally_wet": true,
+          "depth": 4.65891695022583,
+          "stage": 60.89055252075195,
+          "pixel": {
+            "x": 1011.1998616950439,
+            "y": 488.56447318195615
+          },
+          "expected_class": "initial"
+        },
+        {
+          "id": 4748,
+          "originally_wet": false,
+          "depth": 0,
+          "stage": 68.5113296508789,
+          "pixel": {
+            "x": 804.0225344015731,
+            "y": 423.3357039650332
+          },
+          "expected_class": "dry"
+        },
+        {
+          "id": 4762,
+          "originally_wet": false,
+          "depth": 0,
+          "stage": 66.293701171875,
+          "pixel": {
+            "x": 908.090008946422,
+            "y": 395.55101571759747
+          },
+          "expected_class": "dry"
+        },
+        {
+          "id": 4750,
+          "originally_wet": false,
+          "depth": 0,
+          "stage": 80.44214630126953,
+          "pixel": {
+            "x": 786.0226976126454,
+            "y": 389.2576229103536
+          },
+          "expected_class": "dry"
+        },
+        null
+      ],
+      "textures": 4,
+      "normal_ready": true,
+      "normal_unavailable": false,
+      "seconds": 0,
+      "animation_style": 0,
+      "low_quality": false,
+      "cache_count": 4,
+      "pending_count": 0,
+      "initial_frame_cached": true,
+      "basemap": {
+        "kind": "satellite",
+        "brightness": 1,
+        "saturation": 0.6,
+        "gamma": 1.12,
+        "contrast": 1.02
+      },
+      "primitives": 3,
+      "camera": {
+        "position": [
+          -1853176.3168926672,
+          5584816.287003374,
+          2453928.0345060006
+        ],
+        "direction": [
+          -0.03022740050831896,
+          -0.7269097197288311,
+          0.6860674628797535
+        ],
+        "up": [
+          -0.32321025265059794,
+          0.6566147109198993,
+          0.6814633181508112
+        ]
+      },
+      "context_lost": false,
+      "wet_area_km2": "7.49",
+      "rgb": [
+        [
+          47,
+          84,
+          79
+        ],
+        [
+          122,
+          117,
+          105
+        ],
+        [
+          103,
+          111,
+          98
+        ],
+        [
+          81,
+          91,
+          82
+        ],
+        null
+      ]
+    },
+    "rise": {
+      "vertices": 59434,
+      "triangles": 47780,
+      "geometry_bytes": 4149890,
+      "frame_texture_bytes": 376832,
+      "lookup_texture_bytes": 315392,
+      "initial_mask_bytes": 11654,
+      "initial_vertex_bytes": 59434,
+      "uploads": 4,
+      "cells": [
+        {
+          "id": 4730,
+          "originally_wet": true,
+          "depth": 7.868837356567383,
+          "stage": 64.10047149658203,
+          "pixel": {
+            "x": 1011.4775019047138,
+            "y": 484.1493636933362
+          },
+          "expected_class": "initial"
+        },
+        {
+          "id": 4748,
+          "originally_wet": false,
+          "depth": 0,
+          "stage": 68.5113296508789,
+          "pixel": {
+            "x": 804.0225344015731,
+            "y": 423.3357039650332
+          },
+          "expected_class": "dry"
+        },
+        {
+          "id": 4762,
+          "originally_wet": false,
+          "depth": 0,
+          "stage": 66.293701171875,
+          "pixel": {
+            "x": 908.090008946422,
+            "y": 395.55101571759747
+          },
+          "expected_class": "dry"
+        },
+        {
+          "id": 4750,
+          "originally_wet": false,
+          "depth": 0,
+          "stage": 80.44214630126953,
+          "pixel": {
+            "x": 786.0226976126454,
+            "y": 389.2576229103536
+          },
+          "expected_class": "dry"
+        },
+        null
+      ],
+      "textures": 4,
+      "normal_ready": true,
+      "normal_unavailable": false,
+      "seconds": 57600,
+      "animation_style": 0,
+      "low_quality": false,
+      "cache_count": 4,
+      "pending_count": 0,
+      "initial_frame_cached": false,
+      "basemap": {
+        "kind": "satellite",
+        "brightness": 1,
+        "saturation": 0.6,
+        "gamma": 1.12,
+        "contrast": 1.02
+      },
+      "primitives": 3,
+      "camera": {
+        "position": [
+          -1853176.3168926672,
+          5584816.287003374,
+          2453928.0345060006
+        ],
+        "direction": [
+          -0.03022740050831896,
+          -0.7269097197288311,
+          0.6860674628797535
+        ],
+        "up": [
+          -0.32321025265059794,
+          0.6566147109198993,
+          0.6814633181508112
+        ]
+      },
+      "context_lost": false,
+      "wet_area_km2": "11.50",
+      "rgb": [
+        [
+          38,
+          75,
+          70
+        ],
+        [
+          122,
+          117,
+          105
+        ],
+        [
+          103,
+          111,
+          98
+        ],
+        [
+          81,
+          91,
+          82
+        ],
+        null
+      ]
+    },
+    "peak": {
+      "vertices": 59434,
+      "triangles": 47780,
+      "geometry_bytes": 4149890,
+      "frame_texture_bytes": 376832,
+      "lookup_texture_bytes": 315392,
+      "initial_mask_bytes": 11654,
+      "initial_vertex_bytes": 59434,
+      "uploads": 6,
+      "cells": [
+        {
+          "id": 4730,
+          "originally_wet": true,
+          "depth": 13.611549377441406,
+          "stage": 69.84318542480469,
+          "pixel": {
+            "x": 1011.9759567582488,
+            "y": 476.22280017510906
+          },
+          "expected_class": "initial"
+        },
+        {
+          "id": 4748,
+          "originally_wet": false,
+          "depth": 1.3199509382247925,
+          "stage": 69.83128356933594,
+          "pixel": {
+            "x": 804.0290370115277,
+            "y": 421.6742517378599
+          },
+          "expected_class": "flood"
+        },
+        {
+          "id": 4762,
+          "originally_wet": false,
+          "depth": 3.541415214538574,
+          "stage": 69.83511352539062,
+          "pixel": {
+            "x": 908.2275015052533,
+            "y": 391.3471817984139
+          },
+          "expected_class": "flood"
+        },
+        {
+          "id": 4750,
+          "originally_wet": false,
+          "depth": 0,
+          "stage": 80.44214630126953,
+          "pixel": {
+            "x": 786.0226976126454,
+            "y": 389.2576229103536
+          },
+          "expected_class": "dry"
+        },
+        null
+      ],
+      "textures": 4,
+      "normal_ready": true,
+      "normal_unavailable": false,
+      "seconds": 81000,
+      "animation_style": 0,
+      "low_quality": false,
+      "cache_count": 4,
+      "pending_count": 0,
+      "initial_frame_cached": false,
+      "basemap": {
+        "kind": "satellite",
+        "brightness": 1,
+        "saturation": 0.6,
+        "gamma": 1.12,
+        "contrast": 1.02
+      },
+      "primitives": 3,
+      "camera": {
+        "position": [
+          -1853176.3168926672,
+          5584816.287003374,
+          2453928.0345060006
+        ],
+        "direction": [
+          -0.03022740050831896,
+          -0.7269097197288311,
+          0.6860674628797535
+        ],
+        "up": [
+          -0.32321025265059794,
+          0.6566147109198993,
+          0.6814633181508112
+        ]
+      },
+      "context_lost": false,
+      "wet_area_km2": "13.37",
+      "rgb": [
+        [
+          39,
+          77,
+          72
+        ],
+        [
+          64,
+          161,
+          194
+        ],
+        [
+          47,
+          118,
+          166
+        ],
+        [
+          81,
+          91,
+          82
+        ],
+        null
+      ]
+    },
+    "recession": {
+      "vertices": 59434,
+      "triangles": 47780,
+      "geometry_bytes": 4149890,
+      "frame_texture_bytes": 376832,
+      "lookup_texture_bytes": 315392,
+      "initial_mask_bytes": 11654,
+      "initial_vertex_bytes": 59434,
+      "uploads": 8,
+      "cells": [
+        {
+          "id": 4730,
+          "originally_wet": true,
+          "depth": 5.209540843963623,
+          "stage": 61.44117736816406,
+          "pixel": {
+            "x": 1011.2474382455601,
+            "y": 487.8078980455246
+          },
+          "expected_class": "initial"
+        },
+        {
+          "id": 4748,
+          "originally_wet": false,
+          "depth": 7.096052396940791e-15,
+          "stage": 68.5113296508789,
+          "pixel": {
+            "x": 804.0225344015731,
+            "y": 423.3357039650332
+          },
+          "expected_class": "dry"
+        },
+        {
+          "id": 4762,
+          "originally_wet": false,
+          "depth": 7.048169200916032e-15,
+          "stage": 66.293701171875,
+          "pixel": {
+            "x": 908.090008946422,
+            "y": 395.55101571759747
+          },
+          "expected_class": "dry"
+        },
+        {
+          "id": 4750,
+          "originally_wet": false,
+          "depth": 0,
+          "stage": 80.44214630126953,
+          "pixel": {
+            "x": 786.0226976126454,
+            "y": 389.2576229103536
+          },
+          "expected_class": "dry"
+        },
+        null
+      ],
+      "textures": 4,
+      "normal_ready": true,
+      "normal_unavailable": false,
+      "seconds": 216000,
+      "animation_style": 0,
+      "low_quality": false,
+      "cache_count": 2,
+      "pending_count": 0,
+      "initial_frame_cached": false,
+      "basemap": {
+        "kind": "satellite",
+        "brightness": 1,
+        "saturation": 0.6,
+        "gamma": 1.12,
+        "contrast": 1.02
+      },
+      "primitives": 3,
+      "camera": {
+        "position": [
+          -1853176.3168926672,
+          5584816.287003374,
+          2453928.0345060006
+        ],
+        "direction": [
+          -0.03022740050831896,
+          -0.7269097197288311,
+          0.6860674628797535
+        ],
+        "up": [
+          -0.32321025265059794,
+          0.6566147109198993,
+          0.6814633181508112
+        ]
+      },
+      "context_lost": false,
+      "wet_area_km2": "8.35",
+      "rgb": [
+        [
+          46,
+          83,
+          77
+        ],
+        [
+          122,
+          117,
+          105
+        ],
+        [
+          103,
+          111,
+          98
+        ],
+        [
+          81,
+          91,
+          82
+        ],
+        null
+      ]
+    }
+  },
+  "basemaps": {
+    "originalSatellite": {
+      "kind": "satellite",
+      "brightness": 1.16,
+      "saturation": 0.91,
+      "gamma": 1.12,
+      "contrast": 1.02
+    },
+    "naturalSatellite": {
+      "kind": "satellite",
+      "brightness": 1,
+      "saturation": 0.6,
+      "gamma": 1.12,
+      "contrast": 1.02
+    },
+    "naturalLocal": {
+      "kind": "local",
+      "brightness": 1,
+      "saturation": 0.72,
+      "gamma": 1,
+      "contrast": 1
+    },
+    "analysisLocal": {
+      "kind": "local",
+      "brightness": 1,
+      "saturation": 1,
+      "gamma": 1,
+      "contrast": 1
+    }
+  },
+  "resources": {
+    "active": {
+      "vertices": 59434,
+      "triangles": 47780,
+      "geometry_bytes": 4149890,
+      "frame_texture_bytes": 376832,
+      "lookup_texture_bytes": 315392,
+      "initial_mask_bytes": 11654,
+      "initial_vertex_bytes": 59434,
+      "uploads": 8,
+      "cells": [
+        {
+          "id": 4730,
+          "originally_wet": true,
+          "depth": 5.209540843963623,
+          "stage": 61.44117736816406,
+          "pixel": {
+            "x": 1011.2474382455601,
+            "y": 487.8078980455246
+          }
+        },
+        {
+          "id": 4748,
+          "originally_wet": false,
+          "depth": 7.096052396940791e-15,
+          "stage": 68.5113296508789,
+          "pixel": {
+            "x": 804.0225344015731,
+            "y": 423.3357039650332
+          }
+        },
+        {
+          "id": 4762,
+          "originally_wet": false,
+          "depth": 7.048169200916032e-15,
+          "stage": 66.293701171875,
+          "pixel": {
+            "x": 908.090008946422,
+            "y": 395.55101571759747
+          }
+        },
+        {
+          "id": 4750,
+          "originally_wet": false,
+          "depth": 0,
+          "stage": 80.44214630126953,
+          "pixel": {
+            "x": 786.0226976126454,
+            "y": 389.2576229103536
+          }
+        },
+        null
+      ],
+      "textures": 4,
+      "normal_ready": true,
+      "normal_unavailable": false,
+      "seconds": 216000,
+      "animation_style": 0,
+      "low_quality": false,
+      "cache_count": 2,
+      "pending_count": 0,
+      "initial_frame_cached": false,
+      "basemap": {
+        "kind": "satellite",
+        "brightness": 1,
+        "saturation": 0.6,
+        "gamma": 1.12,
+        "contrast": 1.02
+      },
+      "primitives": 3,
+      "camera": {
+        "position": [
+          -1853176.3168926672,
+          5584816.287003374,
+          2453928.0345060006
+        ],
+        "direction": [
+          -0.03022740050831896,
+          -0.7269097197288311,
+          0.6860674628797535
+        ],
+        "up": [
+          -0.32321025265059794,
+          0.6566147109198993,
+          0.6814633181508112
+        ]
+      },
+      "context_lost": false
+    },
+    "afterExit": {
+      "basemap": {
+        "kind": "satellite",
+        "brightness": 1.16,
+        "saturation": 0.91,
+        "gamma": 1.12,
+        "contrast": 1.02
+      },
+      "primitives": 1,
+      "camera": {
+        "position": [
+          -1853176.3168926672,
+          5584816.287003374,
+          2453928.0345060006
+        ],
+        "direction": [
+          -0.03022740050831896,
+          -0.7269097197288311,
+          0.6860674628797535
+        ],
+        "up": [
+          -0.32321025265059794,
+          0.6566147109198993,
+          0.6814633181508112
+        ]
+      },
+      "context_lost": false
+    }
+  },
+  "returnedPeak": {
+    "vertices": 59434,
+    "triangles": 47780,
+    "geometry_bytes": 4149890,
+    "frame_texture_bytes": 376832,
+    "lookup_texture_bytes": 315392,
+    "initial_mask_bytes": 11654,
+    "initial_vertex_bytes": 59434,
+    "uploads": 12,
+    "cells": [
+      {
+        "id": 4730,
+        "originally_wet": true,
+        "depth": 13.611549377441406,
+        "stage": 69.84318542480469,
+        "pixel": {
+          "x": 1011.9759567582488,
+          "y": 476.22280017510906
+        },
+        "expected_class": "initial"
+      },
+      {
+        "id": 4748,
+        "originally_wet": false,
+        "depth": 1.3199509382247925,
+        "stage": 69.83128356933594,
+        "pixel": {
+          "x": 804.0290370115277,
+          "y": 421.6742517378599
+        },
+        "expected_class": "flood"
+      },
+      {
+        "id": 4762,
+        "originally_wet": false,
+        "depth": 3.541415214538574,
+        "stage": 69.83511352539062,
+        "pixel": {
+          "x": 908.2275015052533,
+          "y": 391.3471817984139
+        },
+        "expected_class": "flood"
+      },
+      {
+        "id": 4750,
+        "originally_wet": false,
+        "depth": 0,
+        "stage": 80.44214630126953,
+        "pixel": {
+          "x": 786.0226976126454,
+          "y": 389.2576229103536
+        },
+        "expected_class": "dry"
+      },
+      null
+    ],
+    "textures": 4,
+    "normal_ready": true,
+    "normal_unavailable": false,
+    "seconds": 81000,
+    "animation_style": 0,
+    "low_quality": false,
+    "cache_count": 4,
+    "pending_count": 0,
+    "initial_frame_cached": false,
+    "basemap": {
+      "kind": "satellite",
+      "brightness": 1,
+      "saturation": 0.6,
+      "gamma": 1.12,
+      "contrast": 1.02
+    },
+    "primitives": 3,
+    "camera": {
+      "position": [
+        -1853176.3168926672,
+        5584816.287003374,
+        2453928.0345060006
+      ],
+      "direction": [
+        -0.03022740050831896,
+        -0.7269097197288311,
+        0.6860674628797535
+      ],
+      "up": [
+        -0.32321025265059794,
+        0.6566147109198993,
+        0.6814633181508112
+      ]
+    },
+    "context_lost": false,
+    "wet_area_km2": "13.37"
+  },
+  "errors": []
+}

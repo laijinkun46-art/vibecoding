@@ -1,0 +1,37 @@
+{
+  "states": {
+    "base": {
+      "t": 0,
+      "level": 75,
+      "added_km2": 0,
+      "blue_canvas_pixels": 433
+    },
+    "rising": {
+      "t": 3.84,
+      "level": 80,
+      "added_km2": 77.49,
+      "blue_canvas_pixels": 160655
+    },
+    "peak": {
+      "t": 7.2,
+      "level": 85,
+      "added_km2": 109.13,
+      "blue_canvas_pixels": 235604
+    },
+    "recession": {
+      "t": 12,
+      "level": 78,
+      "added_km2": 56.74,
+      "blue_canvas_pixels": 116322
+    }
+  },
+  "duration": 12.034416299999998,
+  "durationFast": 6.028117700000003,
+  "preview": {
+    "width": 1580,
+    "height": 960
+  },
+  "videoBytes": 4881806,
+  "staticAndHydroRestored": true,
+  "errors": []
+}

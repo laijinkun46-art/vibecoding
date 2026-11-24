@@ -1,0 +1,144 @@
+{
+  "kind": "hypothetical_scenario_not_observation",
+  "assets": {
+    "summary": {
+      "url": "/analysis/expanded_v1/summary.json",
+      "sha256": "07c33cc2594f5fc32eeb257cee502f14305595f1d68693ad77a212656df743e9",
+      "bytes": 5553,
+      "source": "data\\processed\\phase3_extension_v1\\summary.json",
+      "source_sha256": "86d6a8f8bdfcdc077fa24cb087bc60bfddbff45d5341bba437fd3e9289972ee7"
+    },
+    "S01_to_S05_change": {
+      "url": "/analysis/expanded_v1/S01_to_S05_change.geojson",
+      "sha256": "95d142498c51fb7a2edf145dfc203790b68f6d18d2ba4ac3bc880b9054fb1795",
+      "bytes": 759246,
+      "source": "data\\processed\\phase3_extension_v1\\S01_to_S05_change.geojson",
+      "source_sha256": "925a53532a0d0ba335cc5af48e3bb232041629f866b72d91bd864c5db9dc904c"
+    },
+    "S02_to_S07_change": {
+      "url": "/analysis/expanded_v1/S02_to_S07_change.geojson",
+      "sha256": "be5d0000a8ad2d78fe40ecfacbfa9d19eca403014d7faaca45478642921aba4e",
+      "bytes": 1026455,
+      "source": "data\\processed\\phase3_extension_v1\\S02_to_S07_change.geojson",
+      "source_sha256": "913fa654d112ca655de6f559e51f5ab219c513482773609ca280dd6ff0b6e281"
+    },
+    "S03_to_S09_change": {
+      "url": "/analysis/expanded_v1/S03_to_S09_change.geojson",
+      "sha256": "38f35b7397197cf74f089d7e21c6919191cd928a9784454cc7b31f9bbf200359",
+      "bytes": 1110386,
+      "source": "data\\processed\\phase3_extension_v1\\S03_to_S09_change.geojson",
+      "source_sha256": "6881dabfa252d29a4cd34de766c6f2f866e2ec218e03fa68cc32f5bb83f813d8"
+    },
+    "S05_to_S06_change": {
+      "url": "/analysis/expanded_v1/S05_to_S06_change.geojson",
+      "sha256": "c6f6b4910697e958ba86d0f436e1d4b0eba947417fc3181314b9d486a659fc3f",
+      "bytes": 1167785,
+      "source": "data\\processed\\phase3_extension_v1\\S05_to_S06_change.geojson",
+      "source_sha256": "8a1ed1ba9b49e2821599bdf814f7092a1b4e810288bad2d7e9895f6f6d77bbee"
+    },
+    "S05_wet": {
+      "url": "/analysis/expanded_v1/S05_wet.geojson",
+      "sha256": "17587f756df5fb5ecfb14d460ee253bd28f7014e52e8bd16b8c914bdd32aafca",
+      "bytes": 313461,
+      "source": "data\\processed\\phase3_extension_v1\\S05_wet.geojson",
+      "source_sha256": "7f8136629f9b6278639d469fe31d9cc541b3bc12c1dad1ade3c8bd06885dc1ba"
+    },
+    "S06_to_S02_change": {
+      "url": "/analysis/expanded_v1/S06_to_S02_change.geojson",
+      "sha256": "f181bee8fdeed85699613f0b9919ce34a36f65d7eccf02b742196694dceb424a",
+      "bytes": 1155125,
+      "source": "data\\processed\\phase3_extension_v1\\S06_to_S02_change.geojson",
+      "source_sha256": "4e603032321cf3947482ba0db8ba0b12a0b8a664e84c351b43e1e802866c5ac4"
+    },
+    "S06_wet": {
+      "url": "/analysis/expanded_v1/S06_wet.geojson",
+      "sha256": "bf0c8f62631e6dd7321cd5814453c6dd39fbd808f4ff8831d5b44c13c6785f75",
+      "bytes": 316472,
+      "source": "data\\processed\\phase3_extension_v1\\S06_wet.geojson",
+      "source_sha256": "6bd013bd9bb1e93357e46b87a22de1829b735c027389ab192b3919219acce39e"
+    },
+    "S07_to_S08_change": {
+      "url": "/analysis/expanded_v1/S07_to_S08_change.geojson",
+      "sha256": "d6db163d24d5658f89a2fa705a4b5a73dfcd5d66d2bedd64491af747ace67d9b",
+      "bytes": 1080282,
+      "source": "data\\processed\\phase3_extension_v1\\S07_to_S08_change.geojson",
+      "source_sha256": "2f4deba03881f1eaa04eb9ed68fa38212023a6bf17417c32126fad9bb2741622"
+    },
+    "S07_wet": {
+      "url": "/analysis/expanded_v1/S07_wet.geojson",
+      "sha256": "ed5643f8682fde4c692b8c44f9c2c923fa633489515d70273ccda03e538423cf",
+      "bytes": 252341,
+      "source": "data\\processed\\phase3_extension_v1\\S07_wet.geojson",
+      "source_sha256": "910188cf80923b3c060bcb939e87348df4645cb4892ffa198c16cfb0e4051f2c"
+    },
+    "S08_to_S03_change": {
+      "url": "/analysis/expanded_v1/S08_to_S03_change.geojson",
+      "sha256": "954461ccf6394a521fa371aa510751f1d121d13d192d8e601d04ea0dc4978961",
+      "bytes": 1147186,
+      "source": "data\\processed\\phase3_extension_v1\\S08_to_S03_change.geojson",
+      "source_sha256": "fd2a3a506714f2dc3141bdefab91321bd917a329a9deaf164d43ff46585e9d77"
+    },
+    "S08_wet": {
+      "url": "/analysis/expanded_v1/S08_wet.geojson",
+      "sha256": "eb081b676527ad3a657c4deab497404ac9473e81928f5de199cea2282b6c93e6",
+      "bytes": 260414,
+      "source": "data\\processed\\phase3_extension_v1\\S08_wet.geojson",
+      "source_sha256": "c67b876a38140d4a8087d5104b88e359533554049cc8f33d2be298d3adebc653"
+    },
+    "S09_to_S10_change": {
+      "url": "/analysis/expanded_v1/S09_to_S10_change.geojson",
+      "sha256": "6613e053c3a0b4d7ad566b8ce144216afc8d72086d1e9c51de5eead1baeb2d4c",
+      "bytes": 1061704,
+      "source": "data\\processed\\phase3_extension_v1\\S09_to_S10_change.geojson",
+      "source_sha256": "8c9fb150c4765e37096cbe24bfabedaf3fbe6442102f00f3e176ce0bbdef827a"
+    },
+    "S09_wet": {
+      "url": "/analysis/expanded_v1/S09_wet.geojson",
+      "sha256": "850b920f6ba6eb18196457898fa349174d85909660ec0facb187319cc6eadf5a",
+      "bytes": 252739,
+      "source": "data\\processed\\phase3_extension_v1\\S09_wet.geojson",
+      "source_sha256": "75ab76a6732f0b4b33d688e7ac701822ed262c15272d2100bf7e844708709816"
+    },
+    "S10_to_S11_change": {
+      "url": "/analysis/expanded_v1/S10_to_S11_change.geojson",
+      "sha256": "ec1bc7695badf732c9114b947c5ac934a90b8108fb015fb456235f224201e65f",
+      "bytes": 1074619,
+      "source": "data\\processed\\phase3_extension_v1\\S10_to_S11_change.geojson",
+      "source_sha256": "723b696f3b282b84fd5babb9497419983f163670e87f3b5db87503c0c8ae50e8"
+    },
+    "S10_wet": {
+      "url": "/analysis/expanded_v1/S10_wet.geojson",
+      "sha256": "ab1fafe189d28c889bfc0ce5bef22157360608f8830de593aee7c2d34d7db993",
+      "bytes": 253926,
+      "source": "data\\processed\\phase3_extension_v1\\S10_wet.geojson",
+      "source_sha256": "11c61437216b7780f69c8fdd04f356b71af6b989d5a839b577d5328b6b8091d4"
+    },
+    "S11_to_S04_change": {
+      "url": "/analysis/expanded_v1/S11_to_S04_change.geojson",
+      "sha256": "7896b75331cd1f3d088c4509cc45e93ddc038975fa13338af6065a0bad678350",
+      "bytes": 1258923,
+      "source": "data\\processed\\phase3_extension_v1\\S11_to_S04_change.geojson",
+      "source_sha256": "8adc88d60ad7d140434cb55d010943ee8dd8a5fc527d545aeefb4209d4cdc1a9"
+    },
+    "S11_wet": {
+      "url": "/analysis/expanded_v1/S11_wet.geojson",
+      "sha256": "e7284a474e5ec9a02c68ba3afffa77bf0562afbef9805ddd847882e71b7fc7e9",
+      "bytes": 286309,
+      "source": "data\\processed\\phase3_extension_v1\\S11_wet.geojson",
+      "source_sha256": "de7b82b8e7413e8a56a8ebf3aba4dc313949c5c29983da81c701aa6c4dab814d"
+    }
+  },
+  "playback_order": [
+    "S01",
+    "S05",
+    "S06",
+    "S02",
+    "S07",
+    "S08",
+    "S03",
+    "S09",
+    "S10",
+    "S11",
+    "S04"
+  ]
+}

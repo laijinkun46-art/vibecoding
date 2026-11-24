@@ -1,0 +1,140 @@
+{
+  "checked_at": "2026-11-24T16:14:07.982489+08:00",
+  "algorithm": "SHA256",
+  "distinct_files": 582,
+  "groups": [
+    {
+      "group": "v2 and previously protected files",
+      "checked": 329,
+      "matches": 329,
+      "mismatches": []
+    },
+    {
+      "group": "docs/phase2_processing.json inputs",
+      "checked": 4,
+      "matches": 4,
+      "mismatches": []
+    },
+    {
+      "group": "docs/phase2_processing.json outputs",
+      "checked": 21,
+      "matches": 21,
+      "mismatches": []
+    },
+    {
+      "group": "docs/phase3_processing.json inputs",
+      "checked": 3,
+      "matches": 3,
+      "mismatches": []
+    },
+    {
+      "group": "docs/phase3_processing.json outputs",
+      "checked": 21,
+      "matches": 21,
+      "mismatches": []
+    },
+    {
+      "group": "data/processed/phase3_extension_v1/manifest.json inputs",
+      "checked": 7,
+      "matches": 7,
+      "mismatches": []
+    },
+    {
+      "group": "data/processed/phase3_extension_v1/manifest.json outputs",
+      "checked": 44,
+      "matches": 44,
+      "mismatches": []
+    },
+    {
+      "group": "frontend/public/analysis/catalog.json web files",
+      "checked": 10,
+      "matches": 10,
+      "mismatches": []
+    },
+    {
+      "group": "frontend/public/analysis/catalog.json sources",
+      "checked": 10,
+      "matches": 10,
+      "mismatches": []
+    },
+    {
+      "group": "frontend/public/analysis/expanded_v1/catalog.json web files",
+      "checked": 18,
+      "matches": 18,
+      "mismatches": []
+    },
+    {
+      "group": "frontend/public/analysis/expanded_v1/catalog.json sources",
+      "checked": 18,
+      "matches": 18,
+      "mismatches": []
+    },
+    {
+      "group": "independent static replay assets",
+      "checked": 2,
+      "matches": 2,
+      "mismatches": []
+    },
+    {
+      "group": "independent static replay inputs",
+      "checked": 15,
+      "matches": 15,
+      "mismatches": []
+    },
+    {
+      "group": "full_reach_v1/ inputs",
+      "checked": 6,
+      "matches": 6,
+      "mismatches": []
+    },
+    {
+      "group": "full_reach_v1/ outputs",
+      "checked": 2,
+      "matches": 2,
+      "mismatches": []
+    },
+    {
+      "group": "domain/ inputs",
+      "checked": 4,
+      "matches": 4,
+      "mismatches": []
+    },
+    {
+      "group": "domain/ outputs",
+      "checked": 4,
+      "matches": 4,
+      "mismatches": []
+    },
+    {
+      "group": "terrain_c03/ inputs",
+      "checked": 5,
+      "matches": 5,
+      "mismatches": []
+    },
+    {
+      "group": "terrain_c03/ output DEM",
+      "checked": 1,
+      "matches": 1,
+      "mismatches": []
+    },
+    {
+      "group": "v3 inputs",
+      "checked": 13,
+      "matches": 13,
+      "mismatches": []
+    },
+    {
+      "group": "v3 all web assets",
+      "checked": 123,
+      "matches": 123,
+      "mismatches": []
+    },
+    {
+      "group": "v3 scenario upstream preparation",
+      "checked": 5,
+      "matches": 5,
+      "mismatches": []
+    }
+  ],
+  "distinct_mismatches": 0
+}

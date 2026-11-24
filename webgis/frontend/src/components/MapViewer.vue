@@ -17,13 +17,14 @@ const props = defineProps({ bbox: Array, basemap: { type: String, default: 'sate
 const emit = defineEmits(['status', 'terrain-status', 'layer-status', 'river-status', 'effects-status', 'hydro-location'])
 const container = ref(null)
 let viewer
-let terrainFactory, baseTerrain, hydro, hydroPicker, hydroBounds
+let terrainFactory, baseTerrain, hydro, hydroPicker, hydroBounds, stageReplay
+let hydroNatural = false
 const measureHydro = new URLSearchParams(window.location.search).has('measureHydro')
 let basemapRevision = 0
 let destroyed = false
 let layerRevision = 0
 let riverSource
-let basemapLayer, reliefLayer
+let basemapLayer, basemapKind, reliefLayer
 const layerCache = new Map()
 let firstFloodView = true
 let effectController, effectPromise, effectFailed = false
@@ -41,7 +42,7 @@ function syncRelief() {
   if (!viewer || viewer.isDestroyed()) return
   const scale = viewer.scene.mode === SceneMode.SCENE3D ? props.reliefScale : 1
   viewer.scene.verticalExaggeration = scale
-  if (reliefLayer) reliefLayer.show = (props.basemap === 'satellite' || !!hydro) && viewer.scene.mode === SceneMode.SCENE3D
+  if (reliefLayer) reliefLayer.show = (props.basemap === 'satellite' || !!hydro || !!stageReplay) && viewer.scene.mode === SceneMode.SCENE3D
   for (const [source, stage] of scenarioSources) {
     for (const entity of source.entities.values) {
       if (entity.polygon && entity.polygon.height?.getValue() !== stage * scale) {
@@ -281,14 +282,15 @@ function resetView() {
 async function updateBasemap() {
   if (!viewer || viewer.isDestroyed()) return
   const revision = ++basemapRevision
+  const kind = props.basemap
   try {
     let provider
-    if (props.basemap === 'satellite') {
+    if (kind === 'satellite') {
       provider = await ArcGisMapServerImageryProvider.fromUrl(
         'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer',
         { enablePickFeatures: false },
       )
-    } else if (props.basemap === 'osm') {
+    } else if (kind === 'osm') {
       provider = new OpenStreetMapImageryProvider({ url: 'https://tile.openstreetmap.org/' })
     } else {
       provider = await TileMapServiceImageryProvider.fromUrl(buildModuleUrl('Assets/Textures/NaturalEarthII'), { credit: 'Natural Earth · Cesium 本地概览' })
@@ -301,14 +303,10 @@ async function updateBasemap() {
     container.value.dataset.pendingTiles = 'loading'
     const imagery = viewer.imageryLayers.addImageryProvider(provider, 0)
     basemapLayer = imagery
+    basemapKind = kind
     syncRelief()
-    if (props.basemap === 'satellite') {
-      imagery.brightness = 1.16
-      imagery.gamma = 1.12
-      imagery.saturation = .91
-      imagery.contrast = 1.02
-    }
-    container.value.dataset.basemap = props.basemap
+    syncBasemapContrast()
+    container.value.dataset.basemap = kind
     viewer.scene.requestRender()
     emit('status', { state: 'ready' })
   } catch (error) {
@@ -320,6 +318,15 @@ async function updateBasemap() {
       })
     }
   }
+}
+
+function syncBasemapContrast() {
+  if (!basemapLayer) return
+  const satellite = basemapKind === 'satellite'
+  basemapLayer.brightness = satellite ? (hydroNatural ? 1.0 : 1.16) : 1.0
+  basemapLayer.gamma = satellite ? 1.12 : 1.0
+  basemapLayer.saturation = satellite ? (hydroNatural ? .60 : .91) : (hydroNatural ? .72 : 1.0)
+  basemapLayer.contrast = satellite ? 1.02 : 1.0
 }
 
 function setMode(mode) {
@@ -354,12 +361,7 @@ async function enableHydro(data, signal) {
 function viewHydro(name) {
   if (!hydroBounds) return
   if (name==='full') {
-    const [w,s,e,n] = hydroBounds
-    const domain = BoundingSphere.fromPoints([
-      Cartesian3.fromDegrees(w,s), Cartesian3.fromDegrees(e,n),
-      Cartesian3.fromDegrees(w,n), Cartesian3.fromDegrees(e,s),
-    ])
-    viewer.camera.viewBoundingSphere(domain,new HeadingPitchRange(0,-Math.PI*.34,domain.radius*2.10))
+    viewStudyBounds(hydroBounds)
   } else {
     const next = hydroViews[name]
     if (!next) return
@@ -371,16 +373,78 @@ function viewHydro(name) {
   viewer.scene.requestRender()
 }
 
+function viewStudyBounds(bounds) {
+  if (!bounds) return
+  const [w,s,e,n] = bounds
+  const domain = BoundingSphere.fromPoints([
+    Cartesian3.fromDegrees(w,s), Cartesian3.fromDegrees(e,n),
+    Cartesian3.fromDegrees(w,n), Cartesian3.fromDegrees(e,s),
+  ])
+  viewer.camera.viewBoundingSphere(domain,new HeadingPitchRange(0,-Math.PI*.34,domain.radius*2.10))
+}
+
+function viewStageReplay() {
+  if (!stageReplay || !viewer || viewer.isDestroyed()) return
+  viewer.scene.morphTo3D(0)
+  viewStudyBounds(props.bbox ?? [108.23,22.73,108.44,22.85])
+  viewer.camera.lookAtTransform(Matrix4.IDENTITY)
+  viewer.scene.requestRender()
+}
+
+async function enableStageReplay(signal) {
+  const { createStageReplay } = await import('../stageReplay')
+  signal.throwIfAborted()
+  if (!viewer || viewer.isDestroyed() || !baseTerrain) throw new Error('地形尚未就绪')
+  const active = await createStageReplay(viewer,signal)
+  if (signal.aborted || destroyed) {
+    if (!viewer.isDestroyed()) active.dispose()
+    throw new DOMException('Aborted','AbortError')
+  }
+  stageReplay = active
+  viewStageReplay()
+  syncRelief()
+  container.value.dataset.stageReplay = 'ready'
+  return active
+}
+
+function updateStageReplay(level,elapsed,rising) {
+  stageReplay?.update(level,elapsed,rising)
+}
+
+function disableStageReplay() {
+  if (!stageReplay) return
+  stageReplay.dispose()
+  stageReplay = undefined
+  delete container.value.dataset.stageReplay
+  syncRelief()
+}
+
 const hydroViews = {
   bend: [108.32830,22.77750,68,0.42,-0.49,2630],
   bank: [108.35987,22.78376,67,0.28,-0.37,1110],
 }
 
+function viewHydroLocation(lon,lat) {
+  if (!hydro || !viewer || viewer.isDestroyed()) return
+  const bed = hydro.height(lon,lat) ?? 70
+  const point = Cartesian3.fromDegrees(lon,lat,bed*viewer.scene.verticalExaggeration)
+  viewer.camera.viewBoundingSphere(new BoundingSphere(point,60),new HeadingPitchRange(.28,-.57,3400))
+  viewer.camera.lookAtTransform(Matrix4.IDENTITY)
+  viewer.scene.requestRender()
+}
+
 function updateHydro(pair,time,settings) {
+  const natural = !!hydro && settings.style === 0
+  if (hydroNatural !== natural) {
+    hydroNatural = natural
+    syncBasemapContrast()
+  }
   hydro?.update(pair,time,settings)
 }
 
 function disableHydro() {
+  hydroNatural = false
+  syncBasemapContrast()
   hydroPicker?.destroy()
   hydroPicker = undefined
   if (!hydro) return
@@ -407,9 +471,11 @@ onMounted(async () => {
       viewer.scene.postRender.addEventListener(() => {
         if (hydro) container.value?.dispatchEvent(new Event('hydro-render'))
       })
-      container.value.addEventListener('hydro-inspect', () => {
-        const diagnostic = hydro?.diagnostics()
+      container.value.addEventListener('hydro-inspect', ({ detail }) => {
+        const diagnostic = hydro?.diagnostics(detail?.cells)
         container.value.dataset.hydroStats = JSON.stringify({ ...diagnostic,
+          basemap: basemapLayer && { kind: basemapKind, brightness: basemapLayer.brightness,
+            saturation: basemapLayer.saturation, gamma: basemapLayer.gamma, contrast: basemapLayer.contrast },
           primitives: viewer.scene.primitives.length,
           camera: { position: Cartesian3.pack(viewer.camera.positionWC, []), direction: Cartesian3.pack(viewer.camera.directionWC, []),
             up: Cartesian3.pack(viewer.camera.upWC, []) },
@@ -453,10 +519,12 @@ onBeforeUnmount(() => {
   layerRevision++
   effectController?.dispose()
   disableHydro()
+  disableStageReplay()
   if (viewer && !viewer.isDestroyed()) viewer.destroy()
 })
 defineExpose({ resetView, setMode, viewTerrain, viewFlood, viewWater, retryLayer: updateLayer,
-  enableHydro, updateHydro, disableHydro, viewHydro, resetHydroParticles: () => hydro?.reset() })
+  enableStageReplay, updateStageReplay, disableStageReplay, viewStageReplay,
+  enableHydro, updateHydro, disableHydro, viewHydro, viewHydroLocation, resetHydroParticles: () => hydro?.reset() })
 </script>
 
 <template><div ref="container" class="cesium-map" aria-label="Cesium 地图画布"></div></template>

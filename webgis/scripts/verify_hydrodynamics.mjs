@@ -184,7 +184,7 @@ try {
     }
     await page.getByText('真实历史降雨 · CHM_PRE',{exact:true}).waitFor()
     const scenarios=page.getByRole('combobox',{name:/假设水位/})
-    for (const [option, area] of [['1','101.2095'],['2','132.8472'],['3','80.4600']]) {
+    for (const [option, area] of [['S02','101.2095'],['S03','132.8472'],['S04','80.4600']]) {
       await scenarios.selectOption(option)
       assert.ok((await page.locator('[data-testid=area-stat]').textContent()).includes(area))
     }

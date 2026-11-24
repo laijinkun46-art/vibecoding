@@ -2,3 +2,11 @@
 frontend/public/analysis/** -text
 frontend/public/terrain/** -text
 data/processed/** -text
+# 运行清单校验这些源文件，检出时按已验收的字节保留换行。
+data/study_area/nanning_yongjiang_aoi.geojson text eol=crlf
+data/scenarios/flood_scenarios.json text eol=lf
+data/scenarios/flood_scenarios_extension_v1.json text eol=lf
+data/scenarios/overbank_trials_v1.json text eol=lf
+scripts/HydroShallowWater.cs text eol=lf
+scripts/run_full_reach_hydro.py text eol=lf
+scripts/run_overbank_hydro.py text eol=lf

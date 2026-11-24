@@ -1,0 +1,1739 @@
+[
+  {
+    "t_seconds": 0.0,
+    "raw_index": 0,
+    "wet_km2": 6.886586499389648,
+    "overbank_km2": 0.0,
+    "max_depth_m": 4.0,
+    "max_wet_speed_mps": 0.5325520833333335,
+    "relative_mass_error": 0.0
+  },
+  {
+    "t_seconds": 1800.0,
+    "raw_index": 1,
+    "wet_km2": 6.897499076171875,
+    "overbank_km2": 0.0,
+    "max_depth_m": 4.542859691517628,
+    "max_wet_speed_mps": 0.5604907338743585,
+    "relative_mass_error": 1.6260565548769496e-15
+  },
+  {
+    "t_seconds": 3600.0,
+    "raw_index": 2,
+    "wet_km2": 6.912049787841797,
+    "overbank_km2": 0.0,
+    "max_depth_m": 4.765160392663967,
+    "max_wet_speed_mps": 0.5517681258500474,
+    "relative_mass_error": 2.0845067947362824e-15
+  },
+  {
+    "t_seconds": 5400.0,
+    "raw_index": 3,
+    "wet_km2": 6.92660084765625,
+    "overbank_km2": 0.0,
+    "max_depth_m": 4.931284563537937,
+    "max_wet_speed_mps": 0.5512560870201376,
+    "relative_mass_error": 9.284232284407474e-16
+  },
+  {
+    "t_seconds": 7200.0,
+    "raw_index": 4,
+    "wet_km2": 6.959340889160156,
+    "overbank_km2": 0.0,
+    "max_depth_m": 5.070390773785218,
+    "max_wet_speed_mps": 0.545487119826124,
+    "relative_mass_error": 2.5231618683298827e-15
+  },
+  {
+    "t_seconds": 9000.0,
+    "raw_index": 5,
+    "wet_km2": 6.977530396240234,
+    "overbank_km2": 0.0,
+    "max_depth_m": 5.190506289531109,
+    "max_wet_speed_mps": 0.5375819944573474,
+    "relative_mass_error": 1.8509729432702797e-15
+  },
+  {
+    "t_seconds": 10800.0,
+    "raw_index": 6,
+    "wet_km2": 6.995719494506836,
+    "overbank_km2": 0.0,
+    "max_depth_m": 5.297737792735366,
+    "max_wet_speed_mps": 0.5342842061291294,
+    "relative_mass_error": 1.7672213669480761e-15
+  },
+  {
+    "t_seconds": 12600.0,
+    "raw_index": 7,
+    "wet_km2": 7.006633620971679,
+    "overbank_km2": 0.0,
+    "max_depth_m": 5.395730566135433,
+    "max_wet_speed_mps": 0.5303967293350762,
+    "relative_mass_error": 3.0886539323704627e-16
+  },
+  {
+    "t_seconds": 14400.0,
+    "raw_index": 8,
+    "wet_km2": 7.024823181274414,
+    "overbank_km2": 0.0,
+    "max_depth_m": 5.485365180591038,
+    "max_wet_speed_mps": 0.5269225577586497,
+    "relative_mass_error": 1.8689406812076784e-15
+  },
+  {
+    "t_seconds": 16200.0,
+    "raw_index": 9,
+    "wet_km2": 7.039374603637695,
+    "overbank_km2": 0.0,
+    "max_depth_m": 5.567798077626485,
+    "max_wet_speed_mps": 0.522829515083159,
+    "relative_mass_error": 8.341253931012475e-16
+  },
+  {
+    "t_seconds": 18000.0,
+    "raw_index": 10,
+    "wet_km2": 7.050287925170898,
+    "overbank_km2": 0.0,
+    "max_depth_m": 5.644556016133699,
+    "max_wet_speed_mps": 0.517726143096908,
+    "relative_mass_error": 1.2233725331480206e-15
+  },
+  {
+    "t_seconds": 19800.0,
+    "raw_index": 11,
+    "wet_km2": 7.072115539428711,
+    "overbank_km2": 0.0,
+    "max_depth_m": 5.71618555139702,
+    "max_wet_speed_mps": 0.513149239866121,
+    "relative_mass_error": 1.334326238810218e-15
+  },
+  {
+    "t_seconds": 21600.0,
+    "raw_index": 12,
+    "wet_km2": 7.079390499389649,
+    "overbank_km2": 0.0,
+    "max_depth_m": 5.7827205547226175,
+    "max_wet_speed_mps": 0.5069738460711322,
+    "relative_mass_error": 1.7098195877475305e-15
+  },
+  {
+    "t_seconds": 23400.0,
+    "raw_index": 13,
+    "wet_km2": 7.093942407592773,
+    "overbank_km2": 0.0,
+    "max_depth_m": 5.844861461045865,
+    "max_wet_speed_mps": 0.5010062363469464,
+    "relative_mass_error": 2.2146695010898242e-15
+  },
+  {
+    "t_seconds": 25200.0,
+    "raw_index": 14,
+    "wet_km2": 7.1084936314697265,
+    "overbank_km2": 0.0,
+    "max_depth_m": 5.903221922556766,
+    "max_wet_speed_mps": 0.49544409858709726,
+    "relative_mass_error": 3.0030693305844006e-15
+  },
+  {
+    "t_seconds": 27000.0,
+    "raw_index": 15,
+    "wet_km2": 7.1157700159912105,
+    "overbank_km2": 0.0,
+    "max_depth_m": 5.958663974979575,
+    "max_wet_speed_mps": 0.49019830766966727,
+    "relative_mass_error": 4.4257488808669244e-16
+  },
+  {
+    "t_seconds": 28800.0,
+    "raw_index": 16,
+    "wet_km2": 7.1157700159912105,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.011143317431999,
+    "max_wet_speed_mps": 0.48527242308901203,
+    "relative_mass_error": 1.4011602523160145e-16
+  },
+  {
+    "t_seconds": 30600.0,
+    "raw_index": 17,
+    "wet_km2": 7.123045340576172,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.060873720032229,
+    "max_wet_speed_mps": 0.4807499359607528,
+    "relative_mass_error": 3.4962590153136727e-15
+  },
+  {
+    "t_seconds": 32400.0,
+    "raw_index": 18,
+    "wet_km2": 7.130320969482422,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.108095206975002,
+    "max_wet_speed_mps": 0.4763985315950234,
+    "relative_mass_error": 4.150163218457573e-15
+  },
+  {
+    "t_seconds": 34200.0,
+    "raw_index": 19,
+    "wet_km2": 7.141234815429687,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.152831786408211,
+    "max_wet_speed_mps": 0.47203460909380507,
+    "relative_mass_error": 5.983389791929879e-17
+  },
+  {
+    "t_seconds": 36000.0,
+    "raw_index": 20,
+    "wet_km2": 7.141234815429687,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.195317418441829,
+    "max_wet_speed_mps": 0.46802186393637585,
+    "relative_mass_error": 2.5487678179197618e-15
+  },
+  {
+    "t_seconds": 37800.0,
+    "raw_index": 21,
+    "wet_km2": 7.152149639892578,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.235585287759692,
+    "max_wet_speed_mps": 0.46952172906333317,
+    "relative_mass_error": 2.2252068956565416e-15
+  },
+  {
+    "t_seconds": 39600.0,
+    "raw_index": 22,
+    "wet_km2": 7.15942571875,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.273692029803636,
+    "max_wet_speed_mps": 0.47965747405588044,
+    "relative_mass_error": 2.583017547823664e-16
+  },
+  {
+    "t_seconds": 41400.0,
+    "raw_index": 23,
+    "wet_km2": 7.177615301269531,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.3096679202580574,
+    "max_wet_speed_mps": 0.4890895619795882,
+    "relative_mass_error": 1.0825032482575182e-15
+  },
+  {
+    "t_seconds": 43200.0,
+    "raw_index": 24,
+    "wet_km2": 7.184891787597656,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.343651297821812,
+    "max_wet_speed_mps": 0.49789237097395367,
+    "relative_mass_error": 1.2098040505027694e-16
+  },
+  {
+    "t_seconds": 45000.0,
+    "raw_index": 25,
+    "wet_km2": 7.184891787597656,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.375707821969168,
+    "max_wet_speed_mps": 0.5061547006370001,
+    "relative_mass_error": 7.109795991536892e-16
+  },
+  {
+    "t_seconds": 46800.0,
+    "raw_index": 26,
+    "wet_km2": 7.184891787597656,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.405937071641726,
+    "max_wet_speed_mps": 0.5138016221136609,
+    "relative_mass_error": 9.033634900762798e-16
+  },
+  {
+    "t_seconds": 48600.0,
+    "raw_index": 27,
+    "wet_km2": 7.184891787597656,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.434430880105835,
+    "max_wet_speed_mps": 0.5208235395272016,
+    "relative_mass_error": 3.7367716480679027e-16
+  },
+  {
+    "t_seconds": 50400.0,
+    "raw_index": 28,
+    "wet_km2": 7.188529936523437,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.461240646709816,
+    "max_wet_speed_mps": 0.5291127683146781,
+    "relative_mass_error": 1.6661857480456797e-15
+  },
+  {
+    "t_seconds": 52200.0,
+    "raw_index": 29,
+    "wet_km2": 7.203081853027344,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.486428150255544,
+    "max_wet_speed_mps": 0.5374721862940769,
+    "relative_mass_error": 3.1528518892526888e-15
+  },
+  {
+    "t_seconds": 54000.0,
+    "raw_index": 30,
+    "wet_km2": 7.213996775878906,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.509985596463869,
+    "max_wet_speed_mps": 0.5453993115498849,
+    "relative_mass_error": 5.865699900403169e-15
+  },
+  {
+    "t_seconds": 55800.0,
+    "raw_index": 31,
+    "wet_km2": 7.217634887695312,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.5320829599775,
+    "max_wet_speed_mps": 0.5529011972982137,
+    "relative_mass_error": 4.455387814213797e-15
+  },
+  {
+    "t_seconds": 57600.0,
+    "raw_index": 32,
+    "wet_km2": 7.221273140625,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.55270125415032,
+    "max_wet_speed_mps": 0.5599932946816155,
+    "relative_mass_error": 4.950888713616473e-15
+  },
+  {
+    "t_seconds": 59400.0,
+    "raw_index": 33,
+    "wet_km2": 7.228548662597656,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.571943308092474,
+    "max_wet_speed_mps": 0.5666825618074339,
+    "relative_mass_error": 4.956130575540522e-15
+  },
+  {
+    "t_seconds": 61200.0,
+    "raw_index": 34,
+    "wet_km2": 7.2321861285400395,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.58981579912654,
+    "max_wet_speed_mps": 0.5729804553164743,
+    "relative_mass_error": 3.3680365758284424e-15
+  },
+  {
+    "t_seconds": 63000.0,
+    "raw_index": 35,
+    "wet_km2": 7.246736703125,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.606574242957883,
+    "max_wet_speed_mps": 0.5789066419609596,
+    "relative_mass_error": 3.4345835305475244e-16
+  },
+  {
+    "t_seconds": 64800.0,
+    "raw_index": 36,
+    "wet_km2": 7.254011578857422,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.62204907698551,
+    "max_wet_speed_mps": 0.584474858693525,
+    "relative_mass_error": 1.1188929131183922e-15
+  },
+  {
+    "t_seconds": 66600.0,
+    "raw_index": 37,
+    "wet_km2": 7.261286884399414,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.636350015308768,
+    "max_wet_speed_mps": 0.5896903684587538,
+    "relative_mass_error": 1.0657283570120846e-15
+  },
+  {
+    "t_seconds": 68400.0,
+    "raw_index": 38,
+    "wet_km2": 7.275836975219726,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.649684995279403,
+    "max_wet_speed_mps": 0.5945892872433346,
+    "relative_mass_error": 3.7646603009390814e-17
+  },
+  {
+    "t_seconds": 70200.0,
+    "raw_index": 39,
+    "wet_km2": 7.2867499455566405,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.662200493786027,
+    "max_wet_speed_mps": 0.5991793491530616,
+    "relative_mass_error": 7.988621461349975e-17
+  },
+  {
+    "t_seconds": 72000.0,
+    "raw_index": 40,
+    "wet_km2": 7.323124098999023,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.673933403321246,
+    "max_wet_speed_mps": 0.6034648801439988,
+    "relative_mass_error": 1.6549732614922696e-15
+  },
+  {
+    "t_seconds": 73800.0,
+    "raw_index": 41,
+    "wet_km2": 7.344948410400391,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.684884644102616,
+    "max_wet_speed_mps": 0.6074658124052877,
+    "relative_mass_error": 5.197702550613874e-16
+  },
+  {
+    "t_seconds": 75600.0,
+    "raw_index": 42,
+    "wet_km2": 7.3631355234375,
+    "overbank_km2": 0.0,
+    "max_depth_m": 6.695137083662489,
+    "max_wet_speed_mps": 0.6112020667286463,
+    "relative_mass_error": 6.675914830265349e-17
+  },
+  {
+    "t_seconds": 77400.0,
+    "raw_index": 43,
+    "wet_km2": 7.392234548828125,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.704726099631554,
+    "max_wet_speed_mps": 0.6146883033909362,
+    "relative_mass_error": 9.708027652052695e-16
+  },
+  {
+    "t_seconds": 79200.0,
+    "raw_index": 44,
+    "wet_km2": 7.395872174804688,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.713697941266168,
+    "max_wet_speed_mps": 0.6179434728996924,
+    "relative_mass_error": 2.4155484781807624e-15
+  },
+  {
+    "t_seconds": 81000.0,
+    "raw_index": 45,
+    "wet_km2": 7.406784448242187,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.722111511088751,
+    "max_wet_speed_mps": 0.6209874724158867,
+    "relative_mass_error": 9.460328410415236e-16
+  },
+  {
+    "t_seconds": 82800.0,
+    "raw_index": 46,
+    "wet_km2": 7.41405930834961,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.729969836806892,
+    "max_wet_speed_mps": 0.6238104537234362,
+    "relative_mass_error": 6.653710020132221e-16
+  },
+  {
+    "t_seconds": 84600.0,
+    "raw_index": 47,
+    "wet_km2": 7.41769666381836,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.737334382128142,
+    "max_wet_speed_mps": 0.6264454164689207,
+    "relative_mass_error": 1.0806369996050569e-15
+  },
+  {
+    "t_seconds": 86400.0,
+    "raw_index": 48,
+    "wet_km2": 7.428608847412109,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.744234132296755,
+    "max_wet_speed_mps": 0.6289092421605995,
+    "relative_mass_error": 8.051174999222111e-16
+  },
+  {
+    "t_seconds": 88200.0,
+    "raw_index": 49,
+    "wet_km2": 7.439521760498047,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.7506819606988575,
+    "max_wet_speed_mps": 0.6312163493265938,
+    "relative_mass_error": 1.0638457443098373e-16
+  },
+  {
+    "t_seconds": 90000.0,
+    "raw_index": 50,
+    "wet_km2": 7.450434935302734,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.756702120641246,
+    "max_wet_speed_mps": 0.6333741068218054,
+    "relative_mass_error": 2.518068203942118e-15
+  },
+  {
+    "t_seconds": 91800.0,
+    "raw_index": 51,
+    "wet_km2": 7.450434935302734,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.762330113270025,
+    "max_wet_speed_mps": 0.6353953750386939,
+    "relative_mass_error": 9.503625615736192e-16
+  },
+  {
+    "t_seconds": 93600.0,
+    "raw_index": 52,
+    "wet_km2": 7.450434935302734,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.767605942495317,
+    "max_wet_speed_mps": 0.6372883763431131,
+    "relative_mass_error": 8.262678443612802e-16
+  },
+  {
+    "t_seconds": 95400.0,
+    "raw_index": 53,
+    "wet_km2": 7.454073427001953,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.772543217126766,
+    "max_wet_speed_mps": 0.639060177735879,
+    "relative_mass_error": 1.4504275326075182e-15
+  },
+  {
+    "t_seconds": 97200.0,
+    "raw_index": 54,
+    "wet_km2": 7.454073427001953,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.777162397841648,
+    "max_wet_speed_mps": 0.6407215503735255,
+    "relative_mass_error": 8.032534136934309e-16
+  },
+  {
+    "t_seconds": 99000.0,
+    "raw_index": 55,
+    "wet_km2": 7.454073427001953,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.781483434866187,
+    "max_wet_speed_mps": 0.642278221724764,
+    "relative_mass_error": 6.783408149873559e-16
+  },
+  {
+    "t_seconds": 100800.0,
+    "raw_index": 56,
+    "wet_km2": 7.454073427001953,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.785529136216934,
+    "max_wet_speed_mps": 0.6437367922842272,
+    "relative_mass_error": 2.6209704627086967e-15
+  },
+  {
+    "t_seconds": 102600.0,
+    "raw_index": 57,
+    "wet_km2": 7.454073427001953,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.789302253042789,
+    "max_wet_speed_mps": 0.6451031668154297,
+    "relative_mass_error": 2.58388021024599e-15
+  },
+  {
+    "t_seconds": 104400.0,
+    "raw_index": 58,
+    "wet_km2": 7.457710802978515,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.792830119412725,
+    "max_wet_speed_mps": 0.6463844319169525,
+    "relative_mass_error": 4.366442965469101e-15
+  },
+  {
+    "t_seconds": 106200.0,
+    "raw_index": 59,
+    "wet_km2": 7.457710802978515,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.796137211904454,
+    "max_wet_speed_mps": 0.6475848868539279,
+    "relative_mass_error": 8.394310392148488e-15
+  },
+  {
+    "t_seconds": 108000.0,
+    "raw_index": 60,
+    "wet_km2": 7.457710802978515,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.799238874839402,
+    "max_wet_speed_mps": 0.6487090329344288,
+    "relative_mass_error": 4.344423699166882e-15
+  },
+  {
+    "t_seconds": 109800.0,
+    "raw_index": 61,
+    "wet_km2": 7.464985559570312,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.802150201003263,
+    "max_wet_speed_mps": 0.6497611165109011,
+    "relative_mass_error": 4.871668103862047e-15
+  },
+  {
+    "t_seconds": 111600.0,
+    "raw_index": 62,
+    "wet_km2": 7.468624017578125,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.804874073078099,
+    "max_wet_speed_mps": 0.6507448304874871,
+    "relative_mass_error": 7.177530505894153e-15
+  },
+  {
+    "t_seconds": 113400.0,
+    "raw_index": 63,
+    "wet_km2": 7.47226139819336,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.807425002574229,
+    "max_wet_speed_mps": 0.6516638768134284,
+    "relative_mass_error": 3.677213613454542e-15
+  },
+  {
+    "t_seconds": 115200.0,
+    "raw_index": 64,
+    "wet_km2": 7.479536792724609,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.810049071901811,
+    "max_wet_speed_mps": 0.6525241169105477,
+    "relative_mass_error": 4.770343875694144e-15
+  },
+  {
+    "t_seconds": 117000.0,
+    "raw_index": 65,
+    "wet_km2": 7.479536792724609,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.812597696395688,
+    "max_wet_speed_mps": 0.6533290699857096,
+    "relative_mass_error": 4.099484678741259e-15
+  },
+  {
+    "t_seconds": 118800.0,
+    "raw_index": 66,
+    "wet_km2": 7.479536792724609,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.814985503035317,
+    "max_wet_speed_mps": 0.6540823002701148,
+    "relative_mass_error": 3.581279936786046e-15
+  },
+  {
+    "t_seconds": 120600.0,
+    "raw_index": 67,
+    "wet_km2": 7.486811615234375,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.817221525746285,
+    "max_wet_speed_mps": 0.6547871054624699,
+    "relative_mass_error": 4.240044931254803e-15
+  },
+  {
+    "t_seconds": 122400.0,
+    "raw_index": 68,
+    "wet_km2": 7.486811615234375,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.819310282290803,
+    "max_wet_speed_mps": 0.6554467166731452,
+    "relative_mass_error": 2.5581718415260423e-15
+  },
+  {
+    "t_seconds": 124200.0,
+    "raw_index": 69,
+    "wet_km2": 7.486811615234375,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.821264976990187,
+    "max_wet_speed_mps": 0.6560641551428367,
+    "relative_mass_error": 3.0939660965472047e-15
+  },
+  {
+    "t_seconds": 126000.0,
+    "raw_index": 70,
+    "wet_km2": 7.490449053466797,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.823082471400432,
+    "max_wet_speed_mps": 0.6566426846602799,
+    "relative_mass_error": 5.383388377033044e-15
+  },
+  {
+    "t_seconds": 127800.0,
+    "raw_index": 71,
+    "wet_km2": 7.490449053466797,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.824774971269453,
+    "max_wet_speed_mps": 0.6571841712318712,
+    "relative_mass_error": 5.396751098655492e-15
+  },
+  {
+    "t_seconds": 129600.0,
+    "raw_index": 72,
+    "wet_km2": 7.494087484619141,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.826351556918438,
+    "max_wet_speed_mps": 0.6576910332950603,
+    "relative_mass_error": 6.812585575788142e-15
+  },
+  {
+    "t_seconds": 131400.0,
+    "raw_index": 73,
+    "wet_km2": 7.494087484619141,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.82781867429049,
+    "max_wet_speed_mps": 0.6581649397059395,
+    "relative_mass_error": 9.955835102385484e-15
+  },
+  {
+    "t_seconds": 133200.0,
+    "raw_index": 74,
+    "wet_km2": 7.494087484619141,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.829192551919075,
+    "max_wet_speed_mps": 0.6586075845116541,
+    "relative_mass_error": 7.39491522961691e-15
+  },
+  {
+    "t_seconds": 135000.0,
+    "raw_index": 75,
+    "wet_km2": 7.494087484619141,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.8304756253424435,
+    "max_wet_speed_mps": 0.6590210583224937,
+    "relative_mass_error": 9.690679132099257e-15
+  },
+  {
+    "t_seconds": 136800.0,
+    "raw_index": 76,
+    "wet_km2": 7.494087484619141,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.831677926392845,
+    "max_wet_speed_mps": 0.6594075122284543,
+    "relative_mass_error": 6.700267985432894e-15
+  },
+  {
+    "t_seconds": 138600.0,
+    "raw_index": 77,
+    "wet_km2": 7.494087484619141,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.8328069063079795,
+    "max_wet_speed_mps": 0.6597688106715686,
+    "relative_mass_error": 7.0852481144720525e-15
+  },
+  {
+    "t_seconds": 140400.0,
+    "raw_index": 78,
+    "wet_km2": 7.49772494165039,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.833865693822644,
+    "max_wet_speed_mps": 0.6601065942180661,
+    "relative_mass_error": 7.326951478885676e-15
+  },
+  {
+    "t_seconds": 142200.0,
+    "raw_index": 79,
+    "wet_km2": 7.5013623332519535,
+    "overbank_km2": 0.00363734765625,
+    "max_depth_m": 6.834856776797687,
+    "max_wet_speed_mps": 0.6604225143689582,
+    "relative_mass_error": 9.438002151714886e-15
+  },
+  {
+    "t_seconds": 144000.0,
+    "raw_index": 80,
+    "wet_km2": 7.5086371245117185,
+    "overbank_km2": 0.007274736328125,
+    "max_depth_m": 6.835783492266459,
+    "max_wet_speed_mps": 0.6607182360706317,
+    "relative_mass_error": 7.433300679610956e-15
+  },
+  {
+    "t_seconds": 145800.0,
+    "raw_index": 81,
+    "wet_km2": 7.5086371245117185,
+    "overbank_km2": 0.007274736328125,
+    "max_depth_m": 6.836651086145033,
+    "max_wet_speed_mps": 0.6609951451574885,
+    "relative_mass_error": 7.70869846793851e-15
+  },
+  {
+    "t_seconds": 147600.0,
+    "raw_index": 82,
+    "wet_km2": 7.5122745378417966,
+    "overbank_km2": 0.007274736328125,
+    "max_depth_m": 6.837464087099864,
+    "max_wet_speed_mps": 0.6612544793679557,
+    "relative_mass_error": 6.061252781486252e-15
+  },
+  {
+    "t_seconds": 149400.0,
+    "raw_index": 83,
+    "wet_km2": 7.5122745378417966,
+    "overbank_km2": 0.007274736328125,
+    "max_depth_m": 6.838225597959829,
+    "max_wet_speed_mps": 0.6614973983015369,
+    "relative_mass_error": 5.757902950462561e-15
+  },
+  {
+    "t_seconds": 151200.0,
+    "raw_index": 84,
+    "wet_km2": 7.5122745378417966,
+    "overbank_km2": 0.007274736328125,
+    "max_depth_m": 6.838938056708072,
+    "max_wet_speed_mps": 0.6617249495048616,
+    "relative_mass_error": 6.48566281791114e-15
+  },
+  {
+    "t_seconds": 153000.0,
+    "raw_index": 85,
+    "wet_km2": 7.530461760009765,
+    "overbank_km2": 0.007274736328125,
+    "max_depth_m": 6.895944477103125,
+    "max_wet_speed_mps": 0.66193970802306,
+    "relative_mass_error": 7.0502627312117296e-15
+  },
+  {
+    "t_seconds": 154800.0,
+    "raw_index": 86,
+    "wet_km2": 7.755994700439453,
+    "overbank_km2": 0.029100927734375,
+    "max_depth_m": 7.112606647966972,
+    "max_wet_speed_mps": 0.6621491671701925,
+    "relative_mass_error": 7.404701857296226e-15
+  },
+  {
+    "t_seconds": 156600.0,
+    "raw_index": 87,
+    "wet_km2": 7.9888093483886715,
+    "overbank_km2": 0.10549394165039062,
+    "max_depth_m": 7.499001070195573,
+    "max_wet_speed_mps": 0.7400108986048092,
+    "relative_mass_error": 9.786476331340439e-15
+  },
+  {
+    "t_seconds": 158400.0,
+    "raw_index": 88,
+    "wet_km2": 8.199791997558593,
+    "overbank_km2": 0.1273191376953125,
+    "max_depth_m": 8.045019659269254,
+    "max_wet_speed_mps": 0.9204414847356978,
+    "relative_mass_error": 1.0754381392563154e-14
+  },
+  {
+    "t_seconds": 160200.0,
+    "raw_index": 89,
+    "wet_km2": 8.352571183105468,
+    "overbank_km2": 0.14186947485351561,
+    "max_depth_m": 8.717509230199276,
+    "max_wet_speed_mps": 1.094331453935267,
+    "relative_mass_error": 1.2940165580943015e-14
+  },
+  {
+    "t_seconds": 162000.0,
+    "raw_index": 90,
+    "wet_km2": 8.549009522705077,
+    "overbank_km2": 0.18188286791992186,
+    "max_depth_m": 9.467310316658974,
+    "max_wet_speed_mps": 1.2430016717356283,
+    "relative_mass_error": 1.5753223213023102e-14
+  },
+  {
+    "t_seconds": 163800.0,
+    "raw_index": 91,
+    "wet_km2": 8.767276126831055,
+    "overbank_km2": 0.2218966279296875,
+    "max_depth_m": 10.248341174263956,
+    "max_wet_speed_mps": 1.3616561424451255,
+    "relative_mass_error": 1.7640038872322402e-14
+  },
+  {
+    "t_seconds": 165600.0,
+    "raw_index": 92,
+    "wet_km2": 9.000099661865235,
+    "overbank_km2": 0.25827244262695315,
+    "max_depth_m": 11.01115072676434,
+    "max_wet_speed_mps": 1.4515917438136312,
+    "relative_mass_error": 1.975218629456332e-14
+  },
+  {
+    "t_seconds": 167400.0,
+    "raw_index": 93,
+    "wet_km2": 9.29842611682129,
+    "overbank_km2": 0.2946488231201172,
+    "max_depth_m": 11.737084791099601,
+    "max_wet_speed_mps": 1.5057152253924206,
+    "relative_mass_error": 1.7798205767120995e-14
+  },
+  {
+    "t_seconds": 169200.0,
+    "raw_index": 94,
+    "wet_km2": 9.778684257446288,
+    "overbank_km2": 0.4656504295654297,
+    "max_depth_m": 12.403249293138382,
+    "max_wet_speed_mps": 1.528215337762009,
+    "relative_mass_error": 1.4145766038524707e-14
+  },
+  {
+    "t_seconds": 171000.0,
+    "raw_index": 95,
+    "wet_km2": 10.24436515246582,
+    "overbank_km2": 0.6039024691162109,
+    "max_depth_m": 12.987363172424825,
+    "max_wet_speed_mps": 1.5189910270822697,
+    "relative_mass_error": 1.4560531494264466e-14
+  },
+  {
+    "t_seconds": 172800.0,
+    "raw_index": 96,
+    "wet_km2": 10.753683015014648,
+    "overbank_km2": 0.8476477622070312,
+    "max_depth_m": 13.46528262496237,
+    "max_wet_speed_mps": 1.476475109532425,
+    "relative_mass_error": 1.497515542929549e-14
+  },
+  {
+    "t_seconds": 174600.0,
+    "raw_index": 97,
+    "wet_km2": 11.099299989135742,
+    "overbank_km2": 0.9131303310546875,
+    "max_depth_m": 13.908303173927775,
+    "max_wet_speed_mps": 1.4682887082906406,
+    "relative_mass_error": 1.5033162815958263e-14
+  },
+  {
+    "t_seconds": 176400.0,
+    "raw_index": 98,
+    "wet_km2": 11.419453322509765,
+    "overbank_km2": 1.000441636352539,
+    "max_depth_m": 14.457093333202316,
+    "max_wet_speed_mps": 1.5377678655539697,
+    "relative_mass_error": 1.672517826032197e-14
+  },
+  {
+    "t_seconds": 178200.0,
+    "raw_index": 99,
+    "wet_km2": 11.772344396118164,
+    "overbank_km2": 1.1204959919433595,
+    "max_depth_m": 15.141230746487453,
+    "max_wet_speed_mps": 1.6531899880117822,
+    "relative_mass_error": 1.3273057757430702e-14
+  },
+  {
+    "t_seconds": 180000.0,
+    "raw_index": 100,
+    "wet_km2": 12.12521878100586,
+    "overbank_km2": 1.2769244481201172,
+    "max_depth_m": 15.950849683296909,
+    "max_wet_speed_mps": 1.7887133338031,
+    "relative_mass_error": 9.341549805724514e-15
+  },
+  {
+    "t_seconds": 181800.0,
+    "raw_index": 101,
+    "wet_km2": 12.510831237182618,
+    "overbank_km2": 1.5534009125976562,
+    "max_depth_m": 16.854487924453586,
+    "max_wet_speed_mps": 1.9240985814531373,
+    "relative_mass_error": 7.994098657862786e-15
+  },
+  {
+    "t_seconds": 183600.0,
+    "raw_index": 102,
+    "wet_km2": 12.892798040527344,
+    "overbank_km2": 1.8371478767089844,
+    "max_depth_m": 17.82339016589085,
+    "max_wet_speed_mps": 2.0460046589344847,
+    "relative_mass_error": 1.3084746884852429e-14
+  },
+  {
+    "t_seconds": 185400.0,
+    "raw_index": 103,
+    "wet_km2": 13.205651628417968,
+    "overbank_km2": 2.0845217822265627,
+    "max_depth_m": 18.821428932571596,
+    "max_wet_speed_mps": 2.1487993770910543,
+    "relative_mass_error": 1.4447293387069572e-14
+  },
+  {
+    "t_seconds": 187200.0,
+    "raw_index": 104,
+    "wet_km2": 13.616713833374023,
+    "overbank_km2": 2.426465814331055,
+    "max_depth_m": 19.797326757253924,
+    "max_wet_speed_mps": 2.2245471827035526,
+    "relative_mass_error": 1.3534942992364469e-14
+  },
+  {
+    "t_seconds": 189000.0,
+    "raw_index": 105,
+    "wet_km2": 14.133258126098633,
+    "overbank_km2": 2.881167591430664,
+    "max_depth_m": 20.69719509213887,
+    "max_wet_speed_mps": 2.2774260245552735,
+    "relative_mass_error": 1.3009688067841538e-14
+  },
+  {
+    "t_seconds": 190800.0,
+    "raw_index": 106,
+    "wet_km2": 15.475521328735352,
+    "overbank_km2": 4.190690326782226,
+    "max_depth_m": 21.414823328297643,
+    "max_wet_speed_mps": 2.3163638740659227,
+    "relative_mass_error": 1.0132713111757269e-14
+  },
+  {
+    "t_seconds": 192600.0,
+    "raw_index": 107,
+    "wet_km2": 17.719933966918944,
+    "overbank_km2": 6.380533189086914,
+    "max_depth_m": 21.920451862511133,
+    "max_wet_speed_mps": 2.3364990147982727,
+    "relative_mass_error": 1.01034989184903e-14
+  },
+  {
+    "t_seconds": 194400.0,
+    "raw_index": 108,
+    "wet_km2": 20.211739206420898,
+    "overbank_km2": 8.850511502563476,
+    "max_depth_m": 22.21983102984416,
+    "max_wet_speed_mps": 2.327249640685909,
+    "relative_mass_error": 5.972169430937777e-15
+  },
+  {
+    "t_seconds": 196200.0,
+    "raw_index": 109,
+    "wet_km2": 21.735884297485352,
+    "overbank_km2": 10.360104647583007,
+    "max_depth_m": 22.419934968505377,
+    "max_wet_speed_mps": 2.2779432398957553,
+    "relative_mass_error": 5.666359271675054e-15
+  },
+  {
+    "t_seconds": 198000.0,
+    "raw_index": 110,
+    "wet_km2": 23.762061481933593,
+    "overbank_km2": 12.368091874755859,
+    "max_depth_m": 22.538082731379877,
+    "max_wet_speed_mps": 2.203279997250855,
+    "relative_mass_error": 1.106793996059246e-14
+  },
+  {
+    "t_seconds": 199800.0,
+    "raw_index": 111,
+    "wet_km2": 27.246882827636718,
+    "overbank_km2": 15.838362254150391,
+    "max_depth_m": 22.53403860899334,
+    "max_wet_speed_mps": 2.1151262994076943,
+    "relative_mass_error": 8.976014103471075e-15
+  },
+  {
+    "t_seconds": 201600.0,
+    "raw_index": 112,
+    "wet_km2": 29.342201524658204,
+    "overbank_km2": 17.919128588134765,
+    "max_depth_m": 22.479341038125757,
+    "max_wet_speed_mps": 2.0108189322273944,
+    "relative_mass_error": 6.8147022888676064e-15
+  },
+  {
+    "t_seconds": 203400.0,
+    "raw_index": 113,
+    "wet_km2": 30.94641556323242,
+    "overbank_km2": 19.51606744262695,
+    "max_depth_m": 22.387663819178048,
+    "max_wet_speed_mps": 1.8955725096474378,
+    "relative_mass_error": 1.0451941778510424e-14
+  },
+  {
+    "t_seconds": 205200.0,
+    "raw_index": 114,
+    "wet_km2": 32.36863209533691,
+    "overbank_km2": 20.938283612182616,
+    "max_depth_m": 22.258402937721026,
+    "max_wet_speed_mps": 1.7762768363664294,
+    "relative_mass_error": 8.598912662039006e-15
+  },
+  {
+    "t_seconds": 207000.0,
+    "raw_index": 115,
+    "wet_km2": 32.7469621060791,
+    "overbank_km2": 21.316613622924805,
+    "max_depth_m": 22.101791225051116,
+    "max_wet_speed_mps": 1.7405677873220176,
+    "relative_mass_error": 1.4546990940704924e-14
+  },
+  {
+    "t_seconds": 208800.0,
+    "raw_index": 116,
+    "wet_km2": 32.85612992004395,
+    "overbank_km2": 21.425781436889647,
+    "max_depth_m": 21.927861964430484,
+    "max_wet_speed_mps": 1.8729667950796653,
+    "relative_mass_error": 1.3346734334930306e-14
+  },
+  {
+    "t_seconds": 210600.0,
+    "raw_index": 117,
+    "wet_km2": 33.12538240270996,
+    "overbank_km2": 21.69867150036621,
+    "max_depth_m": 21.747848127695747,
+    "max_wet_speed_mps": 2.0157370801338472,
+    "relative_mass_error": 1.1029384007931336e-14
+  },
+  {
+    "t_seconds": 212400.0,
+    "raw_index": 118,
+    "wet_km2": 32.86356038366699,
+    "overbank_km2": 21.440487084594725,
+    "max_depth_m": 21.569744771938293,
+    "max_wet_speed_mps": 2.1590017436247773,
+    "relative_mass_error": 1.4194200473003645e-14
+  },
+  {
+    "t_seconds": 214200.0,
+    "raw_index": 119,
+    "wet_km2": 32.67445489953613,
+    "overbank_km2": 21.258656925659178,
+    "max_depth_m": 21.405860867502273,
+    "max_wet_speed_mps": 2.299915352216786,
+    "relative_mass_error": 1.618420227622726e-14
+  },
+  {
+    "t_seconds": 216000.0,
+    "raw_index": 120,
+    "wet_km2": 32.325227985107425,
+    "overbank_km2": 20.913067877197264,
+    "max_depth_m": 21.276539258091233,
+    "max_wet_speed_mps": 2.434413588230706,
+    "relative_mass_error": 2.4465166912396376e-14
+  },
+  {
+    "t_seconds": 217800.0,
+    "raw_index": 121,
+    "wet_km2": 31.961454916870117,
+    "overbank_km2": 20.560208389038085,
+    "max_depth_m": 21.17374169850825,
+    "max_wet_speed_mps": 2.5584415472955135,
+    "relative_mass_error": 2.4380555781825213e-14
+  },
+  {
+    "t_seconds": 219600.0,
+    "raw_index": 122,
+    "wet_km2": 31.564953708251952,
+    "overbank_km2": 20.170983220458986,
+    "max_depth_m": 21.06534932909397,
+    "max_wet_speed_mps": 2.6679514643806628,
+    "relative_mass_error": 2.4769681579759197e-14
+  },
+  {
+    "t_seconds": 221400.0,
+    "raw_index": 123,
+    "wet_km2": 31.270291481079102,
+    "overbank_km2": 19.88723433972168,
+    "max_depth_m": 20.943089578100974,
+    "max_wet_speed_mps": 2.755292436264797,
+    "relative_mass_error": 2.221210470822267e-14
+  },
+  {
+    "t_seconds": 223200.0,
+    "raw_index": 124,
+    "wet_km2": 30.90651753540039,
+    "overbank_km2": 19.527098275146486,
+    "max_depth_m": 20.803572958649962,
+    "max_wet_speed_mps": 2.808805408531678,
+    "relative_mass_error": 2.2534686382258536e-14
+  },
+  {
+    "t_seconds": 225000.0,
+    "raw_index": 125,
+    "wet_km2": 30.55001870373535,
+    "overbank_km2": 19.18151370690918,
+    "max_depth_m": 20.643777352526197,
+    "max_wet_speed_mps": 2.81558900069998,
+    "relative_mass_error": 2.332090595199316e-14
+  },
+  {
+    "t_seconds": 226800.0,
+    "raw_index": 126,
+    "wet_km2": 29.95712616027832,
+    "overbank_km2": 18.59589703503418,
+    "max_depth_m": 20.461970807101437,
+    "max_wet_speed_mps": 2.7614773147411396,
+    "relative_mass_error": 2.159293552941592e-14
+  },
+  {
+    "t_seconds": 228600.0,
+    "raw_index": 127,
+    "wet_km2": 29.41152066784668,
+    "overbank_km2": 18.05756758605957,
+    "max_depth_m": 20.258433859279442,
+    "max_wet_speed_mps": 2.7020394731453234,
+    "relative_mass_error": 2.0231881383520265e-14
+  },
+  {
+    "t_seconds": 230400.0,
+    "raw_index": 128,
+    "wet_km2": 28.80764442932129,
+    "overbank_km2": 17.46460437487793,
+    "max_depth_m": 20.03252551531084,
+    "max_wet_speed_mps": 2.6737681346346047,
+    "relative_mass_error": 1.958016741768793e-14
+  },
+  {
+    "t_seconds": 232200.0,
+    "raw_index": 129,
+    "wet_km2": 27.89457029626465,
+    "overbank_km2": 16.55153024182129,
+    "max_depth_m": 19.782123753545363,
+    "max_wet_speed_mps": 2.6620548196278313,
+    "relative_mass_error": 2.054659950903556e-14
+  },
+  {
+    "t_seconds": 234000.0,
+    "raw_index": 130,
+    "wet_km2": 27.454376608032227,
+    "overbank_km2": 16.11861238684082,
+    "max_depth_m": 19.50679192777526,
+    "max_wet_speed_mps": 2.6612542312591674,
+    "relative_mass_error": 2.849003625457752e-14
+  },
+  {
+    "t_seconds": 235800.0,
+    "raw_index": 131,
+    "wet_km2": 27.221558520629884,
+    "overbank_km2": 15.89306948840332,
+    "max_depth_m": 19.206169871369234,
+    "max_wet_speed_mps": 2.6670513959212347,
+    "relative_mass_error": 2.6881283994023202e-14
+  },
+  {
+    "t_seconds": 237600.0,
+    "raw_index": 132,
+    "wet_km2": 26.9851132064209,
+    "overbank_km2": 15.671174633911132,
+    "max_depth_m": 18.88215828583493,
+    "max_wet_speed_mps": 2.6754200592283865,
+    "relative_mass_error": 2.3794343457913456e-14
+  },
+  {
+    "t_seconds": 239400.0,
+    "raw_index": 133,
+    "wet_km2": 26.17392850268555,
+    "overbank_km2": 14.863627923828124,
+    "max_depth_m": 18.537599299976396,
+    "max_wet_speed_mps": 2.685810165156855,
+    "relative_mass_error": 2.493842080573016e-14
+  },
+  {
+    "t_seconds": 241200.0,
+    "raw_index": 134,
+    "wet_km2": 25.90474734301758,
+    "overbank_km2": 14.60899860546875,
+    "max_depth_m": 18.177711161031272,
+    "max_wet_speed_mps": 2.6974096600984643,
+    "relative_mass_error": 1.9616735167912878e-14
+  },
+  {
+    "t_seconds": 243000.0,
+    "raw_index": 135,
+    "wet_km2": 25.64647085131836,
+    "overbank_km2": 14.357997465332032,
+    "max_depth_m": 17.80614920031048,
+    "max_wet_speed_mps": 2.708949001821674,
+    "relative_mass_error": 2.1857346857567862e-14
+  },
+  {
+    "t_seconds": 244800.0,
+    "raw_index": 136,
+    "wet_km2": 25.46094408935547,
+    "overbank_km2": 14.18702148852539,
+    "max_depth_m": 17.422994454382668,
+    "max_wet_speed_mps": 2.7238200291236985,
+    "relative_mass_error": 2.7096816264396506e-14
+  },
+  {
+    "t_seconds": 246600.0,
+    "raw_index": 137,
+    "wet_km2": 25.30815745336914,
+    "overbank_km2": 14.059700194335937,
+    "max_depth_m": 17.035242425044522,
+    "max_wet_speed_mps": 2.73858842116732,
+    "relative_mass_error": 1.732866456803199e-14
+  },
+  {
+    "t_seconds": 248400.0,
+    "raw_index": 138,
+    "wet_km2": 25.04260754675293,
+    "overbank_km2": 13.823252409423828,
+    "max_depth_m": 16.645864370075767,
+    "max_wet_speed_mps": 2.750988409980497,
+    "relative_mass_error": 2.3031125470775812e-14
+  },
+  {
+    "t_seconds": 250200.0,
+    "raw_index": 139,
+    "wet_km2": 24.88982107409668,
+    "overbank_km2": 13.699569743652344,
+    "max_depth_m": 16.262624115550263,
+    "max_wet_speed_mps": 2.760251957438614,
+    "relative_mass_error": 2.323110069627358e-14
+  },
+  {
+    "t_seconds": 252000.0,
+    "raw_index": 140,
+    "wet_km2": 24.66428068078613,
+    "overbank_km2": 13.499494065185546,
+    "max_depth_m": 15.890952698449716,
+    "max_wet_speed_mps": 2.7598333907060075,
+    "relative_mass_error": 2.275702420082713e-14
+  },
+  {
+    "t_seconds": 253800.0,
+    "raw_index": 141,
+    "wet_km2": 24.431479001831054,
+    "overbank_km2": 13.284880982910156,
+    "max_depth_m": 15.53493118439272,
+    "max_wet_speed_mps": 2.7507324341214363,
+    "relative_mass_error": 2.528361413669973e-14
+  },
+  {
+    "t_seconds": 255600.0,
+    "raw_index": 142,
+    "wet_km2": 23.95128925402832,
+    "overbank_km2": 12.833792645996093,
+    "max_depth_m": 15.200575075820858,
+    "max_wet_speed_mps": 2.7360647860806075,
+    "relative_mass_error": 2.2976661430702077e-14
+  },
+  {
+    "t_seconds": 257400.0,
+    "raw_index": 143,
+    "wet_km2": 23.84215776550293,
+    "overbank_km2": 12.750126507568359,
+    "max_depth_m": 14.89439166703777,
+    "max_wet_speed_mps": 2.715615884568736,
+    "relative_mass_error": 2.5753677424695364e-14
+  },
+  {
+    "t_seconds": 259200.0,
+    "raw_index": 144,
+    "wet_km2": 23.667546105834962,
+    "overbank_km2": 12.615530475097657,
+    "max_depth_m": 14.628973386762663,
+    "max_wet_speed_mps": 2.6905399178197675,
+    "relative_mass_error": 2.7658072510348276e-14
+  },
+  {
+    "t_seconds": 261000.0,
+    "raw_index": 145,
+    "wet_km2": 23.303782384521483,
+    "overbank_km2": 12.2735941595459,
+    "max_depth_m": 14.400787811358281,
+    "max_wet_speed_mps": 2.6574760975791056,
+    "relative_mass_error": 2.852522269747927e-14
+  },
+  {
+    "t_seconds": 262800.0,
+    "raw_index": 146,
+    "wet_km2": 22.823591911743165,
+    "overbank_km2": 11.818868301513671,
+    "max_depth_m": 14.196608869990058,
+    "max_wet_speed_mps": 2.6218254186067553,
+    "relative_mass_error": 2.7008264020352283e-14
+  },
+  {
+    "t_seconds": 264600.0,
+    "raw_index": 147,
+    "wet_km2": 22.71081919909668,
+    "overbank_km2": 11.76066152319336,
+    "max_depth_m": 14.010536035376612,
+    "max_wet_speed_mps": 2.573214822695574,
+    "relative_mass_error": 2.8089958517003983e-14
+  },
+  {
+    "t_seconds": 266400.0,
+    "raw_index": 148,
+    "wet_km2": 22.60532611022949,
+    "overbank_km2": 11.666081370605468,
+    "max_depth_m": 13.837009642533573,
+    "max_wet_speed_mps": 2.5107169930895057,
+    "relative_mass_error": 2.563627554796551e-14
+  },
+  {
+    "t_seconds": 268200.0,
+    "raw_index": 149,
+    "wet_km2": 22.43435242883301,
+    "overbank_km2": 11.5132961796875,
+    "max_depth_m": 13.672586801563495,
+    "max_wet_speed_mps": 2.440517221641428,
+    "relative_mass_error": 1.8836258147208987e-14
+  },
+  {
+    "t_seconds": 270000.0,
+    "raw_index": 150,
+    "wet_km2": 22.3761478170166,
+    "overbank_km2": 11.480554885986328,
+    "max_depth_m": 13.514977159152117,
+    "max_wet_speed_mps": 2.359500554925694,
+    "relative_mass_error": 1.9172514910047608e-14
+  },
+  {
+    "t_seconds": 271800.0,
+    "raw_index": 151,
+    "wet_km2": 22.31794211315918,
+    "overbank_km2": 11.436900552490235,
+    "max_depth_m": 13.361923818999028,
+    "max_wet_speed_mps": 2.2825822238453157,
+    "relative_mass_error": 1.9035702099905502e-14
+  },
+  {
+    "t_seconds": 273600.0,
+    "raw_index": 152,
+    "wet_km2": 21.71040863598633,
+    "overbank_km2": 10.858468947387696,
+    "max_depth_m": 13.211827392707074,
+    "max_wet_speed_mps": 2.220327548387814,
+    "relative_mass_error": 2.2443797225489138e-14
+  },
+  {
+    "t_seconds": 275400.0,
+    "raw_index": 153,
+    "wet_km2": 21.626739063842773,
+    "overbank_km2": 10.792988383911133,
+    "max_depth_m": 13.063152237525943,
+    "max_wet_speed_mps": 2.1678905233040235,
+    "relative_mass_error": 2.705431862336868e-14
+  },
+  {
+    "t_seconds": 277200.0,
+    "raw_index": 154,
+    "wet_km2": 21.528520848754884,
+    "overbank_km2": 10.716596414428711,
+    "max_depth_m": 12.914225797088704,
+    "max_wet_speed_mps": 2.123528672208652,
+    "relative_mass_error": 2.8624500185189136e-14
+  },
+  {
+    "t_seconds": 279000.0,
+    "raw_index": 155,
+    "wet_km2": 21.34663190209961,
+    "overbank_km2": 10.567448626708984,
+    "max_depth_m": 12.764719317733384,
+    "max_wet_speed_mps": 2.0848533795948176,
+    "relative_mass_error": 2.976386414405714e-14
+  },
+  {
+    "t_seconds": 280800.0,
+    "raw_index": 156,
+    "wet_km2": 21.0774351907959,
+    "overbank_km2": 10.327353806030274,
+    "max_depth_m": 12.613935804940894,
+    "max_wet_speed_mps": 2.0511913555286476,
+    "relative_mass_error": 3.010136392737302e-14
+  },
+  {
+    "t_seconds": 282600.0,
+    "raw_index": 157,
+    "wet_km2": 20.910099353637694,
+    "overbank_km2": 10.203671517456055,
+    "max_depth_m": 12.46154169007428,
+    "max_wet_speed_mps": 2.020909988372366,
+    "relative_mass_error": 2.85198710772483e-14
+  },
+  {
+    "t_seconds": 284400.0,
+    "raw_index": 158,
+    "wet_km2": 20.742764870727537,
+    "overbank_km2": 10.050887998901366,
+    "max_depth_m": 12.3067941979098,
+    "max_wet_speed_mps": 1.9928761413620535,
+    "relative_mass_error": 2.504167776716328e-14
+  },
+  {
+    "t_seconds": 286200.0,
+    "raw_index": 159,
+    "wet_km2": 20.564509658935545,
+    "overbank_km2": 9.898097333618164,
+    "max_depth_m": 12.149466672758392,
+    "max_wet_speed_mps": 1.966854750679332,
+    "relative_mass_error": 2.660836575670611e-14
+  },
+  {
+    "t_seconds": 288000.0,
+    "raw_index": 160,
+    "wet_km2": 20.46992775720215,
+    "overbank_km2": 9.807153395019531,
+    "max_depth_m": 11.988914579634553,
+    "max_wet_speed_mps": 1.9429509253879493,
+    "relative_mass_error": 2.527713091294886e-14
+  },
+  {
+    "t_seconds": 289800.0,
+    "raw_index": 161,
+    "wet_km2": 20.317138373291016,
+    "overbank_km2": 9.676191094970703,
+    "max_depth_m": 11.825369969789481,
+    "max_wet_speed_mps": 1.9211406010335583,
+    "relative_mass_error": 1.943071689480239e-14
+  },
+  {
+    "t_seconds": 291600.0,
+    "raw_index": 162,
+    "wet_km2": 20.22255579296875,
+    "overbank_km2": 9.63253792553711,
+    "max_depth_m": 11.658654152108745,
+    "max_wet_speed_mps": 1.9004783155516711,
+    "relative_mass_error": 2.228406122707298e-14
+  },
+  {
+    "t_seconds": 293400.0,
+    "raw_index": 163,
+    "wet_km2": 20.12069512780762,
+    "overbank_km2": 9.59252192211914,
+    "max_depth_m": 11.488702834617257,
+    "max_wet_speed_mps": 1.8800279130702495,
+    "relative_mass_error": 1.6571963253005406e-14
+  },
+  {
+    "t_seconds": 295200.0,
+    "raw_index": 164,
+    "wet_km2": 20.058850657836913,
+    "overbank_km2": 9.556143166015625,
+    "max_depth_m": 11.315762039839706,
+    "max_wet_speed_mps": 1.860203728891029,
+    "relative_mass_error": 1.5465302693920334e-14
+  },
+  {
+    "t_seconds": 297000.0,
+    "raw_index": 165,
+    "wet_km2": 19.909701673217775,
+    "overbank_km2": 9.443374497802735,
+    "max_depth_m": 11.140813607335641,
+    "max_wet_speed_mps": 1.840210481436449,
+    "relative_mass_error": 1.4122888540206268e-14
+  },
+  {
+    "t_seconds": 298800.0,
+    "raw_index": 166,
+    "wet_km2": 19.72417105505371,
+    "overbank_km2": 9.29058461694336,
+    "max_depth_m": 10.963667684527096,
+    "max_wet_speed_mps": 1.8196737825386857,
+    "relative_mass_error": 9.135331294353763e-15
+  },
+  {
+    "t_seconds": 300600.0,
+    "raw_index": 167,
+    "wet_km2": 19.50953341345215,
+    "overbank_km2": 9.130516686401368,
+    "max_depth_m": 10.792234644037212,
+    "max_wet_speed_mps": 1.7999602115100433,
+    "relative_mass_error": 1.1545298895945835e-14
+  },
+  {
+    "t_seconds": 302400.0,
+    "raw_index": 168,
+    "wet_km2": 19.389481649658205,
+    "overbank_km2": 9.035930477172851,
+    "max_depth_m": 10.626146981919344,
+    "max_wet_speed_mps": 1.7801066667457506,
+    "relative_mass_error": 1.1723173729219852e-14
+  },
+  {
+    "t_seconds": 304200.0,
+    "raw_index": 169,
+    "wet_km2": 19.276701838867186,
+    "overbank_km2": 8.984998898803711,
+    "max_depth_m": 10.459072103851064,
+    "max_wet_speed_mps": 1.7598641131148265,
+    "relative_mass_error": 9.884749303347523e-15
+  },
+  {
+    "t_seconds": 306000.0,
+    "raw_index": 170,
+    "wet_km2": 19.14209917492676,
+    "overbank_km2": 8.8940537154541,
+    "max_depth_m": 10.291436334904235,
+    "max_wet_speed_mps": 1.7380175634747117,
+    "relative_mass_error": 1.1518083532642621e-14
+  },
+  {
+    "t_seconds": 307800.0,
+    "raw_index": 171,
+    "wet_km2": 19.051152083740234,
+    "overbank_km2": 8.86495253942871,
+    "max_depth_m": 10.123763861221098,
+    "max_wet_speed_mps": 1.7143537570184906,
+    "relative_mass_error": 9.609157582869017e-15
+  },
+  {
+    "t_seconds": 309600.0,
+    "raw_index": 172,
+    "wet_km2": 18.974749786499025,
+    "overbank_km2": 8.84676230505371,
+    "max_depth_m": 9.95692110587313,
+    "max_wet_speed_mps": 1.6904908793156102,
+    "relative_mass_error": 1.0678170607791134e-14
+  },
+  {
+    "t_seconds": 311400.0,
+    "raw_index": 173,
+    "wet_km2": 18.85469695227051,
+    "overbank_km2": 8.76672964440918,
+    "max_depth_m": 9.792030317880345,
+    "max_wet_speed_mps": 1.6659006606821136,
+    "relative_mass_error": 7.496089940561298e-15
+  },
+  {
+    "t_seconds": 313200.0,
+    "raw_index": 174,
+    "wet_km2": 18.654611596679686,
+    "overbank_km2": 8.653958478881837,
+    "max_depth_m": 9.629600839859703,
+    "max_wet_speed_mps": 1.6395665353355275,
+    "relative_mass_error": 9.848080625360006e-15
+  },
+  {
+    "t_seconds": 315000.0,
+    "raw_index": 175,
+    "wet_km2": 18.56730071520996,
+    "overbank_km2": 8.621218127075196,
+    "max_depth_m": 9.470401254229419,
+    "max_wet_speed_mps": 1.6115229116001166,
+    "relative_mass_error": 9.63600387264631e-15
+  },
+  {
+    "t_seconds": 316800.0,
+    "raw_index": 176,
+    "wet_km2": 18.381766376464842,
+    "overbank_km2": 8.490256719482423,
+    "max_depth_m": 9.3156509251676,
+    "max_wet_speed_mps": 1.582439985456592,
+    "relative_mass_error": 9.744682631138281e-15
+  },
+  {
+    "t_seconds": 318600.0,
+    "raw_index": 177,
+    "wet_km2": 18.309004520996094,
+    "overbank_km2": 8.47934340649414,
+    "max_depth_m": 9.166771115721172,
+    "max_wet_speed_mps": 1.5527465510700484,
+    "relative_mass_error": 7.659590475333337e-15
+  },
+  {
+    "t_seconds": 320400.0,
+    "raw_index": 178,
+    "wet_km2": 18.19986700073242,
+    "overbank_km2": 8.450241427490234,
+    "max_depth_m": 9.024505171773596,
+    "max_wet_speed_mps": 1.521928350388009,
+    "relative_mass_error": 8.488529315639313e-15
+  },
+  {
+    "t_seconds": 322200.0,
+    "raw_index": 179,
+    "wet_km2": 18.090727528076172,
+    "overbank_km2": 8.428414228027345,
+    "max_depth_m": 8.88967062041711,
+    "max_wet_speed_mps": 1.4896656941351685,
+    "relative_mass_error": 1.3974096801299292e-14
+  },
+  {
+    "t_seconds": 324000.0,
+    "raw_index": 180,
+    "wet_km2": 17.916106329223634,
+    "overbank_km2": 8.355656069335938,
+    "max_depth_m": 8.763500561225372,
+    "max_wet_speed_mps": 1.4556077601105135,
+    "relative_mass_error": 1.5750111073018443e-14
+  },
+  {
+    "t_seconds": 325800.0,
+    "raw_index": 181,
+    "wet_km2": 17.766946807495117,
+    "overbank_km2": 8.279255681152344,
+    "max_depth_m": 8.647367878553636,
+    "max_wet_speed_mps": 1.4188855163309244,
+    "relative_mass_error": 9.655354465428018e-15
+  },
+  {
+    "t_seconds": 327600.0,
+    "raw_index": 182,
+    "wet_km2": 17.59231820715332,
+    "overbank_km2": 8.206491715332032,
+    "max_depth_m": 8.540184151065064,
+    "max_wet_speed_mps": 1.380538844418169,
+    "relative_mass_error": 1.0717651832740237e-14
+  },
+  {
+    "t_seconds": 329400.0,
+    "raw_index": 183,
+    "wet_km2": 17.4613480234375,
+    "overbank_km2": 8.162834692626953,
+    "max_depth_m": 8.440509255807155,
+    "max_wet_speed_mps": 1.3411425720225105,
+    "relative_mass_error": 1.221408524284689e-14
+  },
+  {
+    "t_seconds": 331200.0,
+    "raw_index": 184,
+    "wet_km2": 17.246698244018553,
+    "overbank_km2": 8.053691650146485,
+    "max_depth_m": 8.34750426646186,
+    "max_wet_speed_mps": 1.300294247455771,
+    "relative_mass_error": 1.2875626127205502e-14
+  },
+  {
+    "t_seconds": 333000.0,
+    "raw_index": 185,
+    "wet_km2": 17.03567591796875,
+    "overbank_km2": 7.955455245117188,
+    "max_depth_m": 8.260404209039846,
+    "max_wet_speed_mps": 1.2574645507865927,
+    "relative_mass_error": 1.2625566156013287e-14
+  },
+  {
+    "t_seconds": 334800.0,
+    "raw_index": 186,
+    "wet_km2": 16.882866079345703,
+    "overbank_km2": 7.926347081054687,
+    "max_depth_m": 8.178635015078484,
+    "max_wet_speed_mps": 1.2127359655080885,
+    "relative_mass_error": 1.5301948687364993e-14
+  },
+  {
+    "t_seconds": 336600.0,
+    "raw_index": 187,
+    "wet_km2": 16.70095283251953,
+    "overbank_km2": 7.9081565,
+    "max_depth_m": 8.101604127825514,
+    "max_wet_speed_mps": 1.1697284446596181,
+    "relative_mass_error": 2.3424292444158824e-14
+  },
+  {
+    "t_seconds": 338400.0,
+    "raw_index": 188,
+    "wet_km2": 16.617274130371094,
+    "overbank_km2": 7.9081565,
+    "max_depth_m": 8.028879907289902,
+    "max_wet_speed_mps": 1.1300120311598183,
+    "relative_mass_error": 2.9636584426482714e-14
+  },
+  {
+    "t_seconds": 340200.0,
+    "raw_index": 189,
+    "wet_km2": 16.315392212158205,
+    "overbank_km2": 7.671764828369141,
+    "max_depth_m": 8.001290453693317,
+    "max_wet_speed_mps": 1.0931683930063854,
+    "relative_mass_error": 2.4443125685781467e-14
+  },
+  {
+    "t_seconds": 342000.0,
+    "raw_index": 190,
+    "wet_km2": 16.25354300415039,
+    "overbank_km2": 7.671764828369141,
+    "max_depth_m": 8.001208298640849,
+    "max_wet_speed_mps": 1.0592330155111744,
+    "relative_mass_error": 2.0913986455867247e-14
+  },
+  {
+    "t_seconds": 343800.0,
+    "raw_index": 191,
+    "wet_km2": 16.2098862142334,
+    "overbank_km2": 7.671764828369141,
+    "max_depth_m": 8.00113025366854,
+    "max_wet_speed_mps": 1.0281009290955287,
+    "relative_mass_error": 2.2979089122381227e-14
+  },
+  {
+    "t_seconds": 345600.0,
+    "raw_index": 192,
+    "wet_km2": 16.177146025024413,
+    "overbank_km2": 7.664489676513672,
+    "max_depth_m": 8.00105605494728,
+    "max_wet_speed_mps": 0.9993179406214875,
+    "relative_mass_error": 2.236713196983501e-14
+  }
+]
